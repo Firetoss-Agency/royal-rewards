@@ -1,0 +1,62 @@
+main.login {
+	section.login-form {
+    height: 100vh;
+
+    .box {
+      border: solid 2px $blue;
+      padding: 6rem;
+
+      @include breakpoint(large down) {
+        padding: 4rem;
+      }
+
+      @include breakpoint(small down) {
+        padding: 2rem;
+      }
+
+      // Login Form
+      #wppb-login-wrap {
+        form {
+          padding: 2rem 2rem 0;
+
+          @include breakpoint(768 down) {
+            padding: 2rem 0 0;
+          }
+
+          p {
+            label { display: none }
+
+            input:not([type=submit]) {
+              width: 100%;
+              padding: 10px;
+            }
+
+            &.login-submit {
+              text-align: center;
+
+              input[type=submit] {
+                text-transform: uppercase;
+                background: $red;
+                color: $white;
+                border: none;
+                letter-spacing: 1px;
+                box-shadow: none;
+                padding: 0.75rem 2.75rem;
+                transition: 0.2s;
+                cursor: pointer;
+                font: {
+                  size: rem-calc(20);
+                  weight: $light;
+                }
+
+                &:hover {
+                  background: darken($red, 5%);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

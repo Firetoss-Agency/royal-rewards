@@ -134,7 +134,7 @@
 
 //$base-body-background: $global-background !default;
 //$base-body-font-family: $global-font-family !default;
-//$base-body-font-weight: normal !default;
+$base-body-font-weight: $light !default;
 //$base-body-font-size: $global-font-size !default;
 //$base-body-line-height: $global-line-height !default;
 //$base-body-color: $global-color !default;
@@ -515,7 +515,7 @@
 
 //<editor-fold desc="Container">
 
-//$container-max-width: 1200px !default;
+$container-max-width: 1600px !default;
 //$container-xsmall-max-width: 750px !default;
 //$container-small-max-width: 900px !default;
 //$container-large-max-width: 1600px !default;
@@ -1247,7 +1247,7 @@
 
 //<editor-fold desc="Navbar">
 
-//$navbar-background: $global-muted-background !default;
+$navbar-background: $blue !default;
 //$navbar-color-mode: none !default;
 //$navbar-nav-item-height: 80px !default;
 //$navbar-nav-item-padding-horizontal: 15px !default;

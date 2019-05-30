@@ -2,7 +2,7 @@ const mix     = require('laravel-mix');
 const webpack = require("webpack");
 
 // Set project paths
-const localDomain = 'CHANGE_ME_TO_YOUR_DOMAIN.test';
+const localDomain = 'royal-rewards.test';
 const themePath   = 'wp-content/themes/spark';
 const assetsPath  = `${themePath}/resources`;
 const publicPath  = `${themePath}/public`;

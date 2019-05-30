@@ -13,7 +13,9 @@
     {{ the_field('body_script_snippets', 'option') }}
     @stack('body')
 
-    @include('global.nav')
+    @if(!is_front_page())
+      @include('global.nav')
+    @endif
 
     <main class="site {{ main_class() }}" id="site-main" role="document">
       @yield('content')
