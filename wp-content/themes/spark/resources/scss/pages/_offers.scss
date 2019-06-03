@@ -1,0 +1,71 @@
+main.offers {
+
+}
+
+main.offers-single {
+  section.offer {
+    padding: 1.5rem 0 8rem;
+
+    nav {
+      text-align: right;
+      margin-bottom: 0.5rem;
+
+      a {
+        color: $black;
+        font: {
+          size: rem-calc(12);
+          weight: $regular;
+        }
+      }
+    }
+
+    .details {
+      background: $smoke;
+      padding: 2rem 2.5rem 1rem;
+
+      header {
+        display: flex;
+        justify-content: space-between;
+
+        h5 {
+          font: {
+            style: italic;
+            size: rem-calc(17);
+            weight: $light;
+          }
+        }
+      }
+    }
+
+    .map {
+      h4 {
+        padding: 0 2.5rem;
+      }
+
+      iframe {
+        width: 100%;
+      }
+    }
+
+    .favorite {
+      a img {
+        height: 20px;
+        margin: 0 6px 5px 0;
+      }
+    }
+
+    .back {
+      a {
+        color: $black;
+        border-bottom: solid 1px $black;
+        padding-bottom: 3px;
+        font: {
+          size: rem-calc(12);
+          weight: $regular;
+        }
+      }
+    }
+  }
+}
+
+

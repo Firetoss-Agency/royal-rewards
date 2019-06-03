@@ -4,6 +4,8 @@
 
 header#site-header {
   background: $navbar-background;
+  position: fixed;
+  width: 100%;
 
   > .uk-container {
     padding: 0;

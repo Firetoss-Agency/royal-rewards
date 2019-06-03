@@ -36,6 +36,7 @@ $breakpoint-large-max: ($breakpoint-xlarge - 1) !default;
 
 $black: #000;
 $white: #FFF;
+$smoke: #F7F7F7;
 $clear: rgba(0,0,0,0);
 
 $blue: #0F1031;
@@ -47,21 +48,22 @@ $red: #A32035;
 //
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,500,700&display=swap');
+$google-font: 'Montserrat';
 
 $light: 200;
 $regular: 300;
 $semi: 500;
 $bold: 700;
 
-$global-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$global-font-family: $google-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $global-font-size: 16px !default;
 $global-line-height: 1.5 !default; // 24px
 
 $global-xxlarge-font-size: 2.625rem !default; // 42px
-$global-xlarge-font-size: 2rem !default; // 32px
-$global-large-font-size: 1.5rem !default; // 24px
+$global-xlarge-font-size: 72px !default;
+$global-large-font-size: 26px !default; // 24px
 $global-medium-font-size: 1.25rem !default; // 20px
-$global-small-font-size: 0.875rem !default; // 14px
+$global-small-font-size: 0.875rem !default;
 
 //
 // Colors
@@ -70,8 +72,8 @@ $global-small-font-size: 0.875rem !default; // 14px
 $global-color: #666 !default;
 $global-emphasis-color: #333 !default;
 $global-muted-color: #999 !default;
-$global-link-color: #1e87f0 !default;
-$global-link-hover-color: #0f6ecd !default;
+$global-link-color: $yellow !default;
+$global-link-hover-color: lighten($yellow, 10%) !default;
 $global-inverse-color: #fff !default;
 
 //
@@ -80,7 +82,7 @@ $global-inverse-color: #fff !default;
 
 $global-background: #fff !default;
 $global-muted-background: #f8f8f8 !default;
-$global-primary-background: #1e87f0 !default;
+$global-primary-background: $red !default;
 $global-secondary-background: #222 !default;
 $global-success-background: #32d296 !default;
 $global-warning-background: #faa05a !default;
