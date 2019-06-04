@@ -7,7 +7,7 @@
             "label": "Header Image",
             "name": "header_image",
             "type": "image",
-            "instructions": "Image will be a maximum of 920px wide and height will adjust automatically",
+            "instructions": "Image will have a max width of 920px and the height will auto adjust according to the width.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -31,7 +31,7 @@
             "label": "Logo",
             "name": "logo",
             "type": "image",
-            "instructions": "Image will be whatever size is uploaded.",
+            "instructions": "Image will have a max width of 480px and the height will auto adjust according to the width.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -55,7 +55,7 @@
             "label": "Large Text",
             "name": "large_text",
             "type": "text",
-            "instructions": "",
+            "instructions": "Text will be automatically uppercased to match the design",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -73,8 +73,8 @@
             "key": "field_5cf5673bb0f91",
             "label": "Small Text",
             "name": "small_text",
-            "type": "text",
-            "instructions": "",
+            "type": "textarea",
+            "instructions": "Text will be formatted exactly as typed here.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -84,9 +84,9 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "br"
         },
         {
             "key": "field_5cf56753b0f92",
@@ -163,7 +163,7 @@
             "label": "Map Embed",
             "name": "map_embed",
             "type": "wysiwyg",
-            "instructions": "",
+            "instructions": "1- Go to Google Maps<br>\r\n2- Search the term you'd like and set the view\/zoom how you'd like<br>\r\n3- Click the \"Hamburger\" menu icon in the left sidebar<br>\r\n4- Select \"Share or embed map\"<br>\r\n5- Click the \"Embed a map\" tab<br>\r\n6- Click the \"Copy HTML\" button<br>\r\n7- Paste that code into the editor below. <br><br>\r\nMake sure the editor below it on the \"Text\" tab when pasting the code. Then you can click back over to the \"Visual\" tab and see the map you've embeded",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -209,5 +209,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1559592591
+    "modified": 1559664370
 }

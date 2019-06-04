@@ -4,7 +4,7 @@ main.offers {
 
 main.offers-single {
   section.offer {
-    padding: 1.5rem 0 8rem;
+    padding: 1.5rem 0 6rem;
 
     nav {
       text-align: right;
@@ -16,11 +16,17 @@ main.offers-single {
           size: rem-calc(12);
           weight: $regular;
         }
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
 
+    .logo { max-width: 480px }
+
     .details {
-      background: $smoke;
+      background: $ghost;
       padding: 2rem 2.5rem 1rem;
 
       header {
@@ -57,7 +63,7 @@ main.offers-single {
     .back {
       a {
         color: $black;
-        border-bottom: solid 1px $black;
+        border-bottom: solid 1px $smoke;
         padding-bottom: 3px;
         font: {
           size: rem-calc(12);

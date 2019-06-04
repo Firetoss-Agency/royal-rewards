@@ -119,13 +119,13 @@ if (function_exists('acf_add_options_page')) {
  * Custom excerpt by character length
  */
 
-//function get_excerpt($count){
-//    $excerpt = get_the_content();
-//    $excerpt = strip_tags($excerpt);
-//    $excerpt = substr($excerpt, 0, $count);
-//    $excerpt = $excerpt.'...';
-//    return $excerpt;
-//}
+function get_details_excerpt($count){
+    $excerpt = get_field('details');
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, $count);
+    $excerpt = $excerpt.'...';
+    return $excerpt;
+}
 
 
 // Redirect users not logged in, to the login page

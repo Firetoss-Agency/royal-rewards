@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-	@loop
 
-  <section class="offer">
+	@loop
+    <section class="offer">
     <div class="uk-container">
       <div class="uk-grid uk-flex-center" uk-grid>
         <div class="uk-width-3-5@l uk-width-4-5@m uk-width-1-1">
@@ -15,7 +15,7 @@
               <img src="{{ the_field('header_image') }}" class="uk-margin-medium-bottom">
             @endif
             @if(get_field('logo'))
-              <img src="{{ the_field('logo') }}" class="uk-margin-bottom">
+              <img class="logo uk-margin-bottom" src="{{ the_field('logo') }}" class="uk-margin-bottom">
             @endif
             @if(get_field('large_text'))
               <h2>{{ the_field('large_text') }}</h2>
@@ -67,6 +67,8 @@
       </div>
     </div>
   </section>
-
  	@endloop
+
+  @include('components.category-tiles')
+
 @endsection

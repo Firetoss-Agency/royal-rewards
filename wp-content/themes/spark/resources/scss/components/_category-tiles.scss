@@ -1,0 +1,47 @@
+section.category-tiles {
+  padding-top: 2rem;
+  margin-bottom: 3rem;
+
+  header {
+    padding-bottom: 0.25rem;
+    text-transform: uppercase;
+    border-bottom: solid 1px $smoke;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    border: solid 1px $smoke;
+    margin: 5px;
+    padding: 1rem 0.5rem;
+
+    &:hover {
+      margin: 3px;
+      border: solid 3px $smoke;
+    }
+
+    .icon {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 20%;
+    }
+
+    .title {
+      text-transform: uppercase;
+      line-height: 1.2;
+      font: {
+        size: 16px;
+        weight: $bold;
+      }
+
+      @include breakpoint(1240 down) {
+        font-size: 13px;
+      }
+    }
+  }
+}

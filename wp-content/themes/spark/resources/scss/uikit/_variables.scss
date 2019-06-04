@@ -164,7 +164,7 @@ $base-heading-margin-top: 0 !default;
 //$base-h1-line-height: 1.2 !default;
 //$base-h2-font-size-m: $global-xlarge-font-size !default;
 //$base-h2-font-size: $base-h2-font-size-m * 0.85 !default;
-//$base-h2-line-height: 1.3 !default;
+$base-h2-line-height: 1.1 !default;
 //$base-h3-font-size: $global-large-font-size !default;
 //$base-h3-line-height: 1.4 !default;
 //$base-h4-font-size: $global-medium-font-size !default;
@@ -424,10 +424,10 @@ $button-default-hover-color: lighten($red, 20%) !default;
 //$card-badge-top: $global-gutter !default;
 //$card-badge-right: $card-badge-top !default;
 //$card-hover-background: $global-muted-background !default;
-//$card-default-background: $global-muted-background !default;
+$card-default-background: $ghost !default;
 //$card-default-color: $global-color !default;
 //$card-default-title-color: $global-emphasis-color !default;
-//$card-default-hover-background: darken($card-default-background, 5%) !default;
+$card-default-hover-background: $ghost !default;
 //$card-primary-background: $global-primary-background !default;
 //$card-primary-color: $global-inverse-color !default;
 //$card-primary-title-color: $card-primary-color !default;
@@ -452,22 +452,78 @@ $button-default-hover-color: lighten($red, 20%) !default;
 //$card-large-footer-padding-vertical-l: round($global-large-gutter / 2) !default;
 
 //@mixin hook-card() {}
-//@mixin hook-card-body() {}
+@mixin hook-card-body() {
+  p {
+    color: $black;
+    font: {
+      size: rem-calc(10);
+      weight: $light;
+    }
+  }
+}
 //@mixin hook-card-header() {}
 //@mixin hook-card-footer() {}
 //@mixin hook-card-media() {}
-//@mixin hook-card-media-top() {}
+@mixin hook-card-media-top() {
+  text-align: center;
+
+  img {
+    max-height: 150px;
+
+    &.logo { padding-top: 1rem }
+  }
+}
 //@mixin hook-card-media-bottom() {}
 //@mixin hook-card-media-left() {}
 //@mixin hook-card-media-right() {}
 //@mixin hook-card-title() {}
 //@mixin hook-card-badge() {}
 //@mixin hook-card-hover() {}
-//@mixin hook-card-default() {}
+@mixin hook-card-default() {
+  height: 100%;
+  display: block;
+  z-index: 9;
+  position: relative;
+
+  &:hover { box-shadow: 0 0 8px $smoke }
+
+  .uk-card-header {
+    h3 {
+      margin: 0;
+      font: {
+        size: rem-calc(40);
+        weight: $bold;
+      }
+    }
+
+    h4 {
+      margin: 0;
+      font: {
+        size: rem-calc(15);
+        weight: $bold;
+      }
+    }
+  }
+}
 //@mixin hook-card-default-title() {}
 //@mixin hook-card-default-hover() {}
-//@mixin hook-card-default-header() {}
-//@mixin hook-card-default-footer() {}
+@mixin hook-card-default-header() {
+  text-align: center;
+}
+@mixin hook-card-default-footer() {
+  text-align: center;
+
+  span {
+    color: $black;
+    border-bottom: solid 1px $smoke;
+    padding-bottom: 3px;
+    font: {
+      style: italic;
+      size: rem-calc(12);
+      weight: $regular;
+    }
+  }
+}
 //@mixin hook-card-primary() {}
 //@mixin hook-card-primary-title() {}
 //@mixin hook-card-primary-hover() {}
@@ -624,6 +680,7 @@ $container-max-width: 1600px !default;
   hr {
     display: block;
     margin: 0 auto 26px;
+    border-color: $smoke;
   }
 }
 //@mixin hook-inverse-divider-icon() {}

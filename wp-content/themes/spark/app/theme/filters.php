@@ -138,11 +138,11 @@ add_filter('acf/settings/load_json', function ($paths) {
  * Allow SVG's to be uploaded in the WYSIWYG.
  */
 
-add_filter('upload_mimes', function ($mimes) {
-	$mimes['svg'] = 'image/svg+xml';
-
-	return $mimes;
-});
+//add_filter('upload_mimes', function ($mimes) {
+//	$mimes['svg'] = 'image/svg+xml';
+//
+//	return $mimes;
+//});
 
 
 /**
