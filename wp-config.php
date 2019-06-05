@@ -49,6 +49,10 @@ define( 'AUTOMATIC_UPDATER_DISABLED', false );
 define( 'WP_AUTO_UPDATE_CORE', true );
 // define( 'WPCF7_AUTOP', false );
 
+// JWT
+define('JWT_AUTH_SECRET_KEY', 'Ad0kXxScKOWu0WqVmcZTRWmFDOmmDqsHy');
+define('JWT_AUTH_CORS_ENABLE', true);
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */

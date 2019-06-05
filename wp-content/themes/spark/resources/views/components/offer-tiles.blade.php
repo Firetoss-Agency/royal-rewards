@@ -10,36 +10,53 @@
           'post_type' => 'offers',
           'posts_per_page' => -1
         ];
+
+        if ($term_id) {
+          $args['tax_query'] = [
+            [
+              'taxonomy' => 'offer_categories',
+              'field'    => 'term_id',
+              'terms'    => [$term_id],
+            ]
+          ];
+        }
       @endphp
 
       @query($args)
-        <div class="uk-width-1-3@m uk-width-1-2@s uk-width-1-1">
+        <div class="uk-width-1-3@l uk-width-1-2@m uk-width-1-1">
           <a href="{{ the_permalink() }}" class="uk-card uk-card-default">
 
             {{-- Image --}}
             @if(get_field('header_image') || get_field('logo'))
               <div class="uk-card-media-top">
                 @if(get_field('header_image'))
-                  <img src="{{ the_field('header_image') }}">
+                  <img class="header" src="{{ the_field('header_image') }}">
                 @elseif(get_field('logo'))
                   <img class="logo" src="{{ the_field('logo') }}">
                 @endif
               </div>
             @endif
 
-            {{-- Heading --}}
-            <div class="uk-card-header">
+            {{-- Heading & Details --}}
+            <div class="uk-card-body uk-flex-1">
               @if(get_field('large_text'))
                 <h3>{{ the_field('large_text') }}</h3>
               @endif
+
               @if(get_field('small_text'))
                 <h4>{{ the_field('small_text') }}</h4>
               @endif
-            </div>
 
-            {{-- Details --}}
-            <div class="uk-card-body">
-              <p>{{ get_details_excerpt(120) }}</p>
+              @php
+                $post = get_post();
+                $categories = wp_get_post_terms($post->ID, 'offer_categories');
+                $category = $categories[0]
+              @endphp
+              <div class="divider" style="border-color: {{ the_field('highlight_color', $category) }}"></div>
+
+              @if(get_field('details'))
+                <p>{{ get_details_excerpt(120) }}</p>
+              @endif
             </div>
 
             {{-- CTA --}}

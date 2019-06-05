@@ -12,11 +12,13 @@ UIkit.use(Icons)
 import Router from './util/Router'
 import site from './routes/site'
 import pageLogin from './routes/login'
+import singleOffers from './routes/offer'
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
   site,
   pageLogin,
+  singleOffers
 });
 
 /** Load events */

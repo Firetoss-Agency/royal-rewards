@@ -14,7 +14,7 @@
       @endphp
       @foreach($categories as $category)
         <div class="uk-width-1-6@l uk-width-1-3@s uk-width-1-2">
-          <a class="tile" href="/offers?cat={{ $category->slug }}" style="border-color: {{ the_field('highlight_color', $category) }}">
+          <a class="tile" href="/offer-categories/{{ $category->slug }}" style="border-color: {{ the_field('highlight_color', $category) }}">
             <div class="icon">
               <img src="{{ the_field('category_icon', $category) }}">
             </div>

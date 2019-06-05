@@ -1,8 +1,21 @@
 footer.site-footer {
+  padding: 1rem 0;
+  border-top: solid 1px $smoke;
+
+  .logo {
+    @include breakpoint(medium down) {
+      text-align: center;
+    }
+
+    img { height: 125px }
+  }
+
   .content {
-    border-top: solid 1px $smoke;
-    padding: 1rem 0;
     text-align: right;
+
+    @include breakpoint(medium down) {
+      text-align: center;
+    }
 
     h6 {
       margin-bottom: 0.5rem;

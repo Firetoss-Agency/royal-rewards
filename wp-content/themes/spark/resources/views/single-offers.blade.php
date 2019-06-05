@@ -7,9 +7,6 @@
     <div class="uk-container">
       <div class="uk-grid uk-flex-center" uk-grid>
         <div class="uk-width-3-5@l uk-width-4-5@m uk-width-1-1">
-          <nav>
-            <a href="/offers">Back to Offers</a>
-          </nav>
           <div class="uk-text-center">
             @if(get_field('header_image'))
               <img src="{{ the_field('header_image') }}" class="uk-margin-medium-bottom">

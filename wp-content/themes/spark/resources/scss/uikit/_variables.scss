@@ -453,11 +453,52 @@ $card-default-hover-background: $ghost !default;
 
 //@mixin hook-card() {}
 @mixin hook-card-body() {
-  p {
-    color: $black;
-    font: {
-      size: rem-calc(10);
-      weight: $light;
+  @at-root .uk-card-default & {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 0;
+
+    h3 {
+      text-align: center;
+      margin: 0 0 14px;
+      line-height: 1;
+      font: {
+        size: rem-calc(40);
+        weight: $bold;
+      }
+
+      @include breakpoint(large down) {
+        font-size: rem-calc(32);
+      }
+    }
+
+    h4 {
+      text-align: center;
+      margin: 0;
+      line-height: 1.2;
+      font: {
+        size: rem-calc(15);
+        weight: $bold;
+      }
+
+      @include breakpoint(large down) {
+        font-size: rem-calc(13);
+      }
+    }
+
+    .divider {
+      width: 75%;
+      border-top: solid 1px $red;
+      margin: 20px auto 0;
+    }
+
+    p {
+      color: $black;
+      font: {
+        size: rem-calc(10);
+        weight: $light;
+      }
     }
   }
 }
@@ -468,9 +509,18 @@ $card-default-hover-background: $ghost !default;
   text-align: center;
 
   img {
-    max-height: 150px;
+    &.header {
+      width: 100%;
+    }
 
-    &.logo { padding-top: 1rem }
+    &.logo {
+      padding: 1rem 1rem 0;
+      max-height: 150px;
+
+      @include breakpoint(medium down) {
+        max-height: 120px;
+      }
+    }
   }
 }
 //@mixin hook-card-media-bottom() {}
@@ -481,35 +531,16 @@ $card-default-hover-background: $ghost !default;
 //@mixin hook-card-hover() {}
 @mixin hook-card-default() {
   height: 100%;
-  display: block;
+  display: flex;
+  flex-direction: column;
   z-index: 9;
   position: relative;
 
   &:hover { box-shadow: 0 0 8px $smoke }
-
-  .uk-card-header {
-    h3 {
-      margin: 0;
-      font: {
-        size: rem-calc(40);
-        weight: $bold;
-      }
-    }
-
-    h4 {
-      margin: 0;
-      font: {
-        size: rem-calc(15);
-        weight: $bold;
-      }
-    }
-  }
 }
 //@mixin hook-card-default-title() {}
 //@mixin hook-card-default-hover() {}
-@mixin hook-card-default-header() {
-  text-align: center;
-}
+//@mixin hook-card-default-header() {}
 @mixin hook-card-default-footer() {
   text-align: center;
 

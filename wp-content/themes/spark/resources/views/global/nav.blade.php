@@ -9,7 +9,7 @@
 @endphp
 
 <header id="site-header">
-  <div class="uk-container">
+  <div class="uk-container uk-container-expand">
     <nav class="uk-navbar-container uk-navbar-transparent uk-navbar" uk-navbar="offset: 0; delay-hide: 500;">
 
       {{-- User --}}
@@ -22,7 +22,7 @@
       {{-- Logo --}}
       <div class="uk-navbar-center uk-height-1-1">
         <div class="uk-navbar-item uk-height-1-1">
-          <a class="uk-logo" href="{{ home_url() }}">
+          <a class="uk-logo" href="{{ home_url('/dashboard') }}">
             <img class="logo" src="{{ $logo }}" alt="Logo">
             <img class="symbol" src="{{ $symbol }}" alt="Symbol">
           </a>

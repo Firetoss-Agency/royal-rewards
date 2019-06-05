@@ -1,27 +1,12 @@
-main.offers {
-
+main.offer-categories {
+  section.offer-tiles {
+    padding-top: 2rem;
+  }
 }
 
 main.offers-single {
   section.offer {
-    padding: 1.5rem 0 6rem;
-
-    nav {
-      text-align: right;
-      margin-bottom: 0.5rem;
-
-      a {
-        color: $black;
-        font: {
-          size: rem-calc(12);
-          weight: $regular;
-        }
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
+    padding: 2rem 0 6rem;
 
     .logo { max-width: 480px }
 
