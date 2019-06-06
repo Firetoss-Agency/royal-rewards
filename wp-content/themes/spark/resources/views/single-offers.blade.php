@@ -54,7 +54,30 @@
               </div>
             @endif
             <div class="favorite uk-margin-medium-bottom">
-              <a class="uk-button uk-button-default"><img src="{{ the_img('red-star.svg') }}"> Add offer to favorites</a>
+              @php
+                // Check if user id is already a term in favorites taxonomy
+                $users_term = get_term_by('slug', get_current_user_id(), 'favorites');
+                $users_term_id = 0;
+                if ($users_term) {
+
+                  // Store the term ID
+                  $users_term_id = $users_term->term_id;
+
+                  // Check if the User already has this Offer as a favorite
+                  $favorited = has_term($users_term_id, 'favorites');
+                }
+              @endphp
+              <a
+                class="uk-button uk-button-default favorite-button"
+                data-user="{{ get_current_user_id() }}"
+                data-term="{{ $users_term_id }}"
+                data-offer="{{ get_the_ID() }}"
+                data-favorited="{{ $favorited }}"
+              >
+                <img src="{{ the_img('red-star.svg') }}">
+                <span class="remove uk-hidden">Remove offer from favorites</span>
+                <span class="add">Add offer to favorites</span>
+              </a>
             </div>
             <div class="back">
               <a href="/offers">Back to Offers</a>
