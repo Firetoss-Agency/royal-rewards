@@ -3,5 +3,13 @@ main.dashboard {
     padding: 3rem 0;
     text-align: center;
     color: $black;
+
+    @include breakpoint(small down) {
+      padding-top: 1.5rem;
+
+      p {
+        font-size: 14px;
+      }
+    }
   }
 }

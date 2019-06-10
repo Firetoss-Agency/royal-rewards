@@ -43,39 +43,50 @@
             {{-- Image --}}
             @if(get_field('header_image') || get_field('logo'))
               <div class="uk-card-media-top">
-                @if(get_field('header_image'))
-                  <img class="header" src="{{ the_field('header_image') }}">
-                @elseif(get_field('logo'))
-                  <img class="logo" src="{{ the_field('logo') }}">
-                @endif
+                <div class="uk-visible@m">
+                  @if(get_field('header_image'))
+                    <img class="header" src="{{ the_field('header_image') }}">
+                  @elseif(get_field('logo'))
+                    <img class="logo" src="{{ the_field('logo') }}">
+                  @endif
+                </div>
+                <div class="uk-hidden@m">
+                  @if(get_field('logo'))
+                    <img class="logo" src="{{ the_field('logo') }}">
+                  @elseif(get_field('header_image'))
+                    <img class="header" src="{{ the_field('header_image') }}">
+                  @endif
+                </div>
               </div>
             @endif
 
-            {{-- Heading & Details --}}
-            <div class="uk-card-body uk-flex-1">
-              @if(get_field('large_text'))
-                <h3>{{ the_field('large_text') }}</h3>
-              @endif
+            <div class="card-content">
+              {{-- Heading & Details --}}
+              <div class="uk-card-body uk-flex-1">
+                @if(get_field('large_text'))
+                  <h3>{{ the_field('large_text') }}</h3>
+                @endif
 
-              @if(get_field('small_text'))
-                <h4>{{ the_field('small_text') }}</h4>
-              @endif
+                @if(get_field('small_text'))
+                  <h4>{{ the_field('small_text') }}</h4>
+                @endif
 
-              @php
-                $post = get_post();
-                $categories = wp_get_post_terms($post->ID, 'offer_categories');
-                $category = $categories[0]
-              @endphp
-              <div class="divider" style="border-color: {{ the_field('highlight_color', $category) }}"></div>
+                @php
+                  $post = get_post();
+                  $categories = wp_get_post_terms($post->ID, 'offer_categories');
+                  $category = $categories[0]
+                @endphp
+                <div class="divider" style="border-color: {{ the_field('highlight_color', $category) }}"></div>
 
-              @if(get_field('details'))
-                <p>{{ get_details_excerpt(120) }}</p>
-              @endif
-            </div>
+                @if(get_field('details'))
+                  <p class="uk-visible@m">{{ get_details_excerpt(120) }}</p>
+                @endif
+              </div>
 
-            {{-- CTA --}}
-            <div class="uk-card-footer">
-              <span>See offer details</span>
+              {{-- CTA --}}
+              <div class="uk-card-footer">
+                <span>See offer details</span>
+              </div>
             </div>
 
           </a>

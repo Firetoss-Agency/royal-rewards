@@ -14,81 +14,100 @@ header#site-header {
 }
 
 //
-// Mobile Nav
+// Stick Footer Nav
 //
 
-nav#offcanvas-nav {
-  ul.uk-nav-parent-icon {
-    > li.menu-item {
-      position: relative;
+#sticky-mobile-nav {
+  position: fixed;
+  z-index: 9999;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: $blue;
 
-      // Top level menu-item
-      > span {
-        padding: 3px 2.5rem 3px 0;
-        display: block;
+  .categories {
+    text-align: center;
+    border-bottom: solid 1px $white;
+
+    .button {
+      padding: 0.5rem;
+      color: $white;
+      cursor: pointer;
+
+      .icon {
+        span {
+          display: inline-block;
+          height: 18px;
+          width: 18px;
+          background: $white;
+        }
+      }
+
+      h5 {
+        color: $white;
+        margin: 0;
+        text-transform: uppercase;
+        font: {
+          size: rem-calc(9);
+          weight: $semi;
+        }
+      }
+    }
+  }
+
+  ul.uk-nav-primary {
+    display: flex;
+
+    li.menu-item {
+      flex: 1;
+      width: 25%;
+      border-left: solid 1px $white;
+
+      &:first-child {
+        border-left: none;
+      }
+
+      &.icon {
+        a::before {
+          content: '';
+          display: block;
+          margin: 0 auto 8px;
+          height: 20px;
+          width: 20px;
+          color: $white;
+        }
+
+        &--tag a::before {
+          background: url(../img/tag-icon.svg);
+        }
+        &--info a::before {
+          background: url(../img/info-icon.svg);
+        }
+        &--gear a::before {
+          background: url(../img/gear-icon.svg);
+        }
+        &--star a::before {
+          background: url(../img/star-icon.svg);
+        }
+      }
+
+      span {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
 
         a {
-          display: inline-block;
-          font-size: rem-calc(24);
-          color: $global-muted-color;
-          line-height: 1.2;
-
-          &:hover {
-            text-decoration: none;
+          display: block;
+          width: 100%;
+          padding:  0.5rem 1rem;
+          color: $white;
+          text-transform: uppercase;
+          font: {
+            size: rem-calc(9);
+            weight: $semi;
           }
         }
-      }
-
-      // Top level menu-item that doesn't link, just has sub-items
-      a.no-link {
-        display: block;
-        padding: 3px 0;
-        color: $global-muted-color;
-        line-height: 1.225;
-
-        &:hover,
-        &:focus {
-          color: $global-muted-color;
-        }
-      }
-
-      .uk-nav-sub {
-        li {
-
-          // Sub-item link
-          span {
-            display: block;
-            margin-bottom: 5px;
-
-            a {
-              display: inline-block;
-
-              &:hover {
-                text-decoration: none;
-                color: $global-muted-color;
-              }
-            }
-          }
-
-          // Unused in sub-nav
-          > a {
-            padding: 0;
-          }
-        }
-
-        // Nested sub-navs
-        .uk-nav-sub {
-          padding-top: 0;
-          padding-bottom: 0;
-        }
-      }
-
-      // Chevron link for items with sub-navs
-      > a.indicator {
-        padding: 0 !important;
-        position: absolute;
-        right: 0;
-        top: 0;
       }
     }
   }

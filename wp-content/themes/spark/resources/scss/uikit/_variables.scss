@@ -459,6 +459,10 @@ $card-default-hover-background: $ghost !default;
     justify-content: center;
     padding-bottom: 0;
 
+    @include breakpoint(small down) {
+      padding: 0.5rem 0.5rem 0;
+    }
+
     h3 {
       text-align: center;
       margin: 0 0 14px;
@@ -470,6 +474,11 @@ $card-default-hover-background: $ghost !default;
 
       @include breakpoint(large down) {
         font-size: rem-calc(32);
+      }
+
+      @include breakpoint(small down) {
+        font-size: rem-calc(20);
+        margin-bottom: 0.25rem;
       }
     }
 
@@ -485,12 +494,21 @@ $card-default-hover-background: $ghost !default;
       @include breakpoint(large down) {
         font-size: rem-calc(13);
       }
+
+      @include breakpoint(small down) {
+        font-size: rem-calc(9);
+        margin-bottom: 0;
+      }
     }
 
     .divider {
       width: 75%;
       border-top: solid 1px $red;
       margin: 20px auto 0;
+
+      @include breakpoint(small down) {
+        margin: 5px auto 0;
+      }
     }
 
     p {
@@ -508,6 +526,13 @@ $card-default-hover-background: $ghost !default;
 @mixin hook-card-media-top() {
   text-align: center;
 
+  @include breakpoint(small down) {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   img {
     &.header {
       width: 100%;
@@ -519,6 +544,10 @@ $card-default-hover-background: $ghost !default;
 
       @include breakpoint(medium down) {
         max-height: 120px;
+      }
+
+      @include breakpoint(small down) {
+        padding:  0.5rem;
       }
     }
   }
@@ -536,6 +565,14 @@ $card-default-hover-background: $ghost !default;
   z-index: 9;
   position: relative;
 
+  @include breakpoint(small down) {
+    flex-direction: row;
+
+    .card-content {
+      flex: 2;
+    }
+  }
+
   &:hover { box-shadow: 0 0 8px $smoke }
 }
 //@mixin hook-card-default-title() {}
@@ -543,6 +580,10 @@ $card-default-hover-background: $ghost !default;
 //@mixin hook-card-default-header() {}
 @mixin hook-card-default-footer() {
   text-align: center;
+
+  @include breakpoint(small down) {
+    padding: 10px;
+  }
 
   span {
     color: $black;
@@ -552,6 +593,10 @@ $card-default-hover-background: $ghost !default;
       style: italic;
       size: rem-calc(12);
       weight: $regular;
+    }
+
+    @include breakpoint(small down) {
+      font-size: 10px;
     }
   }
 }
@@ -1222,6 +1267,50 @@ $container-max-width: 1600px !default;
           display: none;
         }
       }
+
+      @include breakpoint(small down) {
+        .uk-navbar {
+          height: 68px;
+
+          @include breakpoint(1120 down) {
+            height: 100px;
+          }
+
+          @include breakpoint(small down) {
+            height: 60px;
+          }
+
+          &::before {
+            top: 74%;
+          }
+        }
+
+        .uk-logo {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          @include breakpoint(1400 down) {
+            align-items: flex-end;
+
+            .symbol {
+              margin-bottom: 0.5rem !important;
+            }
+          }
+
+          @include breakpoint(small down) {
+            padding: 0 1rem;
+          }
+
+          .logo { display: none }
+
+          .symbol {
+            height: 25px;
+            margin-bottom: 4px;
+            display: block;
+          }
+        }
+      }
     }
 
     &--not-top {
@@ -1264,6 +1353,10 @@ $container-max-width: 1600px !default;
           height: 45px;
           margin-bottom: 4px;
           display: block;
+
+          @include breakpoint(small down) {
+            height: 25px;
+          }
         }
       }
     }
@@ -1507,6 +1600,8 @@ $navbar-toggle-hover-color: $white !default;
   }
 
   .user {
+    position: relative;
+    z-index: 999;
     color: $white;
     text-transform: uppercase;
 
@@ -1517,6 +1612,14 @@ $navbar-toggle-hover-color: $white !default;
       &:hover { color: $yellow }
     }
 
+    @include breakpoint(small down) {
+      min-height: 0;
+      padding-top: 0.25rem;
+
+      &, a {
+        font-size: 12px;
+      }
+    }
   }
 
   .uk-navbar-nav {

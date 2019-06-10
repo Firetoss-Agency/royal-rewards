@@ -13,7 +13,7 @@
     <nav class="uk-navbar-container uk-navbar-transparent uk-navbar" uk-navbar="offset: 0; delay-hide: 500;">
 
       {{-- User --}}
-      <div class="uk-navbar-left uk-flex-top uk-visible@m">
+      <div class="uk-navbar-left uk-flex-top">
         <div class="uk-navbar-item user">
           Hello:&nbsp;<a href="{{ home_url('/settings') }}">{{ $user }}</a>
         </div>
@@ -41,34 +41,35 @@
               ]);
             @endphp
           </ul>
-          <a class="uk-navbar-toggle uk-hidden{{ $breakpoint }}" uk-toggle uk-navbar-toggle-icon href="#offcanvas-nav"></a>
+          {{-- <a class="uk-navbar-toggle uk-hidden{{ $breakpoint }}" uk-toggle uk-navbar-toggle-icon href="#offcanvas-nav"></a>--}}
         </div>
       @endif
     </nav>
   </div>
 </header>
 
-@if(has_nav_menu('primary_navigation'))
-  <nav id="offcanvas-nav" uk-offcanvas="flip: true; overlay: true;">
-    <div class="uk-offcanvas-bar">
-
-      <button class="uk-offcanvas-close" type="button" uk-icon="icon:close;ratio:1.5"></button>
-
-      <ul class="uk-nav-primary uk-nav-parent-icon" uk-nav="multiple: true">
-        <li class="menu-item">
-          <span>
-            <a href="{{ home_url('/dashboard') }}">Dashboard</a>
-          </span>
-        </li>
-        @php
-          wp_nav_menu([
-            'items_wrap'     => '%3$s',
-            'theme_location' => 'primary_navigation',
-            'walker'         => new UIkitMobileNavigation()
-          ]);
-        @endphp
-      </ul>
-
+{{-- STICKY MOBILE NAV --}}
+<div id="sticky-mobile-nav" class="uk-hidden@m">
+  <div class="categories">
+    <div class="button">
+      <div class="icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <h5>Categories</h5>
     </div>
+    @include('components.category-tiles', ['mobile' => true])
+  </div>
+  <nav id="mobile-menu">
+    <ul class="uk-nav-primary uk-nav-parent-icon" uk-nav="multiple: true">
+      @php
+        wp_nav_menu([
+          'items_wrap'     => '%3$s',
+          'theme_location' => 'primary_navigation',
+          'walker'         => new UIkitMobileNavigation()
+        ]);
+      @endphp
+    </ul>
   </nav>
-@endif
+</div>

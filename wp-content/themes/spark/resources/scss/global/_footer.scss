@@ -2,6 +2,10 @@ footer.site-footer {
   padding: 1rem 0;
   border-top: solid 1px $smoke;
 
+  @include breakpoint(small down) {
+    padding-bottom: 150px;
+  }
+
   .logo {
     @include breakpoint(medium down) {
       text-align: center;

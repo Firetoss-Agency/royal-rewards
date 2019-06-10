@@ -10,6 +10,9 @@
 		<div class="uk-container">
 		  <div class="uk-grid uk-flex-center" uk-grid>
 		    <div class="uk-width-1-2@l uk-width-2-3@m uk-width-1-1">
+					<div class="uk-hidden@m uk-padding uk-padding-remove-top">
+						<img src="{{ the_img('logo-blue.svg') }}">
+					</div>
 		      <div class="content">
 						{{ the_field('intro') }}
 					</div>
@@ -54,6 +57,10 @@
 			'favorites' => true
 		])
 	@endif
+
+	<div class="uk-hidden@m uk-text-center uk-margin-bottom">
+		<a href="{{ home_url('/offers') }}" class="uk-button uk-button-primary">See All Offers</a>
+	</div>
 
 	{{-- Categories --}}
 	@include('components.category-tiles')

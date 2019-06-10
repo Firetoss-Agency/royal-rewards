@@ -9,5 +9,9 @@ export default {
       headroom.init()
     }
 
+    // Mobile categories menu
+    $('#sticky-mobile-nav .categories .button').click(function () {
+      $('#categories').slideToggle('fast')
+    })
   }
 };

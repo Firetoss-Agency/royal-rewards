@@ -19,6 +19,10 @@ section.category-tiles {
     margin: 5px;
     padding: 1rem 0.5rem;
 
+    @include breakpoint(small down) {
+      padding: 0.5rem;
+    }
+
     &:hover {
       margin: 3px;
       border: solid 3px $smoke;
@@ -30,6 +34,15 @@ section.category-tiles {
       align-items: center;
       justify-content: center;
       padding: 1rem 20%;
+
+      @include breakpoint(small down) {
+        padding: 0;
+        margin-bottom: 0.5rem;
+
+        img {
+          width: 70%;
+        }
+      }
     }
 
     .title {
@@ -43,6 +56,21 @@ section.category-tiles {
       @include breakpoint(1240 down) {
         font-size: 13px;
       }
+
+      @include breakpoint(small down) {
+        font: {
+          size: 8px;
+          weight: $regular;
+        }
+      }
     }
+  }
+
+  // Mobile
+  &--mobile {
+    background: $white;
+    margin: 0;
+    padding: 1rem 0;
+    display: none;
   }
 }
