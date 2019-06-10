@@ -13,9 +13,9 @@
     <nav class="uk-navbar-container uk-navbar-transparent uk-navbar" uk-navbar="offset: 0; delay-hide: 500;">
 
       {{-- User --}}
-      <div class="uk-navbar-left uk-flex-top">
+      <div class="uk-navbar-left uk-flex-top uk-visible@m">
         <div class="uk-navbar-item user">
-          Hello:&nbsp;<a href="#">{{ $user }}</a>
+          Hello:&nbsp;<a href="{{ home_url('/settings') }}">{{ $user }}</a>
         </div>
       </div>
 
@@ -52,9 +52,14 @@
   <nav id="offcanvas-nav" uk-offcanvas="flip: true; overlay: true;">
     <div class="uk-offcanvas-bar">
 
-      <button class="uk-offcanvas-close" type="button" uk-close></button>
+      <button class="uk-offcanvas-close" type="button" uk-icon="icon:close;ratio:1.5"></button>
 
       <ul class="uk-nav-primary uk-nav-parent-icon" uk-nav="multiple: true">
+        <li class="menu-item">
+          <span>
+            <a href="{{ home_url('/dashboard') }}">Dashboard</a>
+          </span>
+        </li>
         @php
           wp_nav_menu([
             'items_wrap'     => '%3$s',

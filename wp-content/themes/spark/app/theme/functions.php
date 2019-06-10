@@ -128,6 +128,9 @@ function get_details_excerpt($count){
 }
 
 
+// CUSTOM ROLES / LOGINS / ETC
+
+
 // Redirect users not logged in, to the login page
 function redirect_private_content() {
 	global $wp_query, $wpdb;
@@ -150,9 +153,13 @@ function user_login_redirect( $redirect_to, $request, $user ){
 	if( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ) {
 		//is there a user to check?
 		if (isset($user->roles) && is_array($user->roles)) {
-			//check for subscribers
-			if (in_array('subscriber', $user->roles)) {
-				// redirect them to another URL, in this case, the homepage
+			// check for Admin
+			if (in_array('administrator', $user->roles)) {
+				$redirect_to =  home_url('/wp-admin');
+			}
+
+			// check for Employee
+			if (in_array('employee', $user->roles)) {
 				$redirect_to =  home_url('/dashboard');
 			}
 		}
@@ -162,14 +169,22 @@ function user_login_redirect( $redirect_to, $request, $user ){
 add_filter( 'login_redirect', 'user_login_redirect', 10, 3 );
 
 
-// Add Role capabilities
-function add_role_caps() {
-	// gets the author role
-	$role = get_role( 'subscriber' );
+/*
+ * ROLES
+ */
 
-	// This only works, because it accesses the class instance.
-	// would allow the author to edit others' posts for current role only
+// Add Roles
+add_role('employee', __('Employee'), [
+  'read'         => true,
+  'edit_posts'   => true,
+  'delete_posts' => true
+]);
+
+// Add Role capabilities
+function employee_role_caps() {
+	$role = get_role( 'employee' );
+
 	$role->add_cap( 'read_private_posts' );
 	$role->add_cap( 'read_private_pages' );
 }
-add_action( 'admin_init', 'add_role_caps');
+add_action( 'admin_init', 'employee_role_caps');

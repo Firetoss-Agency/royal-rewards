@@ -11,6 +11,20 @@
           'posts_per_page' => -1
         ];
 
+        if ($featured) {
+          $args['post__in'] = $featured;
+        }
+
+        if ($favorites) {
+          $args['tax_query'] = [
+            [
+              'taxonomy' => 'favorites',
+              'field'    => 'slug',
+              'terms'    => [get_current_user_id()],
+            ]
+          ];
+        }
+
         if ($term_id) {
           $args['tax_query'] = [
             [

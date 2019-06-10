@@ -1,4 +1,9 @@
 <?php
+// Define the default values.
+define( 'WPPB_DEFAULTS_MAP_LAT', 48 );
+define( 'WPPB_DEFAULTS_MAP_LNG', 12 );
+define( 'WPPB_DEFAULTS_MAP_ZOOM', 4 );
+
 /**
  * Function that creates the Manage Fields submenu and populates it with a repeater field form
  *
@@ -121,22 +126,24 @@ function wppb_populate_manage_fields(){
 		$field_description .= sprintf( __('. Extra Field Types are available in <a href="%s">Hobbyist or PRO versions</a>.' , 'profile-builder'), esc_url( 'https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=manage-fields-link&utm_campaign=PBFree' ) );
 	}
 
-
     //user roles
     global $wp_roles;
 
+	// @TODO - The block below could use refactoring, see new function wppb_prepare_key_value_options.
     $user_roles = array();
     foreach( $wp_roles->roles as $user_role_slug => $user_role )
         if( $user_role_slug !== 'administrator' )
             array_push( $user_roles, '%' . $user_role['name'] . '%' . $user_role_slug );
 
 
+	// @TODO - The block below could use refactoring, see new function wppb_prepare_key_value_options.
 	// country select
 	$default_country_array = wppb_country_select_options( 'back_end' );
 	foreach( $default_country_array as $iso_country_code => $country_name ) {
 		$default_country_options[] = '%'.$country_name.'%'.$iso_country_code;
 	}
 
+	// @TODO - The block below could use refactoring, see new function wppb_prepare_key_value_options.
     // currency select
     $default_currency_array = wppb_get_currencies( 'back_end' );
     array_unshift( $default_currency_array, '' );
@@ -154,6 +161,14 @@ function wppb_populate_manage_fields(){
 	else{
 		$meta_key_description = __( 'Use this in conjunction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be unique)<br/>Changing this will only affect subsequent entries', 'profile-builder' );
 	}
+
+	// Initiate the list of available tags for the pin bubble.
+    if( function_exists( 'wppb_generate_userlisting_merge_tags' ) ) {
+        $bubble_meta_tags = wppb_generate_userlisting_merge_tags('meta');
+        $bubble_meta_tags = wp_list_pluck($bubble_meta_tags, 'label', 'name');
+    }
+    else
+        $bubble_meta_tags = array();
 
 	// set up the fields array
 	$fields = apply_filters( 'wppb_manage_fields', array(
@@ -190,9 +205,29 @@ function wppb_populate_manage_fields(){
         array( 'type' => 'text', 'slug' => 'custom-error-message', 'title' => __( 'Error Message', 'profile-builder' ), 'description' => __( "Set a custom error message that will be displayed to the user.", 'profile-builder' ) ),
         array( 'type' => 'select', 'slug' => 'time-format', 'title' => __( 'Time Format', 'profile-builder' ), 'options' => array( '%12 Hours%12', '%24 Hours%24' ), 'description' => __( 'Specify the time format.', 'profile-builder' ) ),
         array( 'type' => 'text', 'slug' => 'map-api-key', 'title' => __( 'Google Maps API Key', 'profile-builder' ), 'description' => __( 'Enter your Google Maps API key ( <a href="https://console.developers.google.com/flows/enableapi?apiid=maps_backend" target="_blank">Get your API key</a> ). If more than one map fields are added to a form the API key from the first map displayed will be used.', 'profile-builder' ) ),
-        array( 'type' => 'text', 'slug' => 'map-default-lat', 'title' => __( 'Default Latitude', 'profile-builder' ), 'description' => __( "The latitude at which the map should be displayed when no pins are attached.", 'profile-builder' ) ),
-        array( 'type' => 'text', 'slug' => 'map-default-lng', 'title' => __( 'Default Longitude', 'profile-builder' ), 'description' => __( "The longitude at which the map should be displayed when no pins are attached.", 'profile-builder' ) ),
-        array( 'type' => 'text', 'slug' => 'map-default-zoom', 'title' => __( 'Default Zoom Level', 'profile-builder' ), 'description' => __( "Add a number from 0 to 19. The higher the number the higher the zoom.", 'profile-builder' ), 'default' => 16 ),
+
+		array(
+			'type'        => 'text',
+			'slug'        => 'map-default-lat',
+			'title'       => __( 'Default Latitude', 'profile-builder' ),
+			'description' => __( 'The latitude at which the map should be displayed when no pins are attached.', 'profile-builder' ),
+			'default'     => WPPB_DEFAULTS_MAP_LAT,
+		),
+		array(
+			'type'        => 'text',
+			'slug'        => 'map-default-lng',
+			'title'       => __( 'Default Longitude', 'profile-builder' ),
+			'description' => __( 'The longitude at which the map should be displayed when no pins are attached.', 'profile-builder' ),
+			'default'     => WPPB_DEFAULTS_MAP_LNG,
+		),
+		array(
+			'type'        => 'text',
+			'slug'        => 'map-default-zoom',
+			'title'       => __( 'Default Zoom Level', 'profile-builder' ),
+			'description' => __( 'Add a number from 0 to 19. The higher the number the higher the zoom.', 'profile-builder' ),
+			'default'     => WPPB_DEFAULTS_MAP_ZOOM,
+		),
+
         array( 'type' => 'text', 'slug' => 'map-height', 'title' => __( 'Map Height', 'profile-builder' ), 'description' => __( "The height of the map.", 'profile-builder' ), 'default' => 400 ),
 		array( 'type' => 'textarea', 'slug' => 'default-content', 'title' => __( 'Default Content', 'profile-builder' ), 'description' => __( "Default value of the textarea", 'profile-builder' ) ),
 		array( 'type' => 'textarea', 'slug' => 'html-content', 'title' => __( 'HTML Content', 'profile-builder' ), 'description' => __( "Add your HTML (or text) content", 'profile-builder' ) ),
@@ -203,7 +238,43 @@ function wppb_populate_manage_fields(){
 		array( 'type' => 'text', 'slug' => 'number-step-value', 'title' => __( 'Number Step Value', 'profile-builder' ), 'description' => __( "Step value 1 to allow only integers, 0.1 to allow integers and numbers with 1 decimal", 'profile-builder' ) .'<br>'. __( "To allow multiple decimals use for eg. 0.01 (for 2 deciamls) and so on", 'profile-builder' ) .'<br>'. __( "You can also use step value to specify the legal number intervals (eg. step value 2 will allow only -4, -2, 0, 2 and so on)", 'profile-builder' ) .'<br>'. __( "Leave it empty for no restriction", 'profile-builder' ) ),
 		array( 'type' => 'select', 'slug' => 'required', 'title' => __( 'Required', 'profile-builder' ), 'options' => array( 'No', 'Yes' ), 'default' => 'No', 'description' => __( 'Whether the field is required or not', 'profile-builder' ) ),
         array( 'type' => 'select', 'slug' => 'overwrite-existing', 'title' => __( 'Overwrite Existing', 'profile-builder' ), 'options' => array( 'No', 'Yes' ), 'default' => 'No', 'description' => __( "Selecting 'Yes' will add the field to the list, but will overwrite any other field in the database that has the same meta-name<br/>Use this at your own risk", 'profile-builder' ) ),
-    ) );
+
+		// Added the new option for the map field type, that allows to customize the POIs load type.
+		array(
+			'type'        => 'select',
+			'slug'        => 'map-pins-load-type',
+			'title'       => __( 'POIs Load Type', 'profile-builder' ),
+			'options'     => array(
+				'%' . __( 'POIs of the listed users (as filtered & paginated)', 'profile-builder' ) . '%',
+				'%' . __( 'POIs of all the users for the filter* (no pagination)', 'profile-builder' ) . '%all',
+			),
+			'default'     => '',
+			'description' => __( 'This option allows you to load on a single map the POIs for all users, or just these for the listed ones (this will take into account the filters and the faceted menus). *Please use this feature wisely, it will impact the performance.', 'profile-builder' ),
+		),
+
+		// Added the new option for the map field type, that allows to customize the POI bubble content.
+		array(
+			'type'        => 'checkbox',
+			'slug'        => 'map-bubble-fields',
+			'title'       => __( 'POI Bubble Info', 'profile-builder' ),
+			'options'     => wppb_prepare_key_value_options( apply_filters( 'wppb_map_bubble_fields', $bubble_meta_tags ) ),
+			'default'     => 'avatar_or_gravatar, meta_display_name',
+			'description' => __( 'Select the attributes to be listed inside the POI bubble.', 'profile-builder' ),
+			'extra_attributes' => array(
+				'dropdown_options' => true,
+				'sortable_options' => true,
+			),
+		),
+
+		// Added the new option for the map field type, that allows to customize the number of users per iteration.
+		array(
+			'type'        => 'text',
+			'slug'        => 'map-pagination-number',
+			'title'       => __( 'Number of Users per Map Iteration', 'profile-builder' ),
+			'description' => __( 'When loading the map of all users with no pagination, the map script will iterate multiple times and will expose gradually POIs on the map, until all the POIs for the users that match the criteria will be added on the map (think of this as of pagination for the map POIs). The smaller the number of users per iteration, the fastest the iteration response will be, but for a large number of users, the map script will iterate multiple times. Setting a higher limit will decrease the performance, but might produce a smaller number of iterations. <br><br><b>Please adjust this value to your hosting capabilities, and make sure that the value you set is the best for performance.</b> We recommend a <b>maximum</b> value of 300.', 'profile-builder' ),
+			'default'     => 50,
+		),
+	) );
 
 	// create the new submenu with the above options
 	$args = array(
@@ -995,6 +1066,7 @@ function wppb_return_unique_field_list( $only_default_fields = false ){
 	    $unique_field_list[] = 'Avatar';
 	    $unique_field_list[] = 'reCAPTCHA';
         $unique_field_list[] = 'Select (User Role)';
+        $unique_field_list[] = 'Map';
     }
 
 	return 	apply_filters ( 'wppb_unique_field_list', $unique_field_list );
@@ -1356,21 +1428,42 @@ function wppb_get_map_output( $field, $args ) {
 
     $return = '';
 
-    // Search box
-    // The style:left=-99999px is set to hide the input from the viewport. It will be rewritten when the map gets initialised
-    if( $args['show_search'] )
-        $return .= '<input style="left: -99999px" type="text" id="' . $field['meta-name'] . '-search-box" class="wppb-map-search-box" placeholder="' . __( 'Search Location', 'profile-builder' ) . '" />';
+	// Search box
+	// The style:left=-99999px is set to hide the input from the viewport. It will be rewritten when the map gets initialised
+	if ( $args['show_search'] ) {
+		$return .= '<input style="left: -99999px" type="text" id="' . $field['meta-name'] . '-search-box" class="wppb-map-search-box" placeholder="' . __( 'Search Location', 'profile-builder' ) . '" />';
+	}
 
-    // Map container
-    $return .= '<div id="' . $field['meta-name'] . '" class="wppb-map-container" style="height: ' . $field['map-height'] . 'px;" data-editable="' . ( $args['editable'] ? 1 : 0 ) . '" data-default-zoom="' . ( !empty( $field['map-default-zoom'] ) ? (int)$field['map-default-zoom'] : 16 ) . '" data-default-lat="' . $field['map-default-lat'] . '" data-default-lng="' . $field['map-default-lng'] . '" ' . $args['extra_attr'] . '></div>';
+	$lng  = ( ! empty( $field['map-default-lng'] ) ) ? (float) $field['map-default-lng'] : WPPB_DEFAULTS_MAP_LNG;
+	$lat  = ( ! empty( $field['map-default-lat'] ) ) ? (float) $field['map-default-lat'] : WPPB_DEFAULTS_MAP_LAT;
+	$zoom = ( ! empty( $field['map-default-zoom'] ) ) ? (int) $field['map-default-zoom'] : WPPB_DEFAULTS_MAP_ZOOM;
 
-    if( !empty( $args['markers'] ) ) {
-        foreach( $args['markers'] as $marker )
-            $return .= '<input name="' . $field['meta-name'] . '[]" type="hidden" class="wppb-map-marker" value="' . $marker . '" />';
-    }
+	// Get one time the settings.
+	$settings = wppb_options_get_map_settings();
+	$pin_info = ( ! empty( $args['user_id'] ) ) ? wppb_compute_simple_pin_content_for_user( $args['user_id'], $settings ) : '';
 
-    return $return;
+	// Map container.
+	$return .= '<div id="' . $field['meta-name'] . '" class="wppb-map-container" style="height: ' . $field['map-height'] . 'px;" data-editable="' . ( $args['editable'] ? 1 : 0 ) . '" data-default-zoom="' . $zoom . '" data-default-lat="' . $lat . '" data-default-lng="' . $lng . '" ' . $args['extra_attr'] . '></div>';
 
+	if ( ! empty( $args['markers'] ) ) {
+		foreach ( $args['markers'] as $marker ) {
+			if ( ! empty( $args['user_id'] ) ) {
+				// Also compute the marker bubble content.
+				$bubble = wppb_get_user_pin_bubble(
+					$args['user_id'],
+					strstr( $marker, ',', true ),
+					ltrim( strstr( $marker, ',' ), ',' ),
+					$pin_info,
+					''
+				);
+				$return .= $bubble;
+			}
+
+			$return .= '<input name="' . $field['meta-name'] . '[]" type="hidden" class="wppb-map-marker" value="' . $marker . '" />';
+		}
+	}
+
+	return $return;
 }
 
 
@@ -1450,3 +1543,50 @@ function wppb_change_field_meta_key( $meta, $id, $values, $element_id ){
 		}
 	}
 }
+
+
+
+if ( ! function_exists( 'wppb_prepare_key_value_options' ) ) {
+	/**
+	 * Convert an array with keys and values into a usable option for the defined fields types.
+	 *
+	 * @param  arrays $array List of options.
+	 * @return array         Usable options.
+	 */
+	function wppb_prepare_key_value_options( $array = array() ) {
+		$result = array();
+		if ( ! empty( $array ) ) {
+			foreach ( $array as $name => $label ) {
+				$result[] = '%' . $label . '%' . $name;
+			}
+		}
+		return $result;
+	}
+}
+
+if ( ! function_exists( 'wppb_filter_map_bubble_fields' ) ) {
+	/**
+	 * Filter the map POI's bubble content.
+	 *
+	 * @param  arrays $tags List of available tags.
+	 * @return array        Filtered and sorted tags.
+	 */
+	function wppb_filter_map_bubble_fields( $tags ) {
+		// Attempt to preseve one tag example.
+		$maybe_avatar = ( ! empty( $tags['avatar_or_gravatar'] ) ) ? $tags['avatar_or_gravatar'] : false;
+
+		// Remove some of the tags.
+		unset( $tags['meta_user_name'] );
+		unset( $tags['more_info_url'] );
+		unset( $tags['avatar_or_gravatar'] );
+
+		if ( ! empty( $maybe_avatar ) ) {
+			// Perhaps preprend this to the list.
+			$tags = array_merge( array( 'avatar_or_gravatar' => $maybe_avatar ), $tags );
+		}
+
+		return $tags;
+	}
+}
+add_filter( 'wppb_map_bubble_fields', 'wppb_filter_map_bubble_fields' );
+

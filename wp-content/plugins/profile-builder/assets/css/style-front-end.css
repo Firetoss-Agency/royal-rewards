@@ -7,7 +7,7 @@
 2.0 - Forms
 3.0 - Alignments
 4.0 - Errors & Notices
-5.0 - User Listing 
+5.0 - User Listing
 6.0 - Media Queries
 --------------------------------------------------------------*/
 
@@ -739,18 +739,18 @@ ul.wppb-faceted-list .hide-this{
 		margin-left:0;
 	}
 
-	.wppb-checkboxes li label, 
+	.wppb-checkboxes li label,
 	.wppb-radios li label{
 		display:inline;
 	}
-	
+
 	.wppb-form-field .wppb-avatar-nofile,
 	.wppb-form-field .wppb-avatar-file,
 	.wppb-form-field .wppb-upload-nofile,
 	.wppb-form-field .wppb-upload-file{
 		margin-left:0;
 	}
-	
+
 }
 
 /*--------------------------------------------------------------
@@ -820,3 +820,9 @@ ul.wppb-faceted-list .hide-this{
 .wppb-private-website.wppb-private-website-hide-menus .main-navigation{
     display:none;
 }
+
+
+/* Map markers info */
+.marker-content-info {position: absolute; top: -400px; left: -400px; display: none;}
+.wppb-map-container .marker-content {min-width: 320px; max-width: 100%;}
+.wppb-map-container .marker-content .marker-info-avatar_or_gravatar {float: left; margin-right: 10px;}

@@ -1197,6 +1197,10 @@ $container-max-width: 1600px !default;
       }
 
       .uk-logo {
+        @include breakpoint(small down) {
+          padding: 0 1rem;
+        }
+
         .logo {
           height: 120px;
           left: 0;
@@ -1248,6 +1252,10 @@ $container-max-width: 1600px !default;
           .symbol {
             margin-bottom: 0.5rem !important;
           }
+        }
+
+        @include breakpoint(small down) {
+          padding: 0 1rem;
         }
 
         .logo { display: none }
@@ -1450,8 +1458,8 @@ $navbar-nav-item-hover-color: $yellow !default;
 //$navbar-nav-item-onclick-color: $global-emphasis-color !default;
 //$navbar-nav-item-active-color: $global-emphasis-color !default;
 //$navbar-item-color: $global-color !default;
-//$navbar-toggle-color: $global-muted-color !default;
-//$navbar-toggle-hover-color: $global-color !default;
+$navbar-toggle-color: $white !default;
+$navbar-toggle-hover-color: $white !default;
 //$navbar-subtitle-font-size: $global-small-font-size !default;
 //$navbar-dropdown-z-index: $global-z-index + 20 !default;
 //$navbar-dropdown-width: 200px !default;
@@ -1608,7 +1616,7 @@ $navbar-nav-item-hover-color: $yellow !default;
 //<editor-fold desc="Offcanvas">
 
 //$offcanvas-z-index: $global-z-index !default;
-//$offcanvas-bar-width: 270px !default;
+$offcanvas-bar-width: 100vw !default;
 $offcanvas-bar-padding-vertical: $global-margin * 3 !default;
 //$offcanvas-bar-padding-horizontal: $global-margin !default;
 //$offcanvas-bar-background: $global-secondary-background !default;
@@ -1616,11 +1624,37 @@ $offcanvas-bar-padding-vertical: $global-margin * 3 !default;
 //$offcanvas-bar-width-m: 350px !default;
 $offcanvas-bar-padding-vertical-m: $global-margin * 3 !default;
 //$offcanvas-bar-padding-horizontal-m: $global-medium-gutter !default;
-//$offcanvas-close-position: 20px !default;
+$offcanvas-close-position: 10px !default;
 //$offcanvas-close-padding: 5px !default;
 //$offcanvas-overlay-background: rgba(0,0,0,0.1) !default;
 
-//@mixin hook-offcanvas-bar() {}
+@mixin hook-offcanvas-bar() {
+  background: $blue;
+
+  .uk-nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .menu-item {
+      text-align: center;
+
+      span {
+        padding: 0 !important;
+      }
+
+      a {
+        text-transform: uppercase;
+        color: $white !important;
+        font: {
+          size: rem-calc(34) !important;
+          weight: $semi;
+        }
+      }
+    }
+  }
+}
 //@mixin hook-offcanvas-close() {}
 //@mixin hook-offcanvas-overlay() {}
 //@mixin hook-offcanvas-misc() {}

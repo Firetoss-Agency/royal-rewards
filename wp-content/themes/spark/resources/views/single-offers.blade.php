@@ -53,7 +53,10 @@
                 <a class="uk-button uk-button-primary" href="{{ $link['url'] }}" {{ $link['target'] ? 'target="'.$link['target'].'"' : '' }}>{{ $link['title'] }}</a>
               </div>
             @endif
-            <div class="favorite uk-margin-medium-bottom">
+
+            {{-- If an user is an employee show favorites button --}}
+            @if(in_array('employee', wp_get_current_user()->roles))
+              <div class="favorite uk-margin-bottom">
               @php
                 // Check if user id is already a term in favorites taxonomy
                 $users_term = get_term_by('slug', get_current_user_id(), 'favorites');
@@ -79,7 +82,8 @@
                 <span class="add">Add offer to favorites</span>
               </a>
             </div>
-            <div class="back">
+            @endif
+            <div class="back uk-margin-large-top">
               <a href="/offers">Back to Offers</a>
             </div>
           </div>

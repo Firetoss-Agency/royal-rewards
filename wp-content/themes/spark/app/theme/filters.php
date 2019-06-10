@@ -183,3 +183,9 @@ add_filter('sober/controller/namespace', function () {
 
 add_filter('use_block_editor_for_post', '__return_false', 10);
 add_filter('use_block_editor_for_post_type', '__return_false', 10);
+
+
+/**
+ * Disable front-end admin bar for all roles
+ */
+add_filter('show_admin_bar', '__return_false');

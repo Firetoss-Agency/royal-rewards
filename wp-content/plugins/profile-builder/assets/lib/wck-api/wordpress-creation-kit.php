@@ -236,6 +236,9 @@ class Wordpress_Creation_Kit_PB{
 
 		$element .= '<div class="mb-right-column">';
 
+		// Allow for appeding custom markup before the element.
+		$element .= apply_filters( 'wck_output_form_field_before_customtype_' . $details['type'], '', $value, $details, $single_prefix );
+
 		/*
 		include actual field type
 		possible field types: text, textarea, select, checkbox, radio, upload, wysiwyg editor, datepicker, country select, user select, cpt select
@@ -248,6 +251,10 @@ class Wordpress_Creation_Kit_PB{
 			}
 		}
 
+		if ( isset( $details['options'] ) ) {
+			// Allow to filter the options for specific field slugs.
+			$details = apply_filters( 'wck_output_form_field_options_by_slug', $details, $details['slug'], $value, $single_prefix );
+		}
 
 		if( file_exists( dirname( __FILE__ ).'/fields/'.$details['type'].'.php' ) ){
 			require( dirname( __FILE__ ).'/fields/'.$details['type'].'.php' );
@@ -255,6 +262,10 @@ class Wordpress_Creation_Kit_PB{
 
         // Add a filter that allows us to add support for custom field types, not just the ones defined in fields (wck api)
         $element .=  apply_filters('wck_output_form_field_customtype_' . $details['type'], '', $value, $details, $single_prefix);
+
+
+		// Allow for appeding custom markup after the element.
+		$element .= apply_filters( 'wck_output_form_field_after_customtype_' . $details['type'], '', $value, $details, $single_prefix );
 
 		if( !empty( $details['description'] ) ){
 			$element .= '<p class="description">'. $details['description'].'</p>';
@@ -1149,7 +1160,7 @@ class Wordpress_Creation_Kit_PB{
 		/* only go through for metaboxes defined for this post type */
 		if( get_post_type( $post_id ) != $this->args['post_type'] )
 			return $post_id;
-			
+
         // Check the user's permissions.
         if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
             if ( ! current_user_can( 'edit_page', $post_id ) ) {

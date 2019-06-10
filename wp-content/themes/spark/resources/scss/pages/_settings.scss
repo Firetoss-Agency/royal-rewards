@@ -1,0 +1,42 @@
+main.settings {
+  min-height: 65vh;
+
+  section.intro {
+    padding: 3rem 0;
+    text-align: center;
+    color: $black;
+
+    h1 {
+      color: $blue;
+      font-weight: $semi;
+    }
+  }
+
+  section.edit {
+    #wppb-edit-user {
+
+      .form-submit {
+        text-align: right;
+
+        #edit_profile {
+          background: $red;
+          color: $white;
+          border: none;
+          box-shadow: none;
+          padding: 0.5rem 1.5rem;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: 0.2s;
+          font: {
+            size: rem-calc(16);
+            weight: $light;
+          }
+
+          &:hover {
+            background: darken($red, 6%)
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,35 @@
 {
     "key": "group_59a59b512d690",
     "title": "Global - General",
+    "fields": [
+        {
+            "key": "field_5cfe963585f5f",
+            "label": "Featured Offers",
+            "name": "featured_offers",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "offers"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        }
+    ],
     "location": [
         [
             {
@@ -18,5 +47,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1504027189
+    "modified": 1560188841
 }

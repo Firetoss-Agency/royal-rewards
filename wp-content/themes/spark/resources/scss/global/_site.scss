@@ -1,6 +1,10 @@
 main.site {
   padding-top: 160px;
 
+  @include breakpoint(small down) {
+    padding-top: 100px;
+  }
+
   &.four-oh-four,
   &.default {
     padding: 3rem 0;

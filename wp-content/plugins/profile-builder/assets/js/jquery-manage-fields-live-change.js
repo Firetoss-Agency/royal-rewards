@@ -509,6 +509,9 @@ var fields 	=	{
                                                                                         '.row-map-default-lng',
                                                                                         '.row-map-default-zoom',
                                                                                         '.row-map-height',
+                                                                                        '.row-map-pins-load-type',
+                                                                                        '.row-map-pagination-number',
+                                                                                        '.row-map-bubble-fields',
                                                                                         '.row-required'
                                                                                     ]
                                                                 },
@@ -808,3 +811,84 @@ jQuery(function(){
     wppb_enable_select2('#wppb_manage_fields');
 
 });
+
+// Custom functionality for sorting options (see the Map POIs attributes).
+(function ($) {
+	window.SortSelCheck = {
+		// Initiate the events and triggers.
+		init: function () {
+			SortSelCheck.assess();
+			SortSelCheck.listen();
+		},
+
+		// Listen for events.
+		listen: function () {
+			// Listen for the new element setup and trigger the expected custom event.
+			$('.wck-add-form').on('change', function() {
+				SortSelCheck.assess('wck-add-form');
+			});
+		},
+
+		// Assess the potential elements and configure these when possible.
+		assess: function (elem) {
+			var $elem = $('.wppb_sortable_checkboxes_wrap');
+			// console.log('assess triggerer ' + elem, $elem);
+			$elem.each(function() {
+				$rows = SortSelCheck.remake($(this));
+				SortSelCheck.attach($(this), $rows);
+			});
+		},
+
+		// Configure the elements that form the sortable checkboxes options.
+		remake: function ($field) {
+			var $rows = $field.children('.wck-checkboxes');
+			if (!$rows.length) {
+				$field.prepend('<div class="wck-checkboxes"> </div>');
+				var $rows = $field.children('.wck-checkboxes');
+			}
+			if ($rows.length) {
+				SortSelCheck.sortable($rows);
+			}
+			return $rows;
+		},
+
+		// Attach the custom dropdown options as sortable checkboxes options.
+		attach: function ($field, $rows) {
+			var $ddwn = $field.children('.wppb_selector_for_sortable_checkbox');
+			if ($ddwn.length) {
+				$ddwn.on('change', function() {
+					var val = $(this).val();
+					if ('' !== val) {
+						$rows.append('<div><label><input type="checkbox" name="' + $(this).data('list') + '" id="' + $(this).data('list') + '_' + val + '" value="' + val + '" checked="checked" class="mb-checkbox mb-field">' + $(this).children('option').filter(':selected').text() + '</label></div>');
+						$(this).children('option').filter(':selected').remove();
+						SortSelCheck.sortable($rows);
+					}
+				});
+			}
+		},
+
+		// Make sortable items from the list.
+		sortable: function ($list) {
+			var $items = $list.children('div');
+			$items.addClass('wppb_manage_fields_sortables');
+			$items.remove('em');
+			$items.prepend('<em class="dashicons dashicons-menu"></em> ');
+			$list.sortable({
+				items: '> div',
+				classes: {'ui-sortable': 'highlight'}
+			});
+		},
+
+	};
+
+	$(document).ready(function () {
+		// Initialize the custom functionality.
+		SortSelCheck.init('init');
+
+		// Bind the event to the custom functionality.
+		$('html').on('wpbFormMetaLoaded', function(e, elem) {
+			SortSelCheck.assess(elem);
+		});
+	});
+
+})(jQuery);

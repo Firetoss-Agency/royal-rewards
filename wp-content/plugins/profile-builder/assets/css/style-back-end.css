@@ -825,3 +825,11 @@ div.wppb-notice .notice-dismiss {
 .profile-builder_page_user-email-customizer #poststuff, .profile-builder_page_admin-email-customizer  #poststuff{
     padding:0;
 }
+
+/* Sortable options */
+.wppb_manage_fields_sortables {display: block; border: 1px solid #EEE; margin: 0px 0px 5px 32px; padding: 5px;}
+.wppb_manage_fields_sortables:hover {cursor: pointer; background-color: #EEE;}
+.wppb_manage_fields_sortables label {background: transparent !important;}
+.wppb_manage_fields_sortables > .dashicons {color: #f4f4f4; position: absolute; margin-left: -32px;}
+.wppb_manage_fields_sortables:hover > .dashicons {color: #000;}
+.wppb_selector_for_sortable_checkbox {margin-left: 32px; width: calc(100% - 32px);}

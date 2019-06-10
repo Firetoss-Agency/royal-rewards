@@ -1,0 +1,14 @@
+main.favorites {
+  min-height: 65vh;
+  
+  section.intro {
+    padding: 3rem 0;
+    text-align: center;
+    color: $black;
+
+    h1 {
+      color: $blue;
+      font-weight: $semi;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+main.about {
+  section.intro {
+    padding: 3rem 0;
+    text-align: center;
+    color: $black;
+
+    h1 {
+      color: $blue;
+      font-weight: $semi;
+    }
+  }
+
+  section.map {
+    .wpgmza_map {
+      height: 40vw !important;
+
+      @include breakpoint(medium down) {
+        height: 50vw !important;
+      }
+
+      @include breakpoint(small down) {
+        height: 320px !important;
+      }
+    }
+  }
+}
