@@ -14,22 +14,16 @@ export default {
     // If Offer is already favorited or not
     let favorited = favButton.data('favorited')
 
-    // TASK: this doesn't mutate to the new ID once dynamically changed
-    var termId = $('.favorite-button').data('term')
-
-    console.log(termId);
-
     // Change button text based on whether it's favorited or not
     updateFavoritedButton(favorited)
-
 
     // Add current User's ID to Favorites taxonomy
     $('.favorite-button').on('click', function (event) {
       event.preventDefault()
 
-      let userId    = $(this).data('user')
-      termId    = $(this).data('term')
-      let offerId   = $(this).data('offer')
+      let userId    = parseInt($(this).attr('data-user'))
+      let termId    = parseInt($(this).attr('data-term'))
+      let offerId   = parseInt($(this).attr('data-offer'))
 
       // ====================================================================
       // If User has their ID already created as a term in Favorites taxonomy
@@ -128,8 +122,6 @@ export default {
           // Get the term's ID
           let newTermId = term.data.id
 
-          termId = newTermId
-
           // Get current Offer
           axios.get(api + '/offers/' + offerId)
           .then(post => {
@@ -161,8 +153,6 @@ export default {
 
               // Update the favorited variable
               favorited = true
-
-              console.log(termId);
             })
             .catch(error => console.log(error))
           })
