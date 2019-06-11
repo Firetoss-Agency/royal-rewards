@@ -541,6 +541,7 @@ $card-default-hover-background: $ghost !default;
     &.logo {
       padding: 1rem 1rem 0;
       max-height: 150px;
+      max-width: 80%;
 
       @include breakpoint(medium down) {
         max-height: 120px;
@@ -548,6 +549,7 @@ $card-default-hover-background: $ghost !default;
 
       @include breakpoint(small down) {
         padding:  0.5rem;
+        max-width: 100%;
       }
     }
   }
@@ -1587,6 +1589,12 @@ $navbar-toggle-hover-color: $white !default;
   height: 160px;
   position: relative;
   transition: 0.4s;
+
+  // Hide certain nav items for certain roles
+  .resident,
+  .tenant {
+    .hide-for-roles { display: none }
+  }
 
   &::before {
     content: '';

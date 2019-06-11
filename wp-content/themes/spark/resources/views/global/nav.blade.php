@@ -32,7 +32,7 @@
       {{-- Menu --}}
       @if(has_nav_menu('primary_navigation'))
         <div class="uk-navbar-right uk-flex-top">
-          <ul class="uk-navbar-nav uk-visible{{ $breakpoint }}">
+          <ul class="uk-navbar-nav uk-visible{{ $breakpoint }} {{ wp_get_current_user()->roles[0] }}">
             @php
               wp_nav_menu([
                 'items_wrap'     => '%3$s',
@@ -62,7 +62,7 @@
     @include('components.category-tiles', ['mobile' => true])
   </div>
   <nav id="mobile-menu">
-    <ul class="uk-nav-primary uk-nav-parent-icon" uk-nav="multiple: true">
+    <ul class="uk-nav-primary uk-nav-parent-icon {{ wp_get_current_user()->roles[0] }}" uk-nav="multiple: true">
       @php
         wp_nav_menu([
           'items_wrap'     => '%3$s',

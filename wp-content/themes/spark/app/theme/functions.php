@@ -132,17 +132,33 @@ function get_details_excerpt($count){
 
 
 // Redirect users not logged in, to the login page
-function redirect_private_content() {
-	global $wp_query, $wpdb;
-	if ( is_404() ) {
-		$current_query = $wpdb->get_row($wp_query->request);
-		if( 'private' == $current_query->post_status ) {
-			wp_redirect( home_url('/') );
-			exit;
-		}
+function redirect_templates() {
+	if(!is_user_logged_in() && !is_page('login')) {
+		wp_redirect( home_url('/') );
+		exit;
+	}
+
+	if(is_user_logged_in() && is_page('settings') && in_array('tenant', wp_get_current_user()->roles)) {
+		wp_redirect( home_url('/dashboard') );
+		exit;
+	}
+
+	if(is_user_logged_in() && is_page('favorites') && in_array('tenant', wp_get_current_user()->roles)) {
+		wp_redirect( home_url('/dashboard') );
+		exit;
+	}
+
+	if(is_user_logged_in() && is_page('settings') && in_array('resident', wp_get_current_user()->roles)) {
+		wp_redirect( home_url('/dashboard') );
+		exit;
+	}
+
+	if(is_user_logged_in() && is_page('favorites') && in_array('resident', wp_get_current_user()->roles)) {
+		wp_redirect( home_url('/dashboard') );
+		exit;
 	}
 }
-add_action( 'template_redirect', 'redirect_private_content', 9 );
+add_action('template_redirect', 'redirect_templates', 9);
 
 
 /**
@@ -158,8 +174,8 @@ function user_login_redirect( $redirect_to, $request, $user ){
 				$redirect_to =  home_url('/wp-admin');
 			}
 
-			// check for Employee
-			if (in_array('employee', $user->roles)) {
+			// check for Employee, Tenant or Resident
+			if (in_array('employee', $user->roles) || in_array('tenant', $user->roles) || in_array('resident', $user->roles)) {
 				$redirect_to =  home_url('/dashboard');
 			}
 		}
@@ -180,11 +196,14 @@ add_role('employee', __('Employee'), [
   'delete_posts' => true
 ]);
 
-// Add Role capabilities
-function employee_role_caps() {
-	$role = get_role( 'employee' );
+add_role('tenant', __('Tenant'), [
+  'read'         => true,
+  'edit_posts'   => true,
+  'delete_posts' => true
+]);
 
-	$role->add_cap( 'read_private_posts' );
-	$role->add_cap( 'read_private_pages' );
-}
-add_action( 'admin_init', 'employee_role_caps');
+add_role('resident', __('Resident'), [
+  'read'         => true,
+  'edit_posts'   => true,
+  'delete_posts' => true
+]);

@@ -57,31 +57,31 @@
             {{-- If an user is an employee show favorites button --}}
             @if(in_array('employee', wp_get_current_user()->roles))
               <div class="favorite uk-margin-bottom">
-              @php
-                // Check if user id is already a term in favorites taxonomy
-                $users_term = get_term_by('slug', get_current_user_id(), 'favorites');
-                $users_term_id = 0;
-                if ($users_term) {
+                @php
+                  // Check if user id is already a term in favorites taxonomy
+                  $users_term = get_term_by('slug', get_current_user_id(), 'favorites');
+                  $users_term_id = 0;
+                  if ($users_term) {
 
-                  // Store the term ID
-                  $users_term_id = $users_term->term_id;
+                    // Store the term ID
+                    $users_term_id = $users_term->term_id;
 
-                  // Check if the User already has this Offer as a favorite
-                  $favorited = has_term($users_term_id, 'favorites');
-                }
-              @endphp
-              <a
-                class="uk-button uk-button-default favorite-button"
-                data-user="{{ get_current_user_id() }}"
-                data-term="{{ $users_term_id }}"
-                data-offer="{{ get_the_ID() }}"
-                data-favorited="{{ $favorited }}"
-              >
-                <img src="{{ the_img('red-star.svg') }}">
-                <span class="remove uk-hidden">Remove offer from favorites</span>
-                <span class="add">Add offer to favorites</span>
-              </a>
-            </div>
+                    // Check if the User already has this Offer as a favorite
+                    $favorited = has_term($users_term_id, 'favorites');
+                  }
+                @endphp
+                <a
+                  class="uk-button uk-button-default favorite-button"
+                  data-user="{{ get_current_user_id() }}"
+                  data-term="{{ $users_term_id }}"
+                  data-offer="{{ get_the_ID() }}"
+                  data-favorited="{{ $favorited }}"
+                >
+                  <img src="{{ the_img('red-star.svg') }}">
+                  <span class="remove uk-hidden">Remove offer from favorites</span>
+                  <span class="add">Add offer to favorites</span>
+                </a>
+              </div>
             @endif
             <div class="back uk-margin-large-top">
               <a href="/offers">Back to Offers</a>

@@ -43,20 +43,11 @@
             {{-- Image --}}
             @if(get_field('header_image') || get_field('logo'))
               <div class="uk-card-media-top">
-                <div class="uk-visible@m">
-                  @if(get_field('header_image'))
-                    <img class="header" src="{{ the_field('header_image') }}">
-                  @elseif(get_field('logo'))
-                    <img class="logo" src="{{ the_field('logo') }}">
-                  @endif
-                </div>
-                <div class="uk-hidden@m">
-                  @if(get_field('logo'))
-                    <img class="logo" src="{{ the_field('logo') }}">
-                  @elseif(get_field('header_image'))
-                    <img class="header" src="{{ the_field('header_image') }}">
-                  @endif
-                </div>
+                @if(get_field('logo'))
+                  <img class="logo" src="{{ the_field('logo') }}">
+                @elseif(get_field('header_image'))
+                  <img class="header" src="{{ the_field('header_image') }}">
+                @endif
               </div>
             @endif
 

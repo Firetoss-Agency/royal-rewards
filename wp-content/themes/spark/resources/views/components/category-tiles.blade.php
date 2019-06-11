@@ -7,7 +7,7 @@
         </div>
       </div>
     @endif
-    <div class="uk-grid uk-grid-collapse uk-grid-match" uk-grid>
+    <div class="uk-grid uk-grid-collapse uk-grid-match uk-flex-between" uk-grid>
       @php
         $categories = get_terms([
           'taxonomy' => 'offer_categories',

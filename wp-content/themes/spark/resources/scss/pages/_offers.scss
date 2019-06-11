@@ -8,15 +8,49 @@ main.offers-single {
   section.offer {
     padding: 2rem 0 6rem;
 
-    .logo { max-width: 480px }
+    .logo {
+      max-width: 50%;
+
+      @include breakpoint(large down) {
+        max-width: 80%;
+      }
+    }
+
+    h2 {
+      @include breakpoint(small down) {
+        font-size: 44px;
+      }
+    }
+
+    h3 {
+      @include breakpoint(small down) {
+        font-size: 16px;
+      }
+    }
 
     .details {
       background: $ghost;
       padding: 2rem 2.5rem 1rem;
 
+      @include breakpoint(small down) {
+        padding: 1rem;
+        width: calc(100vw - 2rem);
+        margin-left: -30px;
+      }
+
+      @include breakpoint(xsmall down) {
+        margin-left: -15px;
+      }
+
       header {
         display: flex;
         justify-content: space-between;
+
+        h4 {
+          @include breakpoint(small down) {
+            font-size: 16px;
+          }
+        }
 
         h5 {
           font: {
@@ -24,13 +58,39 @@ main.offers-single {
             size: rem-calc(17);
             weight: $light;
           }
+
+          @include breakpoint(small down) {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .content {
+        p {
+          @include breakpoint(small down) {
+            font-size: 14px;
+          }
         }
       }
     }
 
     .map {
+      @include breakpoint(small down) {
+        width: 100vw;
+        margin-left: -30px;
+      }
+
+      @include breakpoint(xsmall down) {
+        margin-left: -15px;
+      }
+
       h4 {
         padding: 0 2.5rem;
+
+        @include breakpoint(small down) {
+          font-size: 16px;
+          padding: 0 1rem;
+        }
       }
 
       iframe {
