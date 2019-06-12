@@ -154,6 +154,14 @@ function redirect_templates() {
 				exit;
 			}
 		}
+
+		// If a logged in user tries to hit the login page
+		if (is_page('login')) {
+
+			// Redirect to the Dashboard
+			wp_redirect( home_url('/dashboard') );
+			exit;
+		}
 	}
 }
 add_action('template_redirect', 'redirect_templates', 9);
