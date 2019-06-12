@@ -15,6 +15,11 @@ main.settings {
   section.edit {
     #wppb-edit-user {
 
+      .wppb-default-username,
+      .wppb-default-e-mail {
+        display: none;
+      }
+
       .form-submit {
         text-align: right;
 

@@ -128,38 +128,45 @@ function get_details_excerpt($count){
 }
 
 
-// CUSTOM ROLES / LOGINS / ETC
+/*
+ * Template Redirects
+ */
 
-
-// Redirect users not logged in, to the login page
 function redirect_templates() {
+
+	// Redirect users not logged in, to the login page
 	if(!is_user_logged_in() && !is_page('login')) {
 		wp_redirect( home_url('/') );
 		exit;
 	}
 
-	if(is_user_logged_in() && is_page('settings') && in_array('tenant', wp_get_current_user()->roles)) {
-		wp_redirect( home_url('/dashboard') );
-		exit;
-	}
+	// User is logged in
+	if (is_user_logged_in()) {
 
-	if(is_user_logged_in() && is_page('favorites') && in_array('tenant', wp_get_current_user()->roles)) {
-		wp_redirect( home_url('/dashboard') );
-		exit;
-	}
+		// If user is a tenant or resident
+		if (in_array('tenant', wp_get_current_user()->roles) || in_array('resident', wp_get_current_user()->roles)) {
 
-	if(is_user_logged_in() && is_page('settings') && in_array('resident', wp_get_current_user()->roles)) {
-		wp_redirect( home_url('/dashboard') );
-		exit;
-	}
+			// If template trying to hit is settings or favorites
+			if (is_page('settings') || is_page('favorites')) {
 
-	if(is_user_logged_in() && is_page('favorites') && in_array('resident', wp_get_current_user()->roles)) {
-		wp_redirect( home_url('/dashboard') );
-		exit;
+				// Redirect to the Dashboard
+				wp_redirect( home_url('/dashboard') );
+				exit;
+			}
+		}
 	}
 }
 add_action('template_redirect', 'redirect_templates', 9);
 
+/*
+ * Redirect on logout
+ */
+
+function auto_redirect_after_logout(){
+	wp_redirect( home_url() );
+	exit;
+}
+add_action('wp_logout','auto_redirect_after_logout');
 
 /**
  * WordPress function for redirecting users on login based on user role

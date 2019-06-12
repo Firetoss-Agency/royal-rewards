@@ -35,6 +35,14 @@
     ])
 	@endif
 
+	<div class="uk-container">
+	  <div class="uk-grid" uk-grid>
+	    <div class="uk-width-1-1 uk-text-center uk-margin-large-bottom">
+				<a href="/offers" class="uk-button uk-button-primary">See all offers</a>
+	    </div>
+	  </div>
+	</div>
+
 	{{-- Favorites --}}
 	@php
 		$user_id = get_current_user_id();

@@ -1,10 +1,7 @@
-@extends('layouts.app')
+{{-- Redirect 404 to Dashboard --}}
 
-@section('content')
-    @if (!have_posts())
-      <div>
-        {{ __('Sorry, but the page you were trying to view does not exist.', 'sage') }}
-      </div>
-      {!! get_search_form(false) !!}
-    @endif
-@endsection
+@php
+  header("HTTP/1.1 301 Moved Permanently");
+  header("Location: " . home_url('dashboard'));
+  exit;
+@endphp

@@ -16,6 +16,12 @@ main.login {
         padding: 2rem;
       }
 
+      .wppb-error {
+        margin: 2rem 0 0;
+        text-align: center;
+        font-size: 14px;
+      }
+
       // Login Form
       #wppb-login-wrap {
         form {
@@ -25,15 +31,20 @@ main.login {
             padding: 2rem 0 0;
           }
 
+          label { display: none }
+
+          input:not([type=submit]) {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+          }
+
           p {
-            label { display: none }
+            font-size: 13px;
+            text-align: center;
 
-            input:not([type=submit]) {
-              width: 100%;
-              padding: 10px;
-            }
-
-            &.login-submit {
+            &.login-submit,
+            &.form-submit {
               text-align: center;
 
               input[type=submit] {
@@ -57,6 +68,29 @@ main.login {
               }
             }
           }
+        }
+      }
+
+      // Forgot Password
+      #wppb-recover-password-container {
+        @extend #wppb-login-wrap;
+        display: none;
+
+        .wppb-success {
+          margin-top: 2rem;
+          text-align: center;
+          font-size: 14px;
+        }
+      }
+
+      button.forgot-password-toggle {
+        border: none;
+        box-shadow: none;
+        cursor: pointer;
+        background: $clear;
+
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
