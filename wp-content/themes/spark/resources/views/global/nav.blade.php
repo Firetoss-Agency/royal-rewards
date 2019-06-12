@@ -13,11 +13,13 @@
     <nav class="uk-navbar-container uk-navbar-transparent uk-navbar" uk-navbar="offset: 0; delay-hide: 500;">
 
       {{-- User --}}
-      <div class="uk-navbar-left uk-flex-top">
-        <div class="uk-navbar-item user">
-          Hello:&nbsp;<a href="{{ home_url('/settings') }}">{{ $user }}</a>
+      @if(in_array('administrator', $current_user->roles) || in_array('employee', $current_user->roles))
+        <div class="uk-navbar-left uk-flex-top">
+          <div class="uk-navbar-item user">
+            Hello:&nbsp;<a href="{{ home_url('/settings') }}">{{ $user }}</a>
+          </div>
         </div>
-      </div>
+      @endif
 
       {{-- Logo --}}
       <div class="uk-navbar-center uk-height-1-1">
