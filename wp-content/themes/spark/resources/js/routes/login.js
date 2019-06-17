@@ -21,8 +21,8 @@ export default {
         method: 'post',
         url: 'http://royal-rewards.test/wp-json/jwt-auth/v1/token',
         data: {
-          "username": "ftadmin",
-          "password": "1198-0256-1191-97ad"
+          "username": user,
+          "password": pass
         }
       })
       .then(response => {
