@@ -5,5 +5,9 @@ section.offer-tiles {
     text-transform: uppercase;
     padding-bottom: 0.25rem;
     font-weight: 400;
+    
+    @include breakpoint(small down) {
+      font-size: rem-calc(12);
+    }
   }
 }
