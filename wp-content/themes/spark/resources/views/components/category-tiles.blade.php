@@ -14,7 +14,7 @@
       @php
         $categories = get_terms([
           'taxonomy' => 'offer_categories',
-          'hide_empty' => false
+          'hide_empty' => true
         ]);
         $total_cat = count($categories);
       @endphp
