@@ -5,7 +5,11 @@
   <div class="uk-container">
     <div class="uk-grid uk-grid-small" uk-grid>
       <div class="uk-width-1-1">
-        <header>{{ $heading }}</header>
+        <header class="uk-visible@m">{{ $heading }}</header>
+        <header class="uk-hidden@m uk-flex uk-flex-between">
+          <span>{{ $heading }}</span>
+          <a class="uk-hidden" uk-filter-control>View All Offers</a>
+        </header>
       </div>
 
       @php

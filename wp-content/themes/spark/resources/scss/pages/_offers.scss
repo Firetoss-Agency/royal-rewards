@@ -4,6 +4,14 @@ main.offer-categories {
   }
 }
 
+main.offers {
+  .offer-filter {
+    @include breakpoint(small down) {
+      padding-top: 1.5rem;
+    }
+  }
+}
+
 main.offers-single {
   section.offer {
     padding: 2rem 0 6rem;

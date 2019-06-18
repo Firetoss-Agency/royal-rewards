@@ -9,7 +9,7 @@
     @stack('head')
   </head>
 
-  <body @php body_class() @endphp>
+  <body @php body_class(); @endphp {{ (is_archive('offers')) ? 'uk-filter=.offer-filter' : '' }}>
     {{ the_field('body_script_snippets', 'option') }}
     @stack('body')
 

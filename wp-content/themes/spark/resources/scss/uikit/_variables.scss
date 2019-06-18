@@ -575,7 +575,9 @@ $card-default-hover-background: $ghost !default;
     }
   }
 
-  &:hover { box-shadow: 0 0 8px $smoke }
+  @include breakpoint(medium) {
+    &:hover { box-shadow: 0 0 8px $smoke }
+  }
 }
 //@mixin hook-card-default-title() {}
 //@mixin hook-card-default-hover() {}

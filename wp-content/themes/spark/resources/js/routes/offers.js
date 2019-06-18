@@ -1,17 +1,19 @@
 export default {
   init() {
 
-    let tile = $('.category-tiles .tile')
-    let viewAll = $('.category-tiles header a')
+    const tile = $('.category-tiles .tile')
+    const viewAll = $('main.offers header a')
+    const mobile = $('#categories').hasClass('category-tiles--mobile')
 
     if (tile.hasClass('uk-active')) {
-      console.log('ok');
       viewAll.removeClass('uk-hidden')
     }
 
-
     tile.click(function () {
       viewAll.removeClass('uk-hidden')
+
+      if (mobile)
+        $('#categories').slideToggle('fast')
     })
 
     viewAll.click(function () {
