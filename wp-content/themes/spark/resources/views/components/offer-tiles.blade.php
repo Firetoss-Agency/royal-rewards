@@ -1,4 +1,7 @@
-<section class="offer-tiles">
+<section
+  class="offer-tiles"
+  id="{{ $slug }}" style="{{ (!$filter || $filter == $slug) ? 'display:block' : 'display:none' }}"
+>
   <div class="uk-container">
     <div class="uk-grid uk-grid-small" uk-grid>
       <div class="uk-width-1-1">

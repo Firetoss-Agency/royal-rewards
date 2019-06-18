@@ -933,6 +933,237 @@ jQuery(function($) {
 	
 });
 
+// js/v8/elias-fano.js
+/**
+ * @namespace WPGMZA
+ * @module EliasFano
+ * @requires WPGMZA
+ */
+jQuery(function($) {
+	
+	WPGMZA.EliasFano = function()
+	{
+		if(!WPGMZA.EliasFano.isSupported)
+			throw new Error("Elias Fano encoding is not supported on browsers without Uint8Array");
+		
+		if(!WPGMZA.EliasFano.decodingTablesInitialised)
+			WPGMZA.EliasFano.createDecodingTable();
+	}
+	
+	WPGMZA.EliasFano.isSupported = ("Uint8Array" in window);
+	
+	WPGMZA.EliasFano.decodingTableHighBits			= [];
+	WPGMZA.EliasFano.decodingTableDocIDNumber		= null;
+	WPGMZA.EliasFano.decodingTableHighBitsCarryover = null;
+	
+	WPGMZA.EliasFano.createDecodingTable = function()
+	{
+		WPGMZA.EliasFano.decodingTableDocIDNumber = new Uint8Array(256);
+		WPGMZA.EliasFano.decodingTableHighBitsCarryover = new Uint8Array(256);
+		
+		var decodingTableHighBits = WPGMZA.EliasFano.decodingTableHighBits;
+		var decodingTableDocIDNumber = WPGMZA.EliasFano.decodingTableDocIDNumber;
+		var decodingTableHighBitsCarryover = WPGMZA.EliasFano.decodingTableHighBitsCarryover;
+		
+		for(var i = 0; i < 256; i++)
+		{
+			var zeroCount = 0;
+			
+			decodingTableHighBits[i] = [];
+			
+			for(var j = 7; j >= 0; j--)
+			{
+				if((i & (1 << j)) > 0)
+				{
+					decodingTableHighBits[i][decodingTableDocIDNumber[i]] = zeroCount;
+					
+					decodingTableDocIDNumber[i]++;
+					zeroCount = 0;
+				}
+				else
+					zeroCount = (zeroCount + 1) % 0xFF;
+			}
+			
+			decodingTableHighBitsCarryover[i] = zeroCount;
+		}
+		
+		WPGMZA.EliasFano.decodingTablesInitialised = true;
+	}
+	
+	WPGMZA.EliasFano.prototype.encode = function(list)
+	{
+		var lastDocID		= 0,
+			buffer1 		= 0,
+			bufferLength1 	= 0,
+			buffer2 		= 0,
+			bufferLength2 	= 0;
+		
+		if(list.length == 0)
+			return result;
+		
+		function toByte(n)
+		{
+			return n & 0xFF;
+		}
+		
+		var compressedBufferPointer1 = 0;
+		var compressedBufferPointer2 = 0;
+		var largestBlockID = list[list.length - 1];
+		var averageDelta = largestBlockID / list.length;
+		var averageDeltaLog = Math.log2(averageDelta);
+		var lowBitsLength = Math.floor(averageDeltaLog);
+		var lowBitsMask = (1 << lowBitsLength) - 1;
+		
+		var maxCompressedSize = Math.floor(
+			(
+				2 + Math.ceil(
+					Math.log2(averageDelta)
+				)
+			) * list.length / 8
+		) + 6;
+		
+		var compressedBuffer = new Uint8Array(maxCompressedSize);
+		
+		if(lowBitsLength < 0)
+			lowBitsLength = 0;
+		
+		compressedBufferPointer2 = Math.floor(lowBitsLength * list.length / 8 + 6);
+		
+		compressedBuffer[compressedBufferPointer1++] = toByte( list.length );
+		compressedBuffer[compressedBufferPointer1++] = toByte( list.length >> 8 );
+		compressedBuffer[compressedBufferPointer1++] = toByte( list.length >> 16 );
+		compressedBuffer[compressedBufferPointer1++] = toByte( list.length >> 24 );
+		
+		compressedBuffer[compressedBufferPointer1++] = toByte( lowBitsLength );
+		
+		list.forEach(function(docID) {
+			
+			var docIDDelta = (docID - lastDocID - 1);
+			
+			buffer1 <<= lowBitsLength;
+			buffer1 |= (docIDDelta & lowBitsMask);
+			bufferLength1 += lowBitsLength;
+			
+			// Flush buffer 1
+			while(bufferLength1 > 7)
+			{
+				bufferLength1 -= 8;
+				compressedBuffer[compressedBufferPointer1++] = toByte( buffer1 >> bufferLength1 );
+			}
+			
+			var unaryCodeLength = (docIDDelta >> lowBitsLength) + 1;
+			
+			buffer2 <<= unaryCodeLength;
+			buffer2 |= 1;
+			bufferLength2 += unaryCodeLength;
+			
+			// Flush buffer 2
+			while(bufferLength2 > 7)
+			{
+				bufferLength2 -= 8;
+				compressedBuffer[compressedBufferPointer2++] = toByte( buffer2 >> bufferLength2 );
+			}
+			
+			lastDocID = docID;
+		});
+		
+		if(bufferLength1 > 0)
+			compressedBuffer[compressedBufferPointer1++] = toByte( buffer1 << (8 - bufferLength1) );
+		
+		if(bufferLength2 > 0)
+			compressedBuffer[compressedBufferPointer2++] = toByte( buffer2 << (8 - bufferLength2) );
+		
+		var result = new Uint8Array(compressedBuffer);
+		
+		result.pointer = compressedBufferPointer2;
+		
+		return result;
+	}
+	
+	WPGMZA.EliasFano.prototype.decode = function(compressedBuffer)
+	{
+		var resultPointer = 0;
+		var list = [];
+		
+		console.log("Decoding buffer from pointer " + compressedBuffer.pointer);
+		console.log(compressedBuffer);
+		
+		var decodingTableHighBits = WPGMZA.EliasFano.decodingTableHighBits;
+		var decodingTableDocIDNumber = WPGMZA.EliasFano.decodingTableDocIDNumber;
+		var decodingTableHighBitsCarryover = WPGMZA.EliasFano.decodingTableHighBitsCarryover;
+		
+		var lowBitsPointer = 0,
+			lastDocID = 0,
+			docID = 0,
+			docIDNumber = 0;
+		
+		var listCount = compressedBuffer[lowBitsPointer++];
+		
+		console.log("listCount is now " + listCount);
+		
+		listCount |= compressedBuffer[lowBitsPointer++] << 8;
+		
+		console.log("listCount is now " + listCount);
+		
+		listCount |= compressedBuffer[lowBitsPointer++] << 16;
+		
+		console.log("listCount is now " + listCount);
+		
+		listCount |= compressedBuffer[lowBitsPointer++] << 24;
+		
+		console.log("Read list count " + listCount);
+		
+		var lowBitsLength = compressedBuffer[lowBitsPointer++];
+		
+		console.log("lowBitsLength = " + lowBitsLength);
+		
+		var highBitsPointer,
+			lowBitsCount = 0,
+			lowBits = 0,
+			cb = 1;
+		
+		for(
+			highBitsPointer = Math.floor(lowBitsLength * listCount / 8 + 6);
+			highBitsPointer < compressedBuffer.pointer;
+			highBitsPointer++
+			)
+		{
+			docID += decodingTableHighBitsCarryover[cb];
+			cb = compressedBuffer[highBitsPointer];
+			
+			docIDNumber = decodingTableDocIDNumber[cb];
+			
+			for(var i = 0; i < docIDNumber; i++)
+			{
+				docID <<= lowBitsCount;
+				docID |= lowBits & ((1 << lowBitsCount) - 1);
+				
+				while(lowBitsCount < lowBitsLength)
+				{
+					docID <<= 8;
+					
+					lowBits = compressedBuffer[lowBitsPointer++];
+					docID |= lowBits;
+					lowBitsCount += 8;
+				}
+				
+				lowBitsCount -= lowBitsLength;
+				docID >>= lowBitsCount;
+				
+				docID += (decodingTableHighBits[cb][i] << lowBitsLength) + lastDocID + 1;
+				
+				list[resultPointer++] = docID;
+				
+				lastDocID = docID;
+				docID = 0;
+			}
+		}
+		
+		return list;
+	}
+	
+});
+
 // js/v8/event-dispatcher.js
 /**
  * @namespace WPGMZA
@@ -4914,8 +5145,38 @@ jQuery(function($) {
 		
 	});
 	
+	Object.defineProperty(WPGMZA.RestAPI.prototype, "maxURLLength", {
+		
+		get: function()
+		{
+			return 2083;
+		}
+		
+	});
+	
 	WPGMZA.RestAPI.prototype.compressParams = function(params)
 	{
+		var suffix = "";
+		
+		if(params.markerIDs)
+		{
+			var markerIDs	= params.markerIDs.split(",");
+			var encoder		= new WPGMZA.EliasFano();
+			var encoded		= encoder.encode(markerIDs);
+			var compressed	= pako.deflate(encoded);
+			var string		= Array.prototype.map.call(compressed, function(ch) {
+				return String.fromCharCode(ch);
+			}).join("");
+			
+			// NB: Append as another path component, this stops the code below performing base64 encoding twice and enlarging the request
+			suffix = "/" + btoa(string).replace(/\//g, "-");
+			
+			// NB: midcbp = Marker ID compressed buffer pointer, abbreviated to save space
+			params.midcbp = encoded.pointer;
+			
+			delete params.markerIDs;
+		}
+		
 		var string		= JSON.stringify(params);
 		var encoder		= new TextEncoder();
 		var input		= encoder.encode(string);
@@ -4926,7 +5187,7 @@ jQuery(function($) {
 		
 		var base64		= btoa(raw);
 		
-		return base64.replace(/\//g, "-");
+		return base64.replace(/\//g, "-") + suffix;
 	}
 	
 	/**
@@ -4938,6 +5199,10 @@ jQuery(function($) {
 	 */
 	WPGMZA.RestAPI.prototype.call = function(route, params)
 	{
+		var attemptedCompressedPathVariable = false;
+		var fallbackRoute = route;
+		var fallbackParams = $.extend({}, params);
+		
 		if(typeof route != "string" || !route.match(/^\//))
 			throw new Error("Invalid route");
 		
@@ -4947,25 +5212,69 @@ jQuery(function($) {
 		if(!params)
 			params = {};
 		
-		params.beforeSend = function(xhr) {
+		var setRESTNonce = function(xhr) {
 			xhr.setRequestHeader('X-WP-Nonce', WPGMZA.restnonce);
 		};
+		
+		if(!params.beforeSend)
+			params.beforeSend = setRESTNonce;
+		else
+		{
+			var base = params.beforeSend;
+			
+			params.beforeSend = function(xhr) {
+				base(xhr);
+				setRESTNonce(xhr);
+			}
+		}
 		
 		if(!params.error)
 			params.error = function(xhr, status, message) {
 				if(status == "abort")
 					return;	// Don't report abort, let it happen silently
 				
+				if(xhr.status == 414 && attemptedCompressedPathVariable)
+				{
+					// Fallback for HTTP 414 - Request too long with compressed requests
+					fallbackParams.method = "POST";
+					fallbackParams.useCompressedPathVariable = false;
+					
+					return WPGMZA.restAPI.call(fallbackRoute, fallbackParams);
+				}
+				
 				throw new Error(message);
 			}
 		
 		if(params.useCompressedPathVariable && this.isCompressedPathVariableSupported && WPGMZA.settings.enable_compressed_path_variables)
 		{
+			var compressedParams = $.extend({}, params);
 			var data = params.data;
+			var compressedRoute = route.replace(/\/$/, "") + "/base64" + this.compressParams(data);
+			var fullCompressedRoute = WPGMZA.RestAPI.URL + compressedRoute;
 			
-			delete params.data;
+			compressedParams.method = "GET";
+			delete compressedParams.data;
 			
-			route += "/base64" + this.compressParams(data);
+			if(params.cache === false)
+				compressedParams.data = {
+					skip_cache: 1
+				};
+			
+			if(compressedRoute.length < this.maxURLLength)
+			{
+				attemptedCompressedPathVariable = true;
+				
+				route = compressedRoute;
+				params = compressedParams;
+			}
+			else
+			{
+				// Fallback for when URL exceeds predefined length limit
+				if(!WPGMZA.RestAPI.compressedPathVariableURLLimitWarningDisplayed)
+					console.warn("Compressed path variable route would exceed URL length limit");
+				
+				WPGMZA.RestAPI.compressedPathVariableURLLimitWarningDisplayed = true;
+			}
 		}
 		
 		return $.ajax(WPGMZA.RestAPI.URL + route, params);
@@ -5804,12 +6113,12 @@ jQuery(function($) {
 			
 			if(div.length)
 			{
+				clearInterval(intervalID);
+				
 				div[0].wpgmzaMapObject = self.mapObject;
 				
 				self.element = div[0];
 				self.trigger("infowindowopen");
-				
-				clearInterval(intervalID);
 			}
 			
 		}, 50);
@@ -6993,18 +7302,21 @@ jQuery(function($) {
 	
 	WPGMZA.GoogleTextOverlay = function(options)
 	{
-		this.element = $("<div></div>");
+		this.element = $("<div class='wpgmza-google-text-overlay'><div class='wpgmza-inner'></div></div>");
 		
 		console.log(options);
 		
 		if(!options)
 			options = {};
 		
+		if(options.position)
+			this.position = options.position;
+		
 		if(options.text)
-			this.element.text(options.text);
+			this.element.find(".wpgmza-inner").text(options.text);
 		
 		if(options.map)
-			this.setMap(map.googleMap);
+			this.setMap(options.map.googleMap);
 	}
 	
 	if(window.google && google.maps && google.maps.OverlayView)
@@ -8733,357 +9045,15 @@ jQuery(function($) {
 		this.dataTable			= $(this.dataTableElement).DataTable(settings);
 		this.wpgmzaDataTable	= this;
 		
+		this.useCompressedPathVariable = (WPGMZA.restAPI.isCompressedPathVariableSupported && WPGMZA.settings.enable_compressed_path_variables);
+		this.method = (this.useCompressedPathVariable ? "GET" : "POST");
+		
 		this.dataTable.ajax.reload();
 	}
 	
 	WPGMZA.DataTable.prototype.getDataTableElement = function()
 	{
 		return $(this.element).find("table");
-	}
-	
-	WPGMZA.DataTable.prototype.getDataTableSettings = function()
-	{
-		var self = this;
-		var element = this.element;
-		var options = {};
-		var route;
-		var useCompressedPathVariable = WPGMZA.restAPI.isCompressedPathVariableSupported && WPGMZA.settings.enable_compressed_path_variables;
-		var method = useCompressedPathVariable ? "GET" : "POST";
-		var url;
-		
-		if($(element).attr("data-wpgmza-datatable-options"))
-			options = JSON.parse($(element).attr("data-wpgmza-datatable-options"));
-		
-		if(route = $(element).attr("data-wpgmza-rest-api-route"))
-		{
-			url = WPGMZA.resturl + route;
-			
-			options.deferLoading = true;
-			
-			options.ajax = {
-				cache: true,
-				url: url,
-				method: method,	// We don't use GET because the request can get bigger than some browsers maximum URL lengths
-				data: function(data, settings) {
-					
-					var request = self.onAJAXRequest(data, settings);
-					
-					if(useCompressedPathVariable)
-					{
-						var params = "base64" + WPGMZA.restAPI.compressParams(data);
-						
-						self.dataTable.ajax.url(url + params);
-						
-						return {};
-					}
-					
-					return request.wpgmzaDataTableRequestData;
-					
-				},
-				beforeSend: function(xhr) {
-					xhr.setRequestHeader('X-WP-Nonce', WPGMZA.restnonce);
-				}
-			};
-			
-			options.processing = true;
-			options.serverSide = true;
-		}
-		
-		if(WPGMZA.AdvancedTableDataTable && this instanceof WPGMZA.AdvancedTableDataTable && WPGMZA.settings.wpgmza_default_items)
-			options.iDisplayLength = parseInt(WPGMZA.settings.wpgmza_default_items);
-		
-		options.aLengthMenu = [5, 10, 25, 50, 100];
-		
-		var languageURL;
-
-		if(WPGMZA.locale)
-			switch(WPGMZA.locale.substr(0, 2))
-			{
-				case "af":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Afrikaans.json";
-					break;
-
-				case "sq":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Albanian.json";
-					break;
-
-				case "am":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Amharic.json";
-					break;
-
-				case "ar":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Arabic.json";
-					break;
-
-				case "hy":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Armenian.json";
-					break;
-
-				case "az":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Azerbaijan.json";
-					break;
-
-				case "bn":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Bangla.json";
-					break;
-
-				case "eu":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Basque.json";
-					break;
-
-				case "be":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Belarusian.json";
-					break;
-
-				case "bg":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Bulgarian.json";
-					break;
-
-				case "ca":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Catalan.json";
-					break;
-
-				case "zh":
-					if(WPGMZA.locale == "zh_TW")
-						languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Chinese-traditional.json";
-					else
-						languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Chinese.json";
-					break;
-
-				case "hr":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Croatian.json";
-					break;
-
-				case "cs":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Czech.json";
-					break;
-
-				case "da":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Danish.json";
-					break;
-
-				case "nl":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Dutch.json";
-					break;
-
-				/*case "en":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/English.json";
-					break;*/
-
-				case "et":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Estonian.json";
-					break;
-
-				case "fi":
-					if(WPGMZA.locale.match(/^fil/))
-						languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Filipino.json";
-					else
-						languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Finnish.json";
-					break;
-
-				case "fr":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/French.json";
-					break;
-
-				case "gl":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Galician.json";
-					break;
-
-				case "ka":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Georgian.json";
-					break;
-
-				case "de":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/German.json";
-					break;
-
-				case "el":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Greek.json";
-					break;
-
-				case "gu":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Gujarati.json";
-					break;
-
-				case "he":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Hebrew.json";
-					break;
-
-				case "hi":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Hindi.json";
-					break;
-
-				case "hu":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Hungarian.json";
-					break;
-
-				case "is":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Icelandic.json";
-					break;
-
-				/*case "id":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Indonesian-Alternative.json";
-					break;*/
-				
-				case "id":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Indonesian.json";
-					break;
-
-				case "ga":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Irish.json";
-					break;
-
-				case "it":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Italian.json";
-					break;
-
-				case "ja":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Japanese.json";
-					break;
-
-				case "kk":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Kazakh.json";
-					break;
-
-				case "ko":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Korean.json";
-					break;
-
-				case "ky":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Kyrgyz.json";
-					break;
-
-				case "lv":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Latvian.json";
-					break;
-
-				case "lt":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Lithuanian.json";
-					break;
-
-				case "mk":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Macedonian.json";
-					break;
-
-				case "ml":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Malay.json";
-					break;
-
-				case "mn":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Mongolian.json";
-					break;
-
-				case "ne":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Nepali.json";
-					break;
-
-				case "nb":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Norwegian-Bokmal.json";
-					break;
-				
-				case "nn":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Norwegian-Nynorsk.json";
-					break;
-				
-				case "ps":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Pashto.json";
-					break;
-
-				case "fa":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Persian.json";
-					break;
-
-				case "pl":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Polish.json";
-					break;
-
-				case "pt":
-					if(WPGMZA.locale == "pt_BR")
-						languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json";
-					else
-						languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese.json";
-					break;
-				
-				case "ro":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Romanian.json";
-					break;
-
-				case "ru":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Russian.json";
-					break;
-
-				case "sr":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Serbian.json";
-					break;
-
-				case "si":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Sinhala.json";
-					break;
-
-				case "sk":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Slovak.json";
-					break;
-
-				case "sl":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Slovenian.json";
-					break;
-
-				case "es":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json";
-					break;
-
-				case "sw":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Swahili.json";
-					break;
-
-				case "sv":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Swedish.json";
-					break;
-
-				case "ta":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Tamil.json";
-					break;
-
-				case "te":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/telugu.json";
-					break;
-
-				case "th":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Thai.json";
-					break;
-
-				case "tr":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Turkish.json";
-					break;
-
-				case "uk":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Ukrainian.json";
-					break;
-
-				case "ur":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Urdu.json";
-					break;
-
-				case "uz":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Uzbek.json";
-					break;
-
-				case "vi":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Vietnamese.json";
-					break;
-
-				case "cy":
-					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Welsh.json";
-					break;
-			}
-		
-		if(languageURL)
-			options.language = {
-				"processing": "test",
-				"url": languageURL
-			};
-		
-		return options;
 	}
 	
 	/**
@@ -9103,29 +9073,360 @@ jQuery(function($) {
 		if(attr)
 			$.extend(params, JSON.parse(attr));
 		
-		$.extend(data, params);
+		return $.extend(data, params);
+	}
+	
+	WPGMZA.DataTable.prototype.onDataTableAjaxRequest = function(data, callback, settings)
+	{
+		var self = this;
+		var element = this.element;
+		var route = $(element).attr("data-wpgmza-rest-api-route");
+		var params = this.onAJAXRequest(data, settings);
+		var draw = params.draw;
 		
-		var uncompressed = {
-			wpgmzaDataTableRequestData: data
+		delete params.draw;
+		
+		if(!route)
+			throw new Error("No data-wpgmza-rest-api-route attribute specified");
+		
+		var options = {
+			method: "POST",
+			useCompressedPathVariable: true,
+			data: params,
+			dataType: "json",
+			cache: !this.preventCaching,
+			beforeSend: function(xhr) {
+				// Put draw in header, for compressed requests
+				xhr.setRequestHeader("X-DataTables-Draw", draw);
+			},
+			success: function(response, status, xhr) {
+				
+				response.draw = draw;
+				self.lastResponse = response;
+				
+				callback(response);
+				
+			}
 		};
 		
-		if(!this.canSendCompressedRequests)
-			return uncompressed;
+		return WPGMZA.restAPI.call(route, options);
+	}
+	
+	WPGMZA.DataTable.prototype.getDataTableSettings = function()
+	{
+		var self = this;
+		var element = this.element;
+		var options = {};
 		
-		var string		= JSON.stringify(data);
-		var encoder		= new TextEncoder();
-		var input		= encoder.encode(string);
-		var compressed	= pako.deflate(input);
+		if($(element).attr("data-wpgmza-datatable-options"))
+			options = JSON.parse($(element).attr("data-wpgmza-datatable-options"));
+	
+		options.deferLoading = true;
+		options.processing = true;
+		options.serverSide = true;
+		options.ajax = function(data, callback, settings) { 
+			return WPGMZA.DataTable.prototype.onDataTableAjaxRequest.apply(self, arguments); 
+		}
 		
-		var raw			= Array.prototype.map.call(compressed, function(ch) {
-			return String.fromCharCode(ch);
-		}).join("");
+		if(WPGMZA.AdvancedTableDataTable && this instanceof WPGMZA.AdvancedTableDataTable && WPGMZA.settings.wpgmza_default_items)
+			options.iDisplayLength = parseInt(WPGMZA.settings.wpgmza_default_items);
 		
-		var base64		= btoa(raw);
+		options.aLengthMenu = [5, 10, 25, 50, 100];
 		
-		return {
-			wpgmzaDataTableRequestData: base64
-		};
+		var languageURL = this.getLanguageURL();
+		if(languageURL)
+			options.language = {
+				"processing": "test",
+				"url": languageURL
+			};
+		
+		return options;
+	}
+	
+	WPGMZA.DataTable.prototype.getLanguageURL = function()
+	{
+		if(!WPGMZA.locale)
+			return null;
+		
+		switch(WPGMZA.locale.substr(0, 2))
+		{
+			case "af":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Afrikaans.json";
+				break;
+
+			case "sq":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Albanian.json";
+				break;
+
+			case "am":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Amharic.json";
+				break;
+
+			case "ar":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Arabic.json";
+				break;
+
+			case "hy":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Armenian.json";
+				break;
+
+			case "az":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Azerbaijan.json";
+				break;
+
+			case "bn":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Bangla.json";
+				break;
+
+			case "eu":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Basque.json";
+				break;
+
+			case "be":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Belarusian.json";
+				break;
+
+			case "bg":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Bulgarian.json";
+				break;
+
+			case "ca":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Catalan.json";
+				break;
+
+			case "zh":
+				if(WPGMZA.locale == "zh_TW")
+					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Chinese-traditional.json";
+				else
+					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Chinese.json";
+				break;
+
+			case "hr":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Croatian.json";
+				break;
+
+			case "cs":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Czech.json";
+				break;
+
+			case "da":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Danish.json";
+				break;
+
+			case "nl":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Dutch.json";
+				break;
+
+			/*case "en":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/English.json";
+				break;*/
+
+			case "et":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Estonian.json";
+				break;
+
+			case "fi":
+				if(WPGMZA.locale.match(/^fil/))
+					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Filipino.json";
+				else
+					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Finnish.json";
+				break;
+
+			case "fr":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/French.json";
+				break;
+
+			case "gl":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Galician.json";
+				break;
+
+			case "ka":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Georgian.json";
+				break;
+
+			case "de":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/German.json";
+				break;
+
+			case "el":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Greek.json";
+				break;
+
+			case "gu":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Gujarati.json";
+				break;
+
+			case "he":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Hebrew.json";
+				break;
+
+			case "hi":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Hindi.json";
+				break;
+
+			case "hu":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Hungarian.json";
+				break;
+
+			case "is":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Icelandic.json";
+				break;
+
+			/*case "id":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Indonesian-Alternative.json";
+				break;*/
+			
+			case "id":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Indonesian.json";
+				break;
+
+			case "ga":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Irish.json";
+				break;
+
+			case "it":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Italian.json";
+				break;
+
+			case "ja":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Japanese.json";
+				break;
+
+			case "kk":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Kazakh.json";
+				break;
+
+			case "ko":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Korean.json";
+				break;
+
+			case "ky":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Kyrgyz.json";
+				break;
+
+			case "lv":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Latvian.json";
+				break;
+
+			case "lt":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Lithuanian.json";
+				break;
+
+			case "mk":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Macedonian.json";
+				break;
+
+			case "ml":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Malay.json";
+				break;
+
+			case "mn":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Mongolian.json";
+				break;
+
+			case "ne":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Nepali.json";
+				break;
+
+			case "nb":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Norwegian-Bokmal.json";
+				break;
+			
+			case "nn":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Norwegian-Nynorsk.json";
+				break;
+			
+			case "ps":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Pashto.json";
+				break;
+
+			case "fa":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Persian.json";
+				break;
+
+			case "pl":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Polish.json";
+				break;
+
+			case "pt":
+				if(WPGMZA.locale == "pt_BR")
+					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json";
+				else
+					languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese.json";
+				break;
+			
+			case "ro":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Romanian.json";
+				break;
+
+			case "ru":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Russian.json";
+				break;
+
+			case "sr":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Serbian.json";
+				break;
+
+			case "si":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Sinhala.json";
+				break;
+
+			case "sk":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Slovak.json";
+				break;
+
+			case "sl":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Slovenian.json";
+				break;
+
+			case "es":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json";
+				break;
+
+			case "sw":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Swahili.json";
+				break;
+
+			case "sv":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Swedish.json";
+				break;
+
+			case "ta":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Tamil.json";
+				break;
+
+			case "te":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/telugu.json";
+				break;
+
+			case "th":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Thai.json";
+				break;
+
+			case "tr":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Turkish.json";
+				break;
+
+			case "uk":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Ukrainian.json";
+				break;
+
+			case "ur":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Urdu.json";
+				break;
+
+			case "uz":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Uzbek.json";
+				break;
+
+			case "vi":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Vietnamese.json";
+				break;
+
+			case "cy":
+				languageURL = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Welsh.json";
+				break;
+		}
 	}
 	
 	WPGMZA.DataTable.prototype.onAJAXResponse = function(response)
@@ -9152,6 +9453,8 @@ jQuery(function($) {
 	{
 		var self = this;
 		
+		this.preventCaching = true;
+		
 		WPGMZA.DataTable.call(this, element);
 		
 		$(element).find(".wpgmza.select_all_markers").on("click", function(event) {
@@ -9173,8 +9476,7 @@ jQuery(function($) {
 		
 		options.createdRow = function(row, data, index)
 		{
-			var ajax = self.dataTable.ajax.json();
-			var meta = ajax.meta[index];
+			var meta = self.lastResponse.meta[index];
 			row.wpgmzaMarkerData = meta;
 		}
 		
@@ -9196,7 +9498,7 @@ jQuery(function($) {
 			ids.push(row.wpgmzaMarkerData.id);
 		});
 		
-		WPGMZA.restAPI.call("/markers/", {
+		WPGMZA.restAPI.call("/markers/?skip_cache=1", {
 			method: "DELETE",
 			data: {
 				ids: ids

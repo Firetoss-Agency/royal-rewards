@@ -11,7 +11,7 @@ class RestAPI extends Factory
 	 * @const The plugins REST API namespace
 	 */
 	const NS = 'wpgmza/v1';
-	const CUSTOM_BASE64_REGEX = '/base64[A-Za-z0-9+\-]+(={0,3})?/';
+	const CUSTOM_BASE64_REGEX = '/base64[A-Za-z0-9+\-]+(={0,3})?(\/[A-Za-z0-9+\-]+(={0,3})?)?/';
 	
 	/**
 	 * Constructor
@@ -23,6 +23,8 @@ class RestAPI extends Factory
 		add_action('enqueue_block_assets', array($this, 'onEnqueueScripts'));
 		
 		add_action('rest_api_init', array($this, 'onRestAPIInit'));
+		
+		add_filter('wp_rest_cache/allowed_endpoints', array($this, 'onWPRestCacheAllowedEndpoints'));
 	}
 	
 	public static function isCompressedPathVariableSupported()
@@ -56,20 +58,46 @@ class RestAPI extends Factory
 	
 	protected function parseCompressedParameters($param)
 	{
-		$param = preg_replace('/^base64/', '', $param);
-		$param = preg_replace('/-/', '/', $param);
-		$param = base64_decode($param);
+		$parts = explode('/', $param);
+		
+		if(empty($parts))
+			throw new \Exception('Failed to explode compressed parameters');
+		
+		$data = $parts[0];
+		
+		$data = preg_replace('/^base64/', '', $data);
+		$data = preg_replace('/-/', '/', $data);
+		$data = base64_decode($data);
 		
 		if(!function_exists('zlib_decode'))
 			throw new \Exception('Server does not support inflate');
 		
-		if(!($string = zlib_decode($param)))
+		if(!($string = zlib_decode($data)))
 			throw new \Exception('The server failed to inflate the request');
 		
 		// TODO: Maybe $string should have stripslashes applied here
 		
 		if(!($request = json_decode($string, JSON_OBJECT_AS_ARRAY)))
 			throw new \Exception('The decompressed request could not be interpreted as JSON');
+		
+		if(count($parts) == 2)
+		{
+			if(!isset($request['midcbp']))
+				throw new \Exception('No compressed buffer pointer supplied for marker IDs');
+			
+			// Marker IDs
+			$compressed = $parts[1];
+			
+			$compressed = preg_replace('/-/', '/', $compressed);
+			$compressed = base64_decode($compressed);
+			$compressed = zlib_decode($compressed);
+			$compressed = array_values( unpack('C' . strlen($compressed), $compressed) );
+			
+			$pointer = (int)$request['midcbp'];
+			
+			$eliasFano = new EliasFano();
+			$markerIDs = $eliasFano->decode($compressed, (int)$request['midcbp']);
+		}
 		
 		return $request;
 	}
@@ -125,7 +153,8 @@ class RestAPI extends Factory
 	 */
 	public function onEnqueueScripts()
 	{
-		wp_enqueue_script('wp-api');
+		// NB: I don't think we need to enqueue the entire API seeing as though we use pure jQuery to make REST calls
+		// wp_enqueue_script('wp-api');
 	}
 	
 	/**
@@ -134,23 +163,18 @@ class RestAPI extends Factory
 	 */
 	public function onRestAPIInit()
 	{
+		// NB: Permalink Manager Lite compatibility. This fix prevents the plugin from causing POST REST requests being redirected to GET
+		// NB: We also check the plugin is active to mitigate any potential effects to other plugins. This could be removed, as an optimization
+		global $wp_query;
+		
+		$active_plugins = get_option('active_plugins');
+		if(!empty($wp_query->query_vars) && array_search('permalink-manager/permalink-manager.php', $active_plugins))
+			$wp_query->query_vars['do_not_redirect'] = 1;
+		
 		register_rest_route(RestAPI::NS, '/maps(\/\d+)?/', array(
 			'methods'					=> 'GET',
 			'callback'					=> array($this, 'maps')
 		));
-		
-		/*register_rest_route(RestAPI::NS, '/markers(\/\d+)?/', array(
-			'methods'					=> array('GET'),
-			'callback'					=> array($this, 'markers')
-		));
-		
-		register_rest_route(RestAPI::NS, '/markers(\/\d+)?/', array(
-			'methods'					=> 'DELETE',
-			'callback'					=> array($this, 'markers'),
-			'permission_callback'		=> function() {
-				return current_user_can('administrator');
-			}
-		));*/
 		
 		$this->registerRoute('/markers/\d+/', array(
 			'methods'					=> array('GET'),
@@ -161,6 +185,14 @@ class RestAPI extends Factory
 			'methods'					=> array('GET'),
 			'callback'					=> array($this, 'markers'),
 			'useCompressedPathVariable'	=> true
+		));
+
+		register_rest_route(RestAPI::NS, '/markers(\/\d+)?/', array(
+			'methods'				=> array('DELETE'),
+			'callback'				=> array($this, 'markers'),
+			'permission_callback'	=> function() {
+				return current_user_can('administrator');
+			}
 		));
 		
 		$this->registerRoute('/datatables', array(
@@ -179,6 +211,30 @@ class RestAPI extends Factory
 			'callback'					=> array($this, 'geocodeCache'),
 			'useCompressedPathVariable'	=> true
 		));
+		
+		$this->registerRoute('/decompress', array(
+			'methods'					=> array('GET'),
+			'callback'					=> array($this, 'decompress'),
+			'useCompressedPathVariable'	=> true
+		));
+	}
+	
+	public function onWPRestCacheAllowedEndpoints($allowed_endpoints)
+	{
+		$cachable_endpoints = array(
+			'markers',
+			'datatables',
+			'geocode-cache',
+			'marker-listing'
+		);
+		
+		foreach($cachable_endpoints as $endpoint)
+		{
+			if(!isset($allowed_endpoints[RestAPI::NS]) || !in_array($endpoint, $allowed_endpoints[RestAPI::NS]))
+				$allowed_endpoints[RestAPI::NS][] = $endpoint;
+		}
+		
+		return $allowed_endpoints;
 	}
 	
 	public function maps($request)
@@ -336,6 +392,10 @@ class RestAPI extends Factory
 	{
 		$request = $this->getRequestParameters();
 		
+		// NB: Legacy support
+		if(isset($request['wpgmzaDataTableRequestData']))
+			$request = $request['wpgmzaDataTableRequestData'];
+		
 		if(RestAPI::isRequestURIUsingCompressedPathVariable())
 			$class = '\\' . $request['phpClass'];
 		else
@@ -375,9 +435,7 @@ class RestAPI extends Factory
 			$instance = $class::createInstance($map_id);
 		}
 		else
-		{
 			$instance = $class::createInstance();
-		}
 		
 		if(!($instance instanceof DataTable))
 			return WP_Error('wpgmza_invalid_datatable_class', 'Specified PHP class must extend WPGMZA\\DataTable', array('status' => 403));
@@ -398,5 +456,12 @@ class RestAPI extends Factory
 			$record = array();
 		
 		return $record;
+	}
+	
+	public function decompress($request)
+	{
+		$params = $this->getRequestParameters();
+		
+		return $params;
 	}
 }

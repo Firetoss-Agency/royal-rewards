@@ -142,14 +142,19 @@ class WPGMapsImportExport{
         $results = $wpdb->get_results( $query, ARRAY_A );
         
         $headerDisplayed = false;
-        
+		
         foreach ( $results as $data ) {
+			
+			if(isset($data['latlng']))
+				unset($data['latlng']);
+			
             // Add a header row if it hasn't been added yet
             if ( !$headerDisplayed ) {
                 // Use the keys from $data as the titles
                 fputcsv($fh, array_keys($data), ",", '"');
                 $headerDisplayed = true;
             }
+			
             // Put the data into the stream
             fputcsv($fh, $data, ",", '"');
         }
@@ -243,6 +248,8 @@ class WPGMapsImportExport{
 	}
 
 	public function import_markers(){
+		
+		set_time_limit(1200);
 
 		if (is_uploaded_file($_FILES['wpgmza_csvfile']['tmp_name'])) {
 	        ini_set("auto_detect_line_endings", true);
@@ -307,7 +314,9 @@ class WPGMapsImportExport{
 		                                    $curl = curl_init($url);
 		                                    curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
 		                                    curl_setopt($curl, CURLOPT_REFERER, $_SERVER['HTTP_HOST']);
+		                                    curl_setopt($curl, CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
 		                                    $output = curl_exec($curl);
+		                                    
 		                                    curl_close($curl);
 
 		                                    // echo "Lookup on url $url<br>";

@@ -3,14 +3,21 @@
     
 }
 
-.wpgmza_map img {
+/* This fixes common CSS conflicts, :not added to cater for Google UI changes */
+.wpgmza_map img:not(button>img)
+{
     border: none !important;
     background-color:transparent !important;
     padding:0 !important;
     box-shadow: none !important;
-    
-    
 }
+
+/* Don't allow white border around Google logo */
+.wpgmza_map img[src$="//maps.gstatic.com/mapfiles/api-3/images/google4.png"]
+{
+	box-shadow: none !important;
+}
+
 #wpgmza_map img { box-shadow: none !important; }
 .wpgmza_table img {
     box-shadow: none !important;
@@ -343,8 +350,8 @@ ul.wpgmza_marker_list_class {
     list-style-type:disc;
 }
 
+@media only screen and (min-width:640px) {
 
-@media only screen and (min-width:480px) {
    .wpgmza_row_col {
         width:31%;
         float:left;
@@ -358,6 +365,11 @@ ul.wpgmza_marker_list_class {
     
 }
 
+
+
+.owl-item p { word-break; break-word; }
+.wpgmza_marker_address { word-break: break-word; }
+
 .wpgmza_sl_search_button_div {
     display:inline-block;
 }
@@ -368,11 +380,41 @@ ul.wpgmza_marker_list_class {
 .wpgmza_filter_container{
     display: block; 
     float: left; 
-    /* width: 400px; */
+    margin-bottom:15px;
+    min-width:30%;
 }
 .addressInput { width: inherit !important; float:left; }
 .sl_use_loc { float:left; margin-left:4px; }
 
-.wpgmza_cat_checkbox_holder { display:block; overflow:auto; }
+.wpgmza_cat_checkbox_holder { 
+    display: block;
+    overflow: auto;
+    height: 100px;
+    
+    overflow-y: auto;
+    padding:5px;
+
+ }
+ .wpgmza_cat_checkbox_item_holder label {
+    padding-left: 5px;
+}
 .wpgmza_cat_checkbox_item_holder_first { display:block; float:left; }
-.wpgmza_cat_checkbox_item_holder { display:block; float:left; margin-left:5px; }
+.wpgmza_cat_ul {
+    margin-left:10px;
+    padding-left: 0;
+}
+
+/* .wpgmza_cat_checkbox_item_holder { display:block; float:left; margin-left:5px; } */
+
+.wpgmza_cat_checkbox_item_holder { 
+    display:block;
+}
+
+.wpgmaps_fullscreen {
+    position: fixed !important;
+    top:0;
+    left:0;
+    width:100% !important;
+    height: 100% !important;
+    z-index:9999;
+}

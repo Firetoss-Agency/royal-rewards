@@ -12,12 +12,14 @@ UIkit.use(Icons)
 import Router from './util/Router'
 import site from './routes/site'
 import pageLogin from './routes/login'
+import postTypeArchiveOffers from './routes/offers'
 import singleOffers from './routes/offer'
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
   site,
   pageLogin,
+  postTypeArchiveOffers,
   singleOffers
 });
 

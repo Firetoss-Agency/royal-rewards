@@ -7,18 +7,21 @@ jQuery(function($) {
 	
 	WPGMZA.GoogleTextOverlay = function(options)
 	{
-		this.element = $("<div></div>");
+		this.element = $("<div class='wpgmza-google-text-overlay'><div class='wpgmza-inner'></div></div>");
 		
 		console.log(options);
 		
 		if(!options)
 			options = {};
 		
+		if(options.position)
+			this.position = options.position;
+		
 		if(options.text)
-			this.element.text(options.text);
+			this.element.find(".wpgmza-inner").text(options.text);
 		
 		if(options.map)
-			this.setMap(map.googleMap);
+			this.setMap(options.map.googleMap);
 	}
 	
 	if(window.google && google.maps && google.maps.OverlayView)

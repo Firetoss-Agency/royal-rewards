@@ -23,7 +23,8 @@ section.category-tiles {
       padding: 0.5rem;
     }
 
-    &:hover {
+    &:hover,
+    &.uk-active {
       margin: 3px;
       border: solid 3px $smoke;
     }

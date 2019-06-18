@@ -1,8 +1,39 @@
 jQuery(document).ready(function() {
 
 
-    var tgm_media_frame_default;
+    
+    var tgm_media_frame_custom_1;
+    jQuery(document.body).on('click.tgmOpenMediaManager', '#upload_custom_marker_click_button', function(e){
+        e.preventDefault();
 
+        if ( tgm_media_frame_custom_1 ) {
+            tgm_media_frame_custom_1.open();
+            return;
+        }
+
+        tgm_media_frame_custom_1 = wp.media.frames.tgm_media_frame = wp.media({
+            className: 'media-frame tgm-media-frame',
+            frame: 'select',
+            multiple: false,
+            title: 'Upload Custom Marker Icon',
+            library: {
+                type: 'image'
+            },
+
+            button: {
+                text:  'Use as Custom Marker'
+            }
+        });
+
+        tgm_media_frame_custom_1.on('select', function(){
+            var media_attachment = tgm_media_frame_custom_1.state().get('selection').first().toJSON();
+            jQuery('#wpgmza_add_custom_marker_on_click').val(media_attachment.url);
+            jQuery("#wpgmza_cmm_custom").html("<img src=\""+media_attachment.url+"\" />");
+        });
+        tgm_media_frame_custom_1.open();
+    });
+
+    var tgm_media_frame_default;
     jQuery(document.body).on('click.tgmOpenMediaManager', '#upload_default_ul_marker_btn', function(e){
         e.preventDefault();
 
