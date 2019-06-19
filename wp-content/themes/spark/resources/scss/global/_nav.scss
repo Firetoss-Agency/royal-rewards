@@ -13,8 +13,18 @@ header#site-header {
     padding: 0;
   }
 
-  &.headroom--unpinned {
-    margin-top: -40px;
+  @include breakpoint(medium down) {
+    margin-top: -100%;
+    opacity: 0;
+
+    &.headroom {
+      margin-top: 0;
+      opacity: 1;
+    }
+
+    &.headroom--unpinned {
+      margin-top: -40px;
+    }
   }
 }
 
