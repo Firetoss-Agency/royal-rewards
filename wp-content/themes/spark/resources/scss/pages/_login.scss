@@ -57,6 +57,7 @@ main.login {
                 padding: 0.75rem 2.75rem;
                 transition: 0.2s;
                 cursor: pointer;
+                -webkit-appearance: button;
                 font: {
                   size: rem-calc(20);
                   weight: $light;
