@@ -35,7 +35,7 @@
     ])
 	@endif
 
-	<div class="uk-container">
+	<div class="uk-visible@m uk-container">
 	  <div class="uk-grid" uk-grid>
 	    <div class="uk-width-1-1 uk-text-center uk-margin-large-bottom">
 				<a href="/offers" class="uk-button uk-button-primary">See all offers</a>
