@@ -7,9 +7,14 @@ header#site-header {
   position: fixed;
   width: 100%;
   z-index: 999;
+  transition: 0.4s;
 
   > .uk-container {
     padding: 0;
+  }
+
+  &.headroom--unpinned {
+    margin-top: -40px;
   }
 }
 
@@ -35,6 +40,8 @@ header#site-header {
       cursor: pointer;
 
       .icon {
+        height: 18px;
+
         span {
           display: inline-block;
           height: 18px;
@@ -45,8 +52,9 @@ header#site-header {
 
       h5 {
         color: $white;
-        margin: 0;
+        margin: 9px 0 0;
         text-transform: uppercase;
+        transition: 0.2s;
         font: {
           size: rem-calc(9);
           weight: $semi;
@@ -75,6 +83,7 @@ header#site-header {
           height: 20px;
           width: 20px;
           color: $white;
+          transition: inherit;
         }
 
         &--tag a::before {
@@ -103,12 +112,27 @@ header#site-header {
           padding:  0.5rem 1rem;
           color: $white;
           text-transform: uppercase;
+          transition: 0.2s;
           font: {
             size: rem-calc(9);
             weight: $semi;
           }
         }
       }
+    }
+  }
+
+  &.headroom--unpinned {
+    h5 {
+      font-size: 0px !important;
+      margin-top: 2px !important;
+      overflow: hidden;
+    }
+
+    ul.uk-nav-primary li.menu-item span a {
+      font-size: 0px;
+
+      &::before { margin-bottom: 0 }
     }
   }
 }

@@ -9,6 +9,12 @@ export default {
       headroom.init()
     }
 
+    let mobileMenu = document.querySelector("#sticky-mobile-nav")
+    if (mobileMenu) {
+      let headroom = new Headroom(mobileMenu)
+      headroom.init()
+    }
+
     // Mobile categories menu
     $('#sticky-mobile-nav .categories .button').click(function () {
       $('#categories').slideToggle('fast')

@@ -14,7 +14,7 @@
 
       {{-- User --}}
       @if(in_array('administrator', $current_user->roles) || in_array('employee', $current_user->roles))
-        <div class="uk-navbar-left uk-flex-top">
+        <div class="uk-navbar-left uk-flex-top uk-visible@m">
           <div class="uk-navbar-item user">
             Hello:&nbsp;<a href="{{ home_url('/settings') }}">{{ $user }}</a>
           </div>

@@ -2,6 +2,13 @@ section.category-tiles {
   padding-top: 2rem;
   margin-bottom: 3rem;
 
+  > .uk-container {
+    @include breakpoint(xsmall down) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
   header {
     padding-bottom: 0.25rem;
     text-transform: uppercase;
@@ -59,10 +66,11 @@ section.category-tiles {
       }
 
       @include breakpoint(small down) {
-        font: {
-          size: 8px;
-          weight: $regular;
-        }
+        font-size: 10px;
+      }
+
+      @include breakpoint(xsmall down) {
+        font-size: 8px;
       }
     }
   }

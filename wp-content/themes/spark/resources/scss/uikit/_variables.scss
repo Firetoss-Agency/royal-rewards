@@ -525,12 +525,12 @@ $card-default-hover-background: $ghost !default;
 //@mixin hook-card-media() {}
 @mixin hook-card-media-top() {
   text-align: center;
+  display: block ;
+  height: 160px;
 
   @include breakpoint(small down) {
     flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 140px;
   }
 
   img {
@@ -542,14 +542,15 @@ $card-default-hover-background: $ghost !default;
       padding: 1rem 1rem 0;
       max-height: 150px;
       max-width: 80%;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
 
       @include breakpoint(medium down) {
-        max-height: 120px;
-      }
-
-      @include breakpoint(small down) {
-        padding:  0.5rem;
+        max-height: 100%;
         max-width: 100%;
+        width: auto;
+        padding: 1rem 0.5rem;
       }
     }
   }
@@ -577,6 +578,14 @@ $card-default-hover-background: $ghost !default;
 
   @include breakpoint(medium) {
     &:hover { box-shadow: 0 0 8px $smoke }
+  }
+
+  .card-content {
+    @include breakpoint(medium down) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
 }
 //@mixin hook-card-default-title() {}
@@ -1263,6 +1272,7 @@ $container-max-width: 1600px !default;
 
           @include breakpoint(small down) {
             margin-top: 0.5rem;
+            height: 40px;
           }
 
         }
@@ -1281,11 +1291,15 @@ $container-max-width: 1600px !default;
           }
 
           @include breakpoint(small down) {
-            height: 60px;
+            height: 40px;
           }
 
           &::before {
             top: 74%;
+
+            @include breakpoint(small down) {
+              top: 60%;
+            }
           }
         }
 
@@ -1304,6 +1318,7 @@ $container-max-width: 1600px !default;
 
           @include breakpoint(small down) {
             padding: 0 1rem;
+            height: 40px;
           }
 
           .logo { display: none }
@@ -1326,11 +1341,15 @@ $container-max-width: 1600px !default;
         }
 
         @include breakpoint(small down) {
-          height: 60px;
+          height: 40px;
         }
 
         &::before {
           top: 74%;
+
+          @include breakpoint(small down) {
+            top: 60%;
+          }
         }
       }
 
@@ -1349,6 +1368,7 @@ $container-max-width: 1600px !default;
 
         @include breakpoint(small down) {
           padding: 0 1rem;
+          height: 40px;
         }
 
         .logo { display: none }
@@ -1607,6 +1627,10 @@ $navbar-toggle-hover-color: $white !default;
     border-bottom: solid 1px $yellow;
     width: calc(100% - 30px);
     transition: 0.4s;
+
+    @include breakpoint(medium down) {
+
+    }
   }
 
   .user {
