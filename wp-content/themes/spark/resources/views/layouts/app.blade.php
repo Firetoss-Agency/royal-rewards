@@ -21,7 +21,9 @@
       @yield('content')
     </main>
 
-    @include('global.footer')
+    @if(!is_front_page())
+      @include('global.footer')
+    @endif
 
     @php wp_footer() @endphp
     {{ the_field('footer_script_snippets', 'option') }}
