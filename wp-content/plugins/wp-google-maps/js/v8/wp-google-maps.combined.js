@@ -616,8 +616,6 @@ jQuery(function($) {
 		
 	});
 	
-	
-	
 });
 
 // js/v8/compatibility.js
@@ -5233,13 +5231,29 @@ jQuery(function($) {
 				if(status == "abort")
 					return;	// Don't report abort, let it happen silently
 				
-				if(xhr.status == 414 && attemptedCompressedPathVariable)
+				switch(xhr.status)
 				{
-					// Fallback for HTTP 414 - Request too long with compressed requests
-					fallbackParams.method = "POST";
-					fallbackParams.useCompressedPathVariable = false;
+					case 401:
+					case 403:
+						// Report back to the server. This is usually due to a security plugin blocking REST requests for non-authenticated users
+						$.post(WPGMZA.ajaxurl, {
+							action: "wpgmza_report_rest_api_blocked"
+						}, function(response) {});
+						
+						console.warn("The REST API was blocked. This is usually due to security plugins blocking REST requests for non-authenticated users.");
+						break;
 					
-					return WPGMZA.restAPI.call(fallbackRoute, fallbackParams);
+					case 414:
+						if(!attemptedCompressedPathVariable)
+							break;
+					
+						// Fallback for HTTP 414 - Request too long with compressed requests
+						fallbackParams.method = "POST";
+						fallbackParams.useCompressedPathVariable = false;
+						
+						return WPGMZA.restAPI.call(fallbackRoute, fallbackParams);
+					
+						break;
 				}
 				
 				throw new Error(message);
@@ -5287,6 +5301,17 @@ jQuery(function($) {
 		
 		nativeCallFunction.apply(this, arguments);
 	}
+	
+	$("#wpgmza-rest-api-blocked button.notice-dismiss").on("click", function(event) {
+		
+		WPGMZA.restAPI.call("/rest-api/", {
+			method: "POST",
+			data: {
+				dismiss_blocked_notice: true
+			}
+		});
+		
+	});
 	
 });
 

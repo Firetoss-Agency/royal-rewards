@@ -24,7 +24,36 @@ class RestAPI extends Factory
 		
 		add_action('rest_api_init', array($this, 'onRestAPIInit'));
 		
+		add_action('wp_ajax_wpgmza_report_rest_api_blocked', array($this, 'onReportRestAPIBlocked'));
+		add_action('wp_ajax_nopriv_wpgmza_report_rest_api_blocked', array($this, 'onReportRestAPIBlocked'));
+		
 		add_filter('wp_rest_cache/allowed_endpoints', array($this, 'onWPRestCacheAllowedEndpoints'));
+		
+		if($lastBlocked = get_option('wpgmza_last_rest_api_blocked'))
+		{
+			$date 		= \DateTime::createFromFormat(\DateTime::ISO8601, $lastBlocked);
+			$friendly 	= $date->format("H:i Y-m-d");
+			$message 	= sprintf(
+				__('<strong>WP Google Maps:</strong> One or more requests to the REST API were blocked. This is usually due to a security plugin disabling REST requests for non-authenticated users. Please whitelist <strong>wpgmza</strong> requests. Last reported at %s', 'wp-google-maps'),
+				$friendly
+			);
+			
+			add_action('admin_notices', function() use ($message) {
+				
+				global $wpgmza;
+				
+				$wpgmza->loadScripts();
+				
+				?>
+				<div id="wpgmza-rest-api-blocked" class='notice notice-error is-dismissible'>
+					<p>
+						<?php echo $message; ?>
+					</p>
+				</div>
+				<?php
+				
+			});
+		}
 	}
 	
 	public static function isCompressedPathVariableSupported()
@@ -171,7 +200,7 @@ class RestAPI extends Factory
 		if(!empty($wp_query->query_vars) && array_search('permalink-manager/permalink-manager.php', $active_plugins))
 			$wp_query->query_vars['do_not_redirect'] = 1;
 		
-		register_rest_route(RestAPI::NS, '/maps(\/\d+)?/', array(
+		$this->registerRoute('/maps(\/\d+)?/', array(
 			'methods'					=> 'GET',
 			'callback'					=> array($this, 'maps')
 		));
@@ -187,10 +216,10 @@ class RestAPI extends Factory
 			'useCompressedPathVariable'	=> true
 		));
 
-		register_rest_route(RestAPI::NS, '/markers(\/\d+)?/', array(
-			'methods'				=> array('DELETE'),
-			'callback'				=> array($this, 'markers'),
-			'permission_callback'	=> function() {
+		$this->registerRoute('/markers(\/\d+)?/', array(
+			'methods'					=> array('DELETE'),
+			'callback'					=> array($this, 'markers'),
+			'permission_callback'		=> function() {
 				return current_user_can('administrator');
 			}
 		));
@@ -217,6 +246,22 @@ class RestAPI extends Factory
 			'callback'					=> array($this, 'decompress'),
 			'useCompressedPathVariable'	=> true
 		));
+		
+		$this->registerRoute('/rest-api', array(
+			'methods'					=> array('POST'),
+			'callback'					=> array($this, 'onRestAPI'),
+			'permission_callback'		=> function() {
+				return current_user_can('administrator');
+			}
+		));
+	}
+	
+	public function onRestAPI($request)
+	{
+		if(isset($_POST['dismiss_blocked_notice']))
+			delete_option('wpgmza_last_rest_api_blocked');
+		
+		return array('success' => 1);
 	}
 	
 	public function onWPRestCacheAllowedEndpoints($allowed_endpoints)
@@ -463,5 +508,12 @@ class RestAPI extends Factory
 		$params = $this->getRequestParameters();
 		
 		return $params;
+	}
+	
+	public function onReportRestAPIBlocked()
+	{
+		$now = new \DateTime();
+		
+		update_option('wpgmza_last_rest_api_blocked', $now->format(\DateTime::ISO8601));
 	}
 }

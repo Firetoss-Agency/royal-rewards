@@ -312,7 +312,7 @@ add_action( "activated_plugin", "wpgmza_redirect_on_activate" );
  * @return void
  */
 function wpgmza_redirect_on_activate( $plugin ) {
-	
+    
     if(preg_match('/wpGoogleMaps\.php$/', $plugin)) {
         if ( !get_option( "WPGM_V6_FIRST_TIME" ) ) {
             update_option( "WPGM_V6_FIRST_TIME", true );

@@ -614,6 +614,4 @@ jQuery(function($) {
 		
 	});
 	
-	
-	
 });
