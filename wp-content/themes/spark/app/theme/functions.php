@@ -182,15 +182,15 @@ add_action('wp_logout','auto_redirect_after_logout');
 
 function user_login_redirect( $redirect_to, $request, $user ){
 	if( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ) {
-		//is there a user to check?
+		// is there a user to check?
 		if (isset($user->roles) && is_array($user->roles)) {
 			// check for Admin
 			if (in_array('administrator', $user->roles)) {
 				$redirect_to =  home_url('/wp-admin');
 			}
 
-			// check for Employee, Tenant or Resident
-			if (in_array('employee', $user->roles) || in_array('tenant', $user->roles) || in_array('resident', $user->roles)) {
+			// check for Employee, Tenant, Season Ticket Holder or Resident
+			if (in_array('employee', $user->roles) || in_array('season_ticket_holder', $user->roles) || in_array('tenant', $user->roles) || in_array('resident', $user->roles)) {
 				$redirect_to =  home_url('/dashboard');
 			}
 		}
@@ -212,6 +212,12 @@ add_role('employee', __('Employee'), [
 ]);
 
 add_role('tenant', __('Tenant'), [
+  'read'         => true,
+  'edit_posts'   => true,
+  'delete_posts' => true
+]);
+
+add_role('season_ticket_holder', __('Season Ticket Holder'), [
   'read'         => true,
   'edit_posts'   => true,
   'delete_posts' => true

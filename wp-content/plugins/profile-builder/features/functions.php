@@ -1252,3 +1252,103 @@ function wppb_hide_menus( $menu ){
 /**
  * Functionality for Private Website end
  */
+
+/**
+ * Functionality GDPR compliance start
+ */
+
+//hook into the wp export compatibility
+add_filter( 'wp_privacy_personal_data_exporters', 'wppb_register_profile_builder_wp_exporter', 10 );
+function wppb_register_profile_builder_wp_exporter( $exporters ) {
+    $exporters['profile-builder'] = array(
+        'exporter_friendly_name' => __( 'Profile Builder' ),
+        'callback' => 'wppb_profile_builder_wp_exporter',
+    );
+    return $exporters;
+}
+/* function to add aour user meta to wp exporter */
+function wppb_profile_builder_wp_exporter( $email_address, $page = 1 ) {
+
+    $export_items = array();
+
+    $form_fields = get_option( 'wppb_manage_fields' );
+
+    if( !empty( $form_fields ) ) {
+        $user = get_user_by( 'email', $email_address );
+        if( $user ) {
+
+            $item_id = "user-meta-{$user->ID}";
+            $group_id = 'user-meta';
+            $group_label = __('User Meta');
+            $data = array();
+
+            $all_meta_for_user = get_user_meta( $user->ID );
+            if( !empty( $all_meta_for_user ) ) {
+                foreach ($form_fields as $form_field) {
+
+                    if (!empty($form_field['meta-name']) && strpos($form_field['field'], 'Default') === false) {
+                        $user_meta_value = $all_meta_for_user[$form_field['meta-name']][0];
+                        if( !empty( $user_meta_value ) ){
+
+
+                            $data[] = array(
+                                        'name' => $form_field['field-title'],
+                                        'value' => $user_meta_value
+                                      );
+                        }
+                    }
+                }
+
+                $export_items[] = array(
+                    'group_id' => $group_id,
+                    'group_label' => $group_label,
+                    'item_id' => $item_id,
+                    'data' => $data,
+                );
+
+            }
+        }
+    }
+
+
+    return array(
+        'data' => $export_items,
+        'done' => true,
+    );
+}
+
+/**
+ * Hook to delete a user through the GDPR Delete button
+ */
+add_action( 'template_redirect', 'wppb_gdpr_delete_user') ;
+function wppb_gdpr_delete_user() {
+
+    if( isset( $_GET['wppb_user'] ) && ! empty( $_GET['wppb_user'] ) ) {
+
+        $edited_user_id = get_current_user_id();
+        if ( ( !is_multisite() && current_user_can('edit_users') ) || ( is_multisite() && current_user_can('manage_network') ) ) {
+                $edited_user_id = absint($_GET['wppb_user']);
+        }
+
+        if (isset($_REQUEST['wppb_action']) && $_REQUEST['wppb_action'] == 'wppb_delete_user' && wp_verify_nonce($_REQUEST['wppb_nonce'], 'wppb-user-own-account-deletion') && isset($_REQUEST['wppb_user']) && $edited_user_id == $_REQUEST['wppb_user']) {
+            require_once(ABSPATH . 'wp-admin/includes/user.php');
+            $user = new WP_User( absint( $_REQUEST['wppb_user'] ) );
+
+            if (!empty($user->roles)) {
+                foreach ($user->roles as $role) {
+                    if ($role != 'administrator') {
+                        wp_delete_user( absint( $_REQUEST['wppb_user'] ) );
+                    }
+                }
+            }
+
+            $args = array('wppb_user', 'wppb_action', 'wppb_nonce');
+            wp_redirect(remove_query_arg($args));
+        }
+    }
+}
+
+
+/**
+ * Functionality GDPR compliance end
+ */

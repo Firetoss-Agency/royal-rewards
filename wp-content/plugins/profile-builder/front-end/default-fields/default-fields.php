@@ -44,5 +44,6 @@ function wppb_include_default_fields_files() {
 
     /* added recaptcha and user role field since version 2.8.2 */
     include_once( WPPB_PLUGIN_DIR.'/front-end/default-fields/gdpr/gdpr.php' );
+    include_once( WPPB_PLUGIN_DIR.'/front-end/default-fields/gdpr-delete/gdpr-delete.php' );
 }
 wppb_include_default_fields_files();

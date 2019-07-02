@@ -215,6 +215,14 @@ var fields 	=	{
 																						true
 																					]
 																},
+						'GDPR Delete Button':					{	'show_rows'	:	[
+																						'.row-field-title',
+																						'.row-description',
+																					],
+																	'properties':	{
+																						'meta_name_value'	: ''
+																					}
+																},
 
 						'Heading':								{	'show_rows'	:	[
 																						'.row-field-title',

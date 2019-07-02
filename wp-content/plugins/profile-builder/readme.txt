@@ -3,8 +3,8 @@ Contributors: cozmoslabs, reflectionmedia, sareiodata, adispiac, madalin.ungurea
 Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, user registration form, user fields, extra user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content, profile
 Requires at least: 3.1
-Tested up to: 5.2.1
-Stable tag: 3.0.0
+Tested up to: 5.2.2
+Stable tag: 3.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +16,7 @@ Powerful user profile plugin for creating front-end login, user registration and
 
 Easy to use profile plugin for creating front-end login, user registration and edit profile forms by using shortcodes.
 
-Restrict Content based on user role or logged in status. Manage user roles and capabilities using the built in Role Editor.
+**Restrict Content** based on user role or logged in status. Manage user roles and capabilities using the built in **Role Editor**.
 
 **Like this plugin?** Consider leaving a [5 star review](https://wordpress.org/support/view/plugin-reviews/profile-builder?filter=5).
 
@@ -27,17 +27,17 @@ To achieve this, simply create a new page and give it an intuitive name(i.e. Edi
 Now all you need to do is add the following shortcode: [wppb-edit-profile].
 Publish the page and you are done!
 
-= Front-end User Registration, Login, Edit Profile and Password Recovery Shortcodes =
-You can use the following shortcode list:
+== Front-end User Registration, Login, User Profile and Password Recovery Forms ==
+You can use the following shortcode list to display the forms:
 
 * **[wppb-edit-profile]** - to grant users front-end access to their user profile (requires user to be logged in).
 * **[wppb-login]** - to add a front-end login form.
 * **[wppb-logout]** - to add logout functionality.
-* **[wppb-register]** - register users via a front-end register form.
+* **[wppb-register]** - easily register users via a front-end register form.
 * **[wppb-recover-password]** - to add a password recovery form.
-* **[wppb-restrict]**Content to restrict**[/wppb-restrict]** - to restrict content of any type
+* **[wppb-restrict]** Content to restrict **[/wppb-restrict]** - to restrict content of any type
 
-Users with administrator rights have access to the following features:
+== Profile Builder Features ==
 
 * drag & drop to reorder user profile fields
 * enable **Email Confirmation** (on registration users will receive a notification to confirm their email address)
@@ -49,9 +49,9 @@ Users with administrator rights have access to the following features:
 * customizable user login widget
 * add a custom stylesheet/inherit values from the current theme or use the default one built into this plugin
 * **Admin Bar Settings**: choose which user roles view the admin bar in the front-end
-* select which profile fields users can use in frontend
+* select which user profile fields are visible in the frontend
 * extended functionality available via [Add-ons](http://www.cozmoslabs.com/profile-builder-add-ons/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree)
-* **Roles Editor**: add, edit, remove or clone roles and capabilities
+* **Roles Editor**: add, edit, remove or clone user roles and capabilities
 * **reCAPTCHA** support for Profile Builder and Wordpress default forms
 * **User Role Select** field on register and edit profile forms
 * **Content Restriction**: [restrict content](https://www.cozmoslabs.com/105571-restrict-content-user-role-profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) based on current users role or logged in status
@@ -68,6 +68,7 @@ The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/?utm_sourc
 * Support for Conditional Fields
 * Front-end User Listing (fully customizable, sorting included)
 * Create Multiple User Listings
+* Create a [Map of Users Locations](https://www.cozmoslabs.com/160142-add-users-map-wordpress/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree)
 * Custom Redirects
 * Multiple Registration Forms (set up [multiple registration forms](https://www.cozmoslabs.com/docs/profile-builder-2/modules/multiple-registration-forms/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) with different profile fields for certain user roles)
 * Multiple Edit Profile Forms
@@ -168,6 +169,11 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 12. Role Editor
 
 == Changelog ==
+= 3.0.1 =
+* Added GDPR Delete Button as a field
+* Export Personal Data now exports Profile Builder fields
+* GDPR improvements
+
 = 3.0.0 =
 * Security improvements
 * Added a filter for the Register and Edit Profile forms.

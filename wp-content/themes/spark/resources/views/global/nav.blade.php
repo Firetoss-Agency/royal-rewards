@@ -55,9 +55,7 @@
   <div class="categories">
     <div class="button">
       <div class="icon">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span class="fas fa-chevron-up"></span>
       </div>
       <h5>Categories</h5>
     </div>

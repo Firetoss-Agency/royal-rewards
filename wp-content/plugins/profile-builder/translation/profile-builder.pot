@@ -209,7 +209,7 @@ msgstr ""
 msgid "BuddyPress needs to be installed and activated for Profile Builder - BuddyPress Integration Add-on to work as expected!"
 msgstr ""
 
-#: ../pb-add-on-buddypress/index.php:508, ../pb-add-on-campaign-monitor-integration/admin/widget.php:226, ../pb-add-on-campaign-monitor-integration/admin/widget.php:228, ../profile-builder-2.0/admin/manage-fields.php:244
+#: ../pb-add-on-buddypress/index.php:508, ../pb-add-on-campaign-monitor-integration/admin/widget.php:226, ../pb-add-on-campaign-monitor-integration/admin/widget.php:228, ../profile-builder-2.0/admin/manage-fields.php:316
 msgid "Name"
 msgstr ""
 
@@ -233,7 +233,7 @@ msgstr ""
 msgid "Display name:"
 msgstr ""
 
-#: ../pb-add-on-buddypress/index.php:531, ../profile-builder-2.0/admin/manage-fields.php:250
+#: ../pb-add-on-buddypress/index.php:531, ../profile-builder-2.0/admin/manage-fields.php:322
 msgid "Contact Info"
 msgstr ""
 
@@ -241,7 +241,7 @@ msgstr ""
 msgid "Website:"
 msgstr ""
 
-#: ../pb-add-on-buddypress/index.php:538, ../profile-builder-2.0/admin/manage-fields.php:261
+#: ../pb-add-on-buddypress/index.php:538, ../profile-builder-2.0/admin/manage-fields.php:333
 msgid "About Yourself"
 msgstr ""
 
@@ -369,7 +369,7 @@ msgstr ""
 msgid "Edit Profile"
 msgstr ""
 
-#: ../pb-add-on-custom-profile-menus/index.php:308, ../pb-add-on-custom-profile-menus/wppb-custom-profile-menus.php:74, ../profile-builder-2.0/front-end/class-formbuilder.php:420, ../profile-builder-2.0/front-end/login.php:421
+#: ../pb-add-on-custom-profile-menus/index.php:308, ../pb-add-on-custom-profile-menus/wppb-custom-profile-menus.php:74, ../profile-builder-2.0/front-end/class-formbuilder.php:422, ../profile-builder-2.0/front-end/login.php:421
 msgid "Register"
 msgstr ""
 
@@ -425,63 +425,63 @@ msgstr ""
 msgid "The email confirmation does not match your email address."
 msgstr ""
 
-#: ../pb-add-on-field-visibility/index.php:205, ../profile-builder-2.0/admin/admin-bar.php:61
+#: ../pb-add-on-field-visibility/index.php:206, ../profile-builder-2.0/admin/admin-bar.php:61
 msgid "Visibility"
 msgstr ""
 
-#: ../pb-add-on-field-visibility/index.php:205
+#: ../pb-add-on-field-visibility/index.php:206
 msgid "<strong>Admin Only</strong> field is visible only for administrators. <strong>User Locked</strong> field is visible for both administrators and users, but only administrators have the capability to edit it."
 msgstr ""
 
-#: ../pb-add-on-field-visibility/index.php:206
+#: ../pb-add-on-field-visibility/index.php:207
 msgid "User Role Visibility"
 msgstr ""
 
-#: ../pb-add-on-field-visibility/index.php:206
+#: ../pb-add-on-field-visibility/index.php:207
 msgid "Select which user roles see this field"
 msgstr ""
 
-#: ../pb-add-on-field-visibility/index.php:207
+#: ../pb-add-on-field-visibility/index.php:208
 msgid "Location Visibility"
 msgstr ""
 
-#: ../pb-add-on-field-visibility/index.php:207
+#: ../pb-add-on-field-visibility/index.php:208
 msgid "Select the locations you wish the field to appear"
 msgstr ""
 
-#: ../pb-add-on-field-visibility/index.php:225
+#: ../pb-add-on-field-visibility/index.php:226
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre><pre class=\"wppb-mb-head-visibility\"></pre>"
 msgstr ""
 
-#: ../pb-add-on-field-visibility/index.php:225, ../pb-add-on-labels-edit/pble.php:354, ../profile-builder-2.0/admin/manage-fields.php:1239, ../profile-builder-2.0/features/functions.php:788, ../profile-builder-2.0/features/functions.php:795, ../profile-builder-2.0/features/admin-approval/class-admin-approval.php:108, ../profile-builder-2.0/features/roles-editor/roles-editor.php:866, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:183, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:197, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:211, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:225, ../profile-builder-2.0/modules/multiple-forms/multiple-forms.php:406
+#: ../pb-add-on-field-visibility/index.php:226, ../pb-add-on-labels-edit/pble.php:354, ../profile-builder-2.0/admin/manage-fields.php:1312, ../profile-builder-2.0/features/functions.php:788, ../profile-builder-2.0/features/functions.php:795, ../profile-builder-2.0/features/admin-approval/class-admin-approval.php:108, ../profile-builder-2.0/features/roles-editor/roles-editor.php:866, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:183, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:197, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:211, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:225, ../profile-builder-2.0/modules/multiple-forms/multiple-forms.php:406
 msgid "Edit"
 msgstr ""
 
-#: ../pb-add-on-field-visibility/index.php:225, ../profile-builder-2.0/admin/manage-fields.php:1239, ../profile-builder-2.0/features/functions.php:781, ../profile-builder-2.0/features/functions.php:795, ../profile-builder-2.0/features/admin-approval/class-admin-approval.php:113, ../profile-builder-2.0/features/email-confirmation/class-email-confirmation.php:121, ../profile-builder-2.0/features/email-confirmation/class-email-confirmation.php:218, ../profile-builder-2.0/features/roles-editor/roles-editor.php:179, ../profile-builder-2.0/features/roles-editor/roles-editor.php:884, ../profile-builder-2.0/features/roles-editor/roles-editor.php:893, ../profile-builder-2.0/features/roles-editor/roles-editor.php:904, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:183, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:197, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:211, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:225
+#: ../pb-add-on-field-visibility/index.php:226, ../profile-builder-2.0/admin/manage-fields.php:1312, ../profile-builder-2.0/features/functions.php:781, ../profile-builder-2.0/features/functions.php:795, ../profile-builder-2.0/features/admin-approval/class-admin-approval.php:113, ../profile-builder-2.0/features/email-confirmation/class-email-confirmation.php:121, ../profile-builder-2.0/features/email-confirmation/class-email-confirmation.php:218, ../profile-builder-2.0/features/roles-editor/roles-editor.php:179, ../profile-builder-2.0/features/roles-editor/roles-editor.php:884, ../profile-builder-2.0/features/roles-editor/roles-editor.php:893, ../profile-builder-2.0/features/roles-editor/roles-editor.php:904, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:183, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:197, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:211, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:225, ../profile-builder-2.0/front-end/default-fields/gdpr-delete/gdpr-delete.php:18
 msgid "Delete"
 msgstr ""
 
-#: ../pb-add-on-field-visibility/index.php:246
+#: ../pb-add-on-field-visibility/index.php:247
 msgid "This field is visible only for administrators."
 msgstr ""
 
-#: ../pb-add-on-field-visibility/index.php:249
+#: ../pb-add-on-field-visibility/index.php:250
 msgid "This field is visible for both administrators and users, but only administrators have the capability to edit it."
 msgstr ""
 
-#: ../pb-add-on-field-visibility/index.php:272
+#: ../pb-add-on-field-visibility/index.php:273
 msgid "This field is visible only for the following user roles: %1$s"
 msgstr ""
 
-#: ../pb-add-on-field-visibility/index.php:318
+#: ../pb-add-on-field-visibility/index.php:319
 msgid "This field is visible only in the following locations: %1$s"
 msgstr ""
 
-#: ../pb-add-on-field-visibility/index.php:460
+#: ../pb-add-on-field-visibility/index.php:461
 msgid "Get file"
 msgstr ""
 
-#: ../pb-add-on-field-visibility/index.php:589
+#: ../pb-add-on-field-visibility/index.php:590
 msgid "You do not have the capabilities necessary to edit this field."
 msgstr ""
 
@@ -567,7 +567,7 @@ msgstr ""
 msgid "You must select a label to edit!"
 msgstr ""
 
-#: ../pb-add-on-labels-edit/pble.php:354, ../profile-builder-2.0/admin/manage-fields.php:173
+#: ../pb-add-on-labels-edit/pble.php:354, ../profile-builder-2.0/admin/manage-fields.php:189
 msgid "Labels"
 msgstr ""
 
@@ -579,7 +579,7 @@ msgstr ""
 msgid "No labels edited, nothing to export!"
 msgstr ""
 
-#: ../pb-add-on-mailpoet-integration/index.php:127
+#: ../pb-add-on-mailpoet-integration/index.php:128
 msgid "MailPoet Newsletters needs to be installed and activated for Profile Builder - MailPoet Add-on to work!"
 msgstr ""
 
@@ -685,7 +685,7 @@ msgstr ""
 msgid "Replace labels with placeholders:"
 msgstr ""
 
-#: ../pb-add-on-placeholder-labels/pbpl.php:171, ../pb-add-on-social-connect/index.php:324, ../profile-builder-2.0/admin/general-settings.php:111, ../profile-builder-2.0/admin/general-settings.php:124, ../profile-builder-2.0/admin/general-settings.php:173, ../profile-builder-2.0/admin/general-settings.php:220, ../profile-builder-2.0/admin/private-website.php:58, ../profile-builder-2.0/admin/private-website.php:115, includes/views/view-admin.php:18, includes/views/view-admin.php:34, includes/views/view-fields.php:18, includes/views/view-fields.php:66, includes/views/view-fields.php:181, includes/views/view-fields.php:197, includes/views/view-fields.php:217, includes/views/view-fields.php:240, includes/views/view-fields.php:261, includes/views/view-forms.php:132, includes/views/view-forms.php:149, includes/views/view-forms.php:164, includes/views/view-forms.php:184, includes/views/view-forms.php:201, includes/views/view-forms.php:239, includes/views/view-forms.php:260, includes/views/view-forms.php:280, includes/views/view-forms.php:302, includes/views/view-shortcodes.php:16, includes/views/view-shortcodes.php:32, includes/views/view-shortcodes.php:48, includes/views/view-shortcodes.php:64, includes/views/view-userlisting.php:53, includes/views/view-userlisting.php:75, ../profile-builder-2.0/features/content-restriction/content-restriction.php:86, ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:206, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:229, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:230, ../profile-builder-2.0/modules/user-listing/userlisting.php:2339
+#: ../pb-add-on-placeholder-labels/pbpl.php:171, ../pb-add-on-social-connect/index.php:324, ../profile-builder-2.0/admin/general-settings.php:111, ../profile-builder-2.0/admin/general-settings.php:124, ../profile-builder-2.0/admin/general-settings.php:173, ../profile-builder-2.0/admin/general-settings.php:220, ../profile-builder-2.0/admin/private-website.php:58, ../profile-builder-2.0/admin/private-website.php:115, includes/views/view-admin.php:18, includes/views/view-admin.php:34, includes/views/view-fields.php:18, includes/views/view-fields.php:66, includes/views/view-fields.php:181, includes/views/view-fields.php:197, includes/views/view-fields.php:217, includes/views/view-fields.php:240, includes/views/view-fields.php:261, includes/views/view-forms.php:132, includes/views/view-forms.php:149, includes/views/view-forms.php:164, includes/views/view-forms.php:184, includes/views/view-forms.php:201, includes/views/view-forms.php:239, includes/views/view-forms.php:260, includes/views/view-forms.php:280, includes/views/view-forms.php:302, includes/views/view-shortcodes.php:16, includes/views/view-shortcodes.php:32, includes/views/view-shortcodes.php:48, includes/views/view-shortcodes.php:64, includes/views/view-userlisting.php:53, includes/views/view-userlisting.php:75, ../profile-builder-2.0/features/content-restriction/content-restriction.php:86, ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:206, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:229, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:230, ../profile-builder-2.0/modules/user-listing/userlisting.php:2359
 msgid "Yes"
 msgstr ""
 
@@ -945,11 +945,11 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/billing-fields.php:6, ../pb-add-on-woocommerce/shipping-fields.php:6, ../profile-builder-2.0/admin/manage-fields.php:246, includes/views/view-fields.php:127
+#: ../pb-add-on-woocommerce/billing-fields.php:6, ../pb-add-on-woocommerce/shipping-fields.php:6, ../profile-builder-2.0/admin/manage-fields.php:318, includes/views/view-fields.php:127
 msgid "First Name"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/billing-fields.php:7, ../pb-add-on-woocommerce/shipping-fields.php:7, ../profile-builder-2.0/admin/manage-fields.php:247, includes/views/view-fields.php:133
+#: ../pb-add-on-woocommerce/billing-fields.php:7, ../pb-add-on-woocommerce/shipping-fields.php:7, ../profile-builder-2.0/admin/manage-fields.php:319, includes/views/view-fields.php:133
 msgid "Last Name"
 msgstr ""
 
@@ -985,103 +985,103 @@ msgstr ""
 msgid "Ship to a different address?"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:166, ../pb-add-on-woocommerce/index.php:735
+#: ../pb-add-on-woocommerce/index.php:167, ../pb-add-on-woocommerce/index.php:736
 msgid "Billing Address"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:166
+#: ../pb-add-on-woocommerce/index.php:167
 msgid "Displays customer billing fields in front-end. "
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:170, ../pb-add-on-woocommerce/index.php:736
+#: ../pb-add-on-woocommerce/index.php:171, ../pb-add-on-woocommerce/index.php:737
 msgid "Shipping Address"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:170
+#: ../pb-add-on-woocommerce/index.php:171
 msgid "Displays customer shipping fields in front-end. "
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:245, ../pb-add-on-woocommerce/index.php:264, ../pb-add-on-woocommerce/index.php:361, ../pb-add-on-woocommerce/index.php:364, ../pb-add-on-woocommerce/index.php:791
+#: ../pb-add-on-woocommerce/index.php:246, ../pb-add-on-woocommerce/index.php:265, ../pb-add-on-woocommerce/index.php:362, ../pb-add-on-woocommerce/index.php:365, ../pb-add-on-woocommerce/index.php:792
 msgid "Address line 2"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:253
+#: ../pb-add-on-woocommerce/index.php:254
 msgid "Billing Fields"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:253
+#: ../pb-add-on-woocommerce/index.php:254
 msgid "Select which WooCommerce Billing fields to display to the user ( drag and drop to re-order ) and which should be required"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:254
+#: ../pb-add-on-woocommerce/index.php:255
 msgid "Billing Fields Order"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:254
+#: ../pb-add-on-woocommerce/index.php:255
 msgid "Save the billing fields order from the billing fields checkboxes"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:255
+#: ../pb-add-on-woocommerce/index.php:256
 msgid "Billing Fields Name"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:255
+#: ../pb-add-on-woocommerce/index.php:256
 msgid "Save the billing fields names"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:272
+#: ../pb-add-on-woocommerce/index.php:273
 msgid "Shipping Fields"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:272
+#: ../pb-add-on-woocommerce/index.php:273
 msgid "Select which WooCommerce Shipping fields to display to the user ( drag and drop to re-order ) and which should be required"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:273
+#: ../pb-add-on-woocommerce/index.php:274
 msgid "Shipping Fields Order"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:273
+#: ../pb-add-on-woocommerce/index.php:274
 msgid "Save the shipping fields order from the billing fields checkboxes"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:274
+#: ../pb-add-on-woocommerce/index.php:275
 msgid "Shipping Fields Name"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:274
+#: ../pb-add-on-woocommerce/index.php:275
 msgid "Save the shipping fields names"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:302
+#: ../pb-add-on-woocommerce/index.php:303
 msgid "Field Name"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:303, ../profile-builder-2.0/admin/manage-fields.php:204
+#: ../pb-add-on-woocommerce/index.php:304, ../profile-builder-2.0/admin/manage-fields.php:240
 msgid "Required"
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:366
+#: ../pb-add-on-woocommerce/index.php:367
 msgid "Click to edit "
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:390, ../profile-builder-2.0/front-end/default-fields/email/email.php:47
+#: ../pb-add-on-woocommerce/index.php:391, ../profile-builder-2.0/front-end/default-fields/email/email.php:47
 msgid "The email you entered is not a valid email address."
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:648
+#: ../pb-add-on-woocommerce/index.php:649
 msgid "No options available. Please select one country."
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:667, ../pb-add-on-woocommerce/index.php:692
+#: ../pb-add-on-woocommerce/index.php:668, ../pb-add-on-woocommerce/index.php:693
 msgid "Billing "
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:675, ../pb-add-on-woocommerce/index.php:699
+#: ../pb-add-on-woocommerce/index.php:676, ../pb-add-on-woocommerce/index.php:700
 msgid "Shipping "
 msgstr ""
 
-#: ../pb-add-on-woocommerce/index.php:852
+#: ../pb-add-on-woocommerce/index.php:853
 msgid "WooCommerce needs to be installed and activated for Profile Builder - WooCommerce Sync Add-on to work!"
 msgstr ""
 
@@ -1129,7 +1129,7 @@ msgstr ""
 msgid "Campaign Monitor Integration"
 msgstr ""
 
-#: ../pb-add-on-campaign-monitor-integration/admin/cmonitor-page.php:58, ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:94, ../pb-add-on-labels-edit/assets/lib/wck-api/wordpress-creation-kit.php:340, ../profile-builder-2.0/assets/lib/wck-api/wordpress-creation-kit.php:332
+#: ../pb-add-on-campaign-monitor-integration/admin/cmonitor-page.php:58, ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:94, ../pb-add-on-labels-edit/assets/lib/wck-api/wordpress-creation-kit.php:340, ../profile-builder-2.0/assets/lib/wck-api/wordpress-creation-kit.php:343
 msgid "Save"
 msgstr ""
 
@@ -1197,7 +1197,7 @@ msgstr ""
 msgid "Click to edit"
 msgstr ""
 
-#: ../pb-add-on-campaign-monitor-integration/admin/cmonitor-page.php:451, ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:171, ../profile-builder-2.0/features/functions.php:774, ../pb-add-on-labels-edit/assets/lib/wck-api/wordpress-creation-kit.php:403, ../profile-builder-2.0/assets/lib/wck-api/wordpress-creation-kit.php:395
+#: ../pb-add-on-campaign-monitor-integration/admin/cmonitor-page.php:451, ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:171, ../profile-builder-2.0/features/functions.php:774, ../pb-add-on-labels-edit/assets/lib/wck-api/wordpress-creation-kit.php:403, ../profile-builder-2.0/assets/lib/wck-api/wordpress-creation-kit.php:406
 msgid "Cancel"
 msgstr ""
 
@@ -1331,7 +1331,7 @@ msgstr ""
 msgid "Communication Preferences"
 msgstr ""
 
-#: ../pb-add-on-gdpr-communication-preferences/admin/manage-fields.php:29, ../pb-add-on-gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9, ../profile-builder-2.0/admin/manage-fields.php:251, ../profile-builder-2.0/front-end/recover.php:119, includes/shortcodes/resend-activation.php:9, ../profile-builder-2.0/features/admin-approval/class-admin-approval.php:169, ../profile-builder-2.0/features/email-confirmation/class-email-confirmation.php:169, ../profile-builder-2.0/modules/user-listing/userlisting.php:117
+#: ../pb-add-on-gdpr-communication-preferences/admin/manage-fields.php:29, ../pb-add-on-gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9, ../profile-builder-2.0/admin/manage-fields.php:323, ../profile-builder-2.0/front-end/recover.php:119, includes/shortcodes/resend-activation.php:9, ../profile-builder-2.0/features/admin-approval/class-admin-approval.php:169, ../profile-builder-2.0/features/email-confirmation/class-email-confirmation.php:169, ../profile-builder-2.0/modules/user-listing/userlisting.php:117
 msgid "E-mail"
 msgstr ""
 
@@ -1419,7 +1419,7 @@ msgstr ""
 msgid "Enter a MailChimp API key. You can create keys in your MailChimp account."
 msgstr ""
 
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:157, ../pb-add-on-labels-edit/assets/lib/wck-api/wordpress-creation-kit.php:540, ../profile-builder-2.0/assets/lib/wck-api/wordpress-creation-kit.php:533
+#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:157, ../pb-add-on-labels-edit/assets/lib/wck-api/wordpress-creation-kit.php:540, ../profile-builder-2.0/assets/lib/wck-api/wordpress-creation-kit.php:544
 msgid "Edit this item"
 msgstr ""
 
@@ -1707,7 +1707,7 @@ msgstr ""
 msgid "Not compatible with Profile Builder"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/add-ons.php:325, ../profile-builder-2.0/front-end/class-formbuilder.php:423
+#: ../profile-builder-2.0/admin/add-ons.php:325, ../profile-builder-2.0/front-end/class-formbuilder.php:425
 msgid "Update"
 msgstr ""
 
@@ -1747,7 +1747,7 @@ msgstr ""
 msgid "Show"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/admin-bar.php:78, ../profile-builder-2.0/modules/user-listing/userlisting.php:1621
+#: ../profile-builder-2.0/admin/admin-bar.php:78, ../profile-builder-2.0/modules/user-listing/userlisting.php:1638
 msgid "Hide"
 msgstr ""
 
@@ -2255,11 +2255,11 @@ msgstr ""
 msgid "Username and Email"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/general-settings.php:249, ../profile-builder-2.0/admin/manage-fields.php:245, ../profile-builder-2.0/front-end/login.php:246, ../profile-builder-2.0/front-end/login.php:260, ../profile-builder-2.0/front-end/login.php:389, includes/views/view-fields.php:121, ../profile-builder-2.0/features/admin-approval/class-admin-approval.php:166, ../profile-builder-2.0/features/email-confirmation/class-email-confirmation.php:168, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:60, ../profile-builder-2.0/modules/email-customizer/email-customizer.php:28, ../profile-builder-2.0/modules/user-listing/userlisting.php:111, ../profile-builder-2.0/modules/user-listing/userlisting.php:303, ../profile-builder-2.0/modules/user-listing/userlisting.php:778, ../profile-builder-2.0/modules/user-listing/userlisting.php:2290
+#: ../profile-builder-2.0/admin/general-settings.php:249, ../profile-builder-2.0/admin/manage-fields.php:317, ../profile-builder-2.0/front-end/login.php:246, ../profile-builder-2.0/front-end/login.php:260, ../profile-builder-2.0/front-end/login.php:389, includes/views/view-fields.php:121, ../profile-builder-2.0/features/admin-approval/class-admin-approval.php:166, ../profile-builder-2.0/features/email-confirmation/class-email-confirmation.php:168, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:60, ../profile-builder-2.0/modules/email-customizer/email-customizer.php:28, ../profile-builder-2.0/modules/user-listing/userlisting.php:111, ../profile-builder-2.0/modules/user-listing/userlisting.php:311, ../profile-builder-2.0/modules/user-listing/userlisting.php:786, ../profile-builder-2.0/modules/user-listing/userlisting.php:2310
 msgid "Username"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/general-settings.php:250, ../profile-builder-2.0/front-end/login.php:386, ../profile-builder-2.0/modules/email-customizer/email-customizer.php:29, ../profile-builder-2.0/modules/user-listing/userlisting.php:784, ../profile-builder-2.0/modules/user-listing/userlisting.php:2291
+#: ../profile-builder-2.0/admin/general-settings.php:250, ../profile-builder-2.0/front-end/login.php:386, ../profile-builder-2.0/modules/email-customizer/email-customizer.php:29, ../profile-builder-2.0/modules/user-listing/userlisting.php:792, ../profile-builder-2.0/modules/user-listing/userlisting.php:2311
 msgid "Email"
 msgstr ""
 
@@ -2291,2045 +2291,2077 @@ msgstr ""
 msgid "Disabled"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:12
+#: ../profile-builder-2.0/admin/manage-fields.php:17
 msgid "Form Fields"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:13
+#: ../profile-builder-2.0/admin/manage-fields.php:18
 msgid "Manage Form Fields"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:119
+#: ../profile-builder-2.0/admin/manage-fields.php:125
 msgid "Choose one of the supported field types"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:121
+#: ../profile-builder-2.0/admin/manage-fields.php:127
 msgid ". Extra Field Types are available in <a href=\"%s\">Hobbyist or PRO versions</a>."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:152
+#: ../profile-builder-2.0/admin/manage-fields.php:160
 msgid "Use this in conjunction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be unique)<br/>Changing this might take long in case of a very big user-count"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:155
+#: ../profile-builder-2.0/admin/manage-fields.php:163
 msgid "Use this in conjunction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be unique)<br/>Changing this will only affect subsequent entries"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:161
+#: ../profile-builder-2.0/admin/manage-fields.php:177
 msgid "Field Title"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:161
+#: ../profile-builder-2.0/admin/manage-fields.php:177
 msgid "Title of the field"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:162, ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:245, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:266
+#: ../profile-builder-2.0/admin/manage-fields.php:178, ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:245, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:266
 msgid "Field"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:163
+#: ../profile-builder-2.0/admin/manage-fields.php:179
 msgid "Meta-name"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:164, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:69, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:99, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:118, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:143, ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:246, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:267
+#: ../profile-builder-2.0/admin/manage-fields.php:180, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:69, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:99, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:118, ../profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:143, ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:246, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:267
 msgid "ID"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:164, ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:246, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:267
+#: ../profile-builder-2.0/admin/manage-fields.php:180, ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:246, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:267
 msgid "A unique, auto-generated ID for this particular field<br/>You can use this in conjuction with filters to target this element if needed<br/>Can't be edited"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:165
+#: ../profile-builder-2.0/admin/manage-fields.php:181
 msgid "Description"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:165
+#: ../profile-builder-2.0/admin/manage-fields.php:181
 msgid "Enter a (detailed) description of the option for end users to read<br/>Optional"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:166
+#: ../profile-builder-2.0/admin/manage-fields.php:182
 msgid "Row Count"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:166
+#: ../profile-builder-2.0/admin/manage-fields.php:182
 msgid "Specify the number of rows for a 'Textarea' field<br/>If not specified, defaults to 5"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:167
+#: ../profile-builder-2.0/admin/manage-fields.php:183
 msgid "Allowed Image Extensions"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:167
+#: ../profile-builder-2.0/admin/manage-fields.php:183
 msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to: .jpg,.jpeg,.gif,.png (.*)"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:168
+#: ../profile-builder-2.0/admin/manage-fields.php:184
 msgid "Allowed Upload Extensions"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:168
+#: ../profile-builder-2.0/admin/manage-fields.php:184
 msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to all WordPress allowed file extensions (.*)"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:169
+#: ../profile-builder-2.0/admin/manage-fields.php:185
 msgid "Avatar Size"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:169
+#: ../profile-builder-2.0/admin/manage-fields.php:185
 msgid "Enter a value (between 20 and 200) for the size of the 'Avatar'<br/>If not specified, defaults to 100"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:170
+#: ../profile-builder-2.0/admin/manage-fields.php:186
 msgid "Date-format"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:170
+#: ../profile-builder-2.0/admin/manage-fields.php:186
 msgid "Specify the format of the date when using Datepicker<br/>Valid options: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd, mm-dd-yy, yy-mm-dd, D, dd M yy, D, d M y, DD, dd-M-y, D, d M yy, @<br/>If not specified, defaults to mm/dd/yy"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:171
+#: ../profile-builder-2.0/admin/manage-fields.php:187
 msgid "Terms of Agreement"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:171
+#: ../profile-builder-2.0/admin/manage-fields.php:187
 msgid "Enter a detailed description of the temrs of agreement for the user to read.<br/>Links can be inserted by using standard HTML syntax: &lt;a href=\"custom_url\"&gt;custom_text&lt;/a&gt;"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:172
+#: ../profile-builder-2.0/admin/manage-fields.php:188
 msgid "Options"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:172
+#: ../profile-builder-2.0/admin/manage-fields.php:188
 msgid "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:173
+#: ../profile-builder-2.0/admin/manage-fields.php:189
 msgid "Enter a comma separated list of labels<br/>Visible for the user"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:174
+#: ../profile-builder-2.0/admin/manage-fields.php:190
 msgid "reCAPTCHA Type"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:174
+#: ../profile-builder-2.0/admin/manage-fields.php:190
 msgid "Choose the <a href=\"https://developers.google.com/recaptcha/docs/versions\" target=\"_blank\">type of reCAPTCHA</a> you wish to add to this site."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:175
+#: ../profile-builder-2.0/admin/manage-fields.php:191
 msgid "Site Key"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:175
+#: ../profile-builder-2.0/admin/manage-fields.php:191
 msgid "The site key from Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:176
+#: ../profile-builder-2.0/admin/manage-fields.php:192
 msgid "Secret Key"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:176
+#: ../profile-builder-2.0/admin/manage-fields.php:192
 msgid "The secret key from Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:177
+#: ../profile-builder-2.0/admin/manage-fields.php:193
 msgid "Display on PB forms"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:177
+#: ../profile-builder-2.0/admin/manage-fields.php:193
 msgid "PB Login"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:177
+#: ../profile-builder-2.0/admin/manage-fields.php:193
 msgid "PB Register"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:177
+#: ../profile-builder-2.0/admin/manage-fields.php:193
 msgid "PB Recover Password"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:177
+#: ../profile-builder-2.0/admin/manage-fields.php:193
 msgid "Select on which Profile Builder forms to display reCAPTCHA"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:178
+#: ../profile-builder-2.0/admin/manage-fields.php:194
 msgid "Display on default WP forms"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:178
+#: ../profile-builder-2.0/admin/manage-fields.php:194
 msgid "Default WP Login"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:178
+#: ../profile-builder-2.0/admin/manage-fields.php:194
 msgid "Default WP Register"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:178
+#: ../profile-builder-2.0/admin/manage-fields.php:194
 msgid "Default WP Recover Password"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:178
+#: ../profile-builder-2.0/admin/manage-fields.php:194
 msgid "Select on which default WP forms to display reCAPTCHA"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:179
+#: ../profile-builder-2.0/admin/manage-fields.php:195
 msgid "User Roles"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:179
+#: ../profile-builder-2.0/admin/manage-fields.php:195
 msgid "Select which user roles to show to the user ( drag and drop to re-order )"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:180
+#: ../profile-builder-2.0/admin/manage-fields.php:196
 msgid "User Roles Order"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:180
+#: ../profile-builder-2.0/admin/manage-fields.php:196
 msgid "Save the user role order from the user roles checkboxes"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:181
+#: ../profile-builder-2.0/admin/manage-fields.php:197
 msgid "Default Value"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:181
+#: ../profile-builder-2.0/admin/manage-fields.php:197
 msgid "Default value of the field"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:182, ../profile-builder-2.0/admin/manage-fields.php:184, ../profile-builder-2.0/admin/manage-fields.php:185, ../profile-builder-2.0/admin/manage-fields.php:186
+#: ../profile-builder-2.0/admin/manage-fields.php:198, ../profile-builder-2.0/admin/manage-fields.php:200, ../profile-builder-2.0/admin/manage-fields.php:201, ../profile-builder-2.0/admin/manage-fields.php:202
 msgid "Default Option"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:182
+#: ../profile-builder-2.0/admin/manage-fields.php:198
 msgid "Specify the option which should be selected by default"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:183
+#: ../profile-builder-2.0/admin/manage-fields.php:199
 msgid "Default Option(s)"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:183
+#: ../profile-builder-2.0/admin/manage-fields.php:199
 msgid "Specify the option which should be checked by default<br/>If there are multiple values, separate them with a ',' (comma)"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:184, ../profile-builder-2.0/admin/manage-fields.php:185, ../profile-builder-2.0/admin/manage-fields.php:186
+#: ../profile-builder-2.0/admin/manage-fields.php:200, ../profile-builder-2.0/admin/manage-fields.php:201, ../profile-builder-2.0/admin/manage-fields.php:202
 msgid "Default option of the field"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:187
+#: ../profile-builder-2.0/admin/manage-fields.php:203
 msgid "Show Currency Symbol"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:187
+#: ../profile-builder-2.0/admin/manage-fields.php:203
 msgid "Whether the currency symbol should be displayed after the currency name in the select option."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:188
+#: ../profile-builder-2.0/admin/manage-fields.php:204
 msgid "Show Post Type"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:188
+#: ../profile-builder-2.0/admin/manage-fields.php:204
 msgid "Posts from what post type will be displayed in the select."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:189
+#: ../profile-builder-2.0/admin/manage-fields.php:205
 msgid "Allowable Values"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:189
+#: ../profile-builder-2.0/admin/manage-fields.php:205
 msgid "Enter a comma separated list of possible values. Upon registration if the value provided by the user does not match one of these values, the user will not be registered."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:190
+#: ../profile-builder-2.0/admin/manage-fields.php:206
 msgid "Error Message"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:190
+#: ../profile-builder-2.0/admin/manage-fields.php:206
 msgid "Set a custom error message that will be displayed to the user."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:191
+#: ../profile-builder-2.0/admin/manage-fields.php:207
 msgid "Time Format"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:191
+#: ../profile-builder-2.0/admin/manage-fields.php:207
 msgid "Specify the time format."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:192
+#: ../profile-builder-2.0/admin/manage-fields.php:208
 msgid "Google Maps API Key"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:192
+#: ../profile-builder-2.0/admin/manage-fields.php:208
 msgid "Enter your Google Maps API key ( <a href=\"https://console.developers.google.com/flows/enableapi?apiid=maps_backend\" target=\"_blank\">Get your API key</a> ). If more than one map fields are added to a form the API key from the first map displayed will be used."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:193
+#: ../profile-builder-2.0/admin/manage-fields.php:213
 msgid "Default Latitude"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:193
+#: ../profile-builder-2.0/admin/manage-fields.php:214
 msgid "The latitude at which the map should be displayed when no pins are attached."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:194
+#: ../profile-builder-2.0/admin/manage-fields.php:220
 msgid "Default Longitude"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:194
+#: ../profile-builder-2.0/admin/manage-fields.php:221
 msgid "The longitude at which the map should be displayed when no pins are attached."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:195
+#: ../profile-builder-2.0/admin/manage-fields.php:227
 msgid "Default Zoom Level"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:195
+#: ../profile-builder-2.0/admin/manage-fields.php:228
 msgid "Add a number from 0 to 19. The higher the number the higher the zoom."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:196
+#: ../profile-builder-2.0/admin/manage-fields.php:232
 msgid "Map Height"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:196
+#: ../profile-builder-2.0/admin/manage-fields.php:232
 msgid "The height of the map."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:197
+#: ../profile-builder-2.0/admin/manage-fields.php:233
 msgid "Default Content"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:197
+#: ../profile-builder-2.0/admin/manage-fields.php:233
 msgid "Default value of the textarea"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:198
+#: ../profile-builder-2.0/admin/manage-fields.php:234
 msgid "HTML Content"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:198
+#: ../profile-builder-2.0/admin/manage-fields.php:234
 msgid "Add your HTML (or text) content"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:199
+#: ../profile-builder-2.0/admin/manage-fields.php:235
 msgid "Phone Format"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:199
+#: ../profile-builder-2.0/admin/manage-fields.php:235
 msgid "You can use: # for numbers, parentheses ( ), - sign, + sign, dot . and spaces."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:199
+#: ../profile-builder-2.0/admin/manage-fields.php:235
 msgid "Eg. (###) ###-####"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:199
+#: ../profile-builder-2.0/admin/manage-fields.php:235
 msgid "Empty field won't check for correct phone number."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:200
+#: ../profile-builder-2.0/admin/manage-fields.php:236
 msgid "Heading Tag"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:200
+#: ../profile-builder-2.0/admin/manage-fields.php:236
 msgid "Change heading field size on front-end forms"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:201
+#: ../profile-builder-2.0/admin/manage-fields.php:237
 msgid "Min Number Value"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:201
+#: ../profile-builder-2.0/admin/manage-fields.php:237
 msgid "Min allowed number value (0 to allow only positive numbers)"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:201
+#: ../profile-builder-2.0/admin/manage-fields.php:237
 msgid "Leave it empty for no min value"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:202
+#: ../profile-builder-2.0/admin/manage-fields.php:238
 msgid "Max Number Value"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:202
+#: ../profile-builder-2.0/admin/manage-fields.php:238
 msgid "Max allowed number value (0 to allow only negative numbers)"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:202
+#: ../profile-builder-2.0/admin/manage-fields.php:238
 msgid "Leave it empty for no max value"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:203
+#: ../profile-builder-2.0/admin/manage-fields.php:239
 msgid "Number Step Value"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:203
+#: ../profile-builder-2.0/admin/manage-fields.php:239
 msgid "Step value 1 to allow only integers, 0.1 to allow integers and numbers with 1 decimal"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:203
+#: ../profile-builder-2.0/admin/manage-fields.php:239
 msgid "To allow multiple decimals use for eg. 0.01 (for 2 deciamls) and so on"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:203
+#: ../profile-builder-2.0/admin/manage-fields.php:239
 msgid "You can also use step value to specify the legal number intervals (eg. step value 2 will allow only -4, -2, 0, 2 and so on)"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:203
+#: ../profile-builder-2.0/admin/manage-fields.php:239
 msgid "Leave it empty for no restriction"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:204
+#: ../profile-builder-2.0/admin/manage-fields.php:240
 msgid "Whether the field is required or not"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:205
+#: ../profile-builder-2.0/admin/manage-fields.php:241
 msgid "Overwrite Existing"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:205
+#: ../profile-builder-2.0/admin/manage-fields.php:241
 msgid "Selecting 'Yes' will add the field to the list, but will overwrite any other field in the database that has the same meta-name<br/>Use this at your own risk"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:211
-msgid "Form Field Properties"
-msgstr ""
-
-#: ../profile-builder-2.0/admin/manage-fields.php:225
-msgid "Registration & Edit Profile Forms"
-msgstr ""
-
-#: ../profile-builder-2.0/admin/manage-fields.php:245
-msgid "Usernames cannot be changed."
-msgstr ""
-
-#: ../profile-builder-2.0/admin/manage-fields.php:248, ../profile-builder-2.0/modules/user-listing/userlisting.php:817, ../profile-builder-2.0/modules/user-listing/userlisting.php:2298
-msgid "Nickname"
+#: ../profile-builder-2.0/admin/manage-fields.php:247
+msgid "POIs Load Type"
 msgstr ""
 
 #: ../profile-builder-2.0/admin/manage-fields.php:249
-msgid "Display name publicly as"
+msgid "POIs of the listed users (as filtered & paginated)"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:252, ../profile-builder-2.0/modules/email-customizer/email-customizer.php:33, ../profile-builder-2.0/modules/user-listing/userlisting.php:120, ../profile-builder-2.0/modules/user-listing/userlisting.php:799, ../profile-builder-2.0/modules/user-listing/userlisting.php:2292
-msgid "Website"
+#: ../profile-builder-2.0/admin/manage-fields.php:250
+msgid "POIs of all the users for the filter* (no pagination)"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:256
-msgid "AIM"
+#: ../profile-builder-2.0/admin/manage-fields.php:253
+msgid "This option allows you to load on a single map the POIs for all users, or just these for the listed ones (this will take into account the filters and the faceted menus). *Please use this feature wisely, it will impact the performance."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:257
-msgid "Yahoo IM"
-msgstr ""
-
-#: ../profile-builder-2.0/admin/manage-fields.php:258
-msgid "Jabber / Google Talk"
-msgstr ""
-
-#: ../profile-builder-2.0/admin/manage-fields.php:262, ../profile-builder-2.0/modules/user-listing/userlisting.php:123, ../profile-builder-2.0/modules/user-listing/userlisting.php:802, ../profile-builder-2.0/modules/user-listing/userlisting.php:2293
-msgid "Biographical Info"
-msgstr ""
-
-#: ../profile-builder-2.0/admin/manage-fields.php:262
-msgid "Share a little biographical information to fill out your profile. This may be shown publicly."
-msgstr ""
-
-#: ../profile-builder-2.0/admin/manage-fields.php:263, ../profile-builder-2.0/front-end/recover.php:73, ../profile-builder-2.0/modules/email-customizer/email-customizer.php:30
-msgid "Password"
+#: ../profile-builder-2.0/admin/manage-fields.php:260
+msgid "POI Bubble Info"
 msgstr ""
 
 #: ../profile-builder-2.0/admin/manage-fields.php:263
+msgid "Select the attributes to be listed inside the POI bubble."
+msgstr ""
+
+#: ../profile-builder-2.0/admin/manage-fields.php:274
+msgid "Number of Users per Map Iteration"
+msgstr ""
+
+#: ../profile-builder-2.0/admin/manage-fields.php:275
+msgid "When loading the map of all users with no pagination, the map script will iterate multiple times and will expose gradually POIs on the map, until all the POIs for the users that match the criteria will be added on the map (think of this as of pagination for the map POIs). The smaller the number of users per iteration, the fastest the iteration response will be, but for a large number of users, the map script will iterate multiple times. Setting a higher limit will decrease the performance, but might produce a smaller number of iterations. <br><br><b>Please adjust this value to your hosting capabilities, and make sure that the value you set is the best for performance.</b> We recommend a <b>maximum</b> value of 300."
+msgstr ""
+
+#: ../profile-builder-2.0/admin/manage-fields.php:283
+msgid "Form Field Properties"
+msgstr ""
+
+#: ../profile-builder-2.0/admin/manage-fields.php:297
+msgid "Registration & Edit Profile Forms"
+msgstr ""
+
+#: ../profile-builder-2.0/admin/manage-fields.php:317
+msgid "Usernames cannot be changed."
+msgstr ""
+
+#: ../profile-builder-2.0/admin/manage-fields.php:320, ../profile-builder-2.0/modules/user-listing/userlisting.php:825, ../profile-builder-2.0/modules/user-listing/userlisting.php:2318
+msgid "Nickname"
+msgstr ""
+
+#: ../profile-builder-2.0/admin/manage-fields.php:321
+msgid "Display name publicly as"
+msgstr ""
+
+#: ../profile-builder-2.0/admin/manage-fields.php:324, ../profile-builder-2.0/modules/email-customizer/email-customizer.php:33, ../profile-builder-2.0/modules/user-listing/userlisting.php:120, ../profile-builder-2.0/modules/user-listing/userlisting.php:807, ../profile-builder-2.0/modules/user-listing/userlisting.php:2312
+msgid "Website"
+msgstr ""
+
+#: ../profile-builder-2.0/admin/manage-fields.php:328
+msgid "AIM"
+msgstr ""
+
+#: ../profile-builder-2.0/admin/manage-fields.php:329
+msgid "Yahoo IM"
+msgstr ""
+
+#: ../profile-builder-2.0/admin/manage-fields.php:330
+msgid "Jabber / Google Talk"
+msgstr ""
+
+#: ../profile-builder-2.0/admin/manage-fields.php:334, ../profile-builder-2.0/modules/user-listing/userlisting.php:123, ../profile-builder-2.0/modules/user-listing/userlisting.php:810, ../profile-builder-2.0/modules/user-listing/userlisting.php:2313
+msgid "Biographical Info"
+msgstr ""
+
+#: ../profile-builder-2.0/admin/manage-fields.php:334
+msgid "Share a little biographical information to fill out your profile. This may be shown publicly."
+msgstr ""
+
+#: ../profile-builder-2.0/admin/manage-fields.php:335, ../profile-builder-2.0/front-end/recover.php:73, ../profile-builder-2.0/modules/email-customizer/email-customizer.php:30
+msgid "Password"
+msgstr ""
+
+#: ../profile-builder-2.0/admin/manage-fields.php:335
 msgid "Type your password."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:264, ../profile-builder-2.0/front-end/recover.php:74
+#: ../profile-builder-2.0/admin/manage-fields.php:336, ../profile-builder-2.0/front-end/recover.php:74
 msgid "Repeat Password"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:264
+#: ../profile-builder-2.0/admin/manage-fields.php:336
 msgid "Type your password again. "
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:266
+#: ../profile-builder-2.0/admin/manage-fields.php:338
 msgid "Blog Details"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:325
+#: ../profile-builder-2.0/admin/manage-fields.php:397
 msgid "Select a Country"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:326, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:398, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Afghanistan"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:327, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:399, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Aland Islands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:328, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:400, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Albania"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:329, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:401, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Algeria"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:330, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:402, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "American Samoa"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:331, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:403, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Andorra"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:332, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:404, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Angola"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:333, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:405, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Anguilla"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:334, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:406, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Antarctica"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:335, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:407, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Antigua and Barbuda"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:336, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:408, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Argentina"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:337, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:409, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Armenia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:338, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:410, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Aruba"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:339, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:411, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Australia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:340, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:412, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Austria"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:341, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:413, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Azerbaijan"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:342, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:414, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Bahamas"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:343, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:415, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Bahrain"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:344, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:416, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Bangladesh"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:345, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:417, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Barbados"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:346, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:418, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Belarus"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:347, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:419, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Belgium"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:348, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:420, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Belize"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:349, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:421, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Benin"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:350, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:422, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Bermuda"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:351, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:423, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Bhutan"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:352
+#: ../profile-builder-2.0/admin/manage-fields.php:424
 msgid "Bolivia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:353
+#: ../profile-builder-2.0/admin/manage-fields.php:425
 msgid "Bonaire, Saint Eustatius and Saba"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:354, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:426, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Bosnia and Herzegovina"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:355, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:427, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Botswana"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:356, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:428, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Bouvet Island"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:357, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:429, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Brazil"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:358, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:430, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "British Indian Ocean Territory"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:359
+#: ../profile-builder-2.0/admin/manage-fields.php:431
 msgid "British Virgin Islands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:360
+#: ../profile-builder-2.0/admin/manage-fields.php:432
 msgid "Brunei"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:361, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:433, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Bulgaria"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:362, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:434, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Burkina Faso"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:363, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:435, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Burundi"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:364, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:436, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Cambodia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:365, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:437, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Cameroon"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:366, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:438, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Canada"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:367
+#: ../profile-builder-2.0/admin/manage-fields.php:439
 msgid "Cape Verde"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:368, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:440, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Cayman Islands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:369, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:441, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Central African Republic"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:370, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:442, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Chad"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:371, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:443, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Chile"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:372, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:444, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "China"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:373, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:445, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Christmas Island"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:374
+#: ../profile-builder-2.0/admin/manage-fields.php:446
 msgid "Cocos Islands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:375, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:447, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Colombia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:376, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:448, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Comoros"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:377, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:449, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Cook Islands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:378, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:450, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Costa Rica"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:379, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:451, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Croatia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:380, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:452, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Cuba"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:381, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:453, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Curacao"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:382, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:454, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Cyprus"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:383, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:455, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Czech Republic"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:384
+#: ../profile-builder-2.0/admin/manage-fields.php:456
 msgid "Democratic Republic of the Congo"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:385, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:457, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Denmark"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:386, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:458, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Djibouti"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:387, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:459, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Dominica"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:388, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:460, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Dominican Republic"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:389
+#: ../profile-builder-2.0/admin/manage-fields.php:461
 msgid "East Timor"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:390, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:462, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Ecuador"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:391, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:463, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Egypt"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:392, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:464, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "El Salvador"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:393, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:465, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Equatorial Guinea"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:394, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:466, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Eritrea"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:395, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:467, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Estonia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:396, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:468, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Ethiopia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:397
+#: ../profile-builder-2.0/admin/manage-fields.php:469
 msgid "Falkland Islands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:398, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:470, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Faroe Islands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:399, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:471, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Fiji"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:400, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:472, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Finland"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:401, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:473, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "France"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:402, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:474, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "French Guiana"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:403, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:475, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "French Polynesia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:404, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:476, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "French Southern Territories"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:405, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:477, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Gabon"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:406, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:478, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Gambia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:407, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:479, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Georgia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:408, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:480, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Germany"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:409, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:481, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Ghana"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:410, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:482, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Gibraltar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:411, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:483, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Greece"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:412, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:484, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Greenland"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:413, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:485, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Grenada"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:414, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:486, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Guadeloupe"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:415, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:487, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Guam"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:416, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:488, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Guatemala"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:417, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:489, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Guernsey"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:418, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:490, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Guinea"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:419, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:491, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Guinea-Bissau"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:420, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:492, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Guyana"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:421, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:493, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Haiti"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:422, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:494, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Heard Island and McDonald Islands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:423, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:495, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Honduras"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:424, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:496, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Hong Kong"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:425, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:497, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Hungary"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:426, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:498, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Iceland"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:427, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:499, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "India"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:428, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:500, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Indonesia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:429
+#: ../profile-builder-2.0/admin/manage-fields.php:501
 msgid "Iran"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:430, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:502, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Iraq"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:431, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:503, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Ireland"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:432, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:504, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Isle of Man"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:433, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:505, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Israel"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:434, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:506, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Italy"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:435
+#: ../profile-builder-2.0/admin/manage-fields.php:507
 msgid "Ivory Coast"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:436, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:508, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Jamaica"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:437, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:509, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Japan"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:438, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:510, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Jersey"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:439, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:511, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Jordan"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:440, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:512, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Kazakhstan"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:441, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:513, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Kenya"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:442, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:514, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Kiribati"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:443
+#: ../profile-builder-2.0/admin/manage-fields.php:515
 msgid "Kosovo"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:444, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:516, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Kuwait"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:445, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:517, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Kyrgyzstan"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:446
+#: ../profile-builder-2.0/admin/manage-fields.php:518
 msgid "Laos"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:447, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:519, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Latvia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:448, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:520, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Lebanon"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:449, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:521, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Lesotho"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:450, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:522, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Liberia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:451, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:523, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Libya"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:452, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:524, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Liechtenstein"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:453, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:525, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Lithuania"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:454, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:526, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Luxembourg"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:455, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:527, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Macao"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:456
+#: ../profile-builder-2.0/admin/manage-fields.php:528
 msgid "Macedonia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:457, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:529, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Madagascar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:458, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:530, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Malawi"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:459, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:531, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Malaysia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:460, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:532, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Maldives"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:461, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:533, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Mali"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:462, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:534, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Malta"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:463, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:535, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Marshall Islands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:464, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:536, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Martinique"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:465, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:537, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Mauritania"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:466, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:538, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Mauritius"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:467, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:539, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Mayotte"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:468, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:540, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Mexico"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:469
+#: ../profile-builder-2.0/admin/manage-fields.php:541
 msgid "Micronesia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:470
+#: ../profile-builder-2.0/admin/manage-fields.php:542
 msgid "Moldova"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:471, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:543, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Monaco"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:472, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:544, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Mongolia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:473, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:545, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Montenegro"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:474, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:546, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Montserrat"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:475, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:547, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Morocco"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:476, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:548, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Mozambique"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:477, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:549, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Myanmar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:478, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:550, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Namibia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:479, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:551, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Nauru"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:480, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:552, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Nepal"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:481, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:553, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Netherlands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:482, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:554, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "New Caledonia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:483, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:555, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "New Zealand"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:484, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:556, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Nicaragua"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:485, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:557, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Niger"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:486, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:558, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Nigeria"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:487, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:559, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Niue"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:488, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:560, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Norfolk Island"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:489
+#: ../profile-builder-2.0/admin/manage-fields.php:561
 msgid "North Korea"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:490, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:562, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Northern Mariana Islands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:491, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:563, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Norway"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:492, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:564, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Oman"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:493, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:565, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Pakistan"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:494, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:566, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Palau"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:495
+#: ../profile-builder-2.0/admin/manage-fields.php:567
 msgid "Palestinian Territory"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:496, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:568, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Panama"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:497, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:569, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Papua New Guinea"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:498, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:570, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Paraguay"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:499, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:571, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Peru"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:500, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:572, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Philippines"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:501, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:573, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Pitcairn"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:502, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:574, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Poland"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:503, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:575, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Portugal"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:504, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:576, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Puerto Rico"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:505, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:577, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Qatar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:506
+#: ../profile-builder-2.0/admin/manage-fields.php:578
 msgid "Republic of the Congo"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:507, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:579, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Reunion"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:508, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:580, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Romania"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:509
+#: ../profile-builder-2.0/admin/manage-fields.php:581
 msgid "Russia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:510, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:582, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Rwanda"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:511, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:583, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Saint Barthelemy"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:512
+#: ../profile-builder-2.0/admin/manage-fields.php:584
 msgid "Saint Helena"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:513, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:585, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Saint Kitts and Nevis"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:514, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:586, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Saint Lucia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:515
+#: ../profile-builder-2.0/admin/manage-fields.php:587
 msgid "Saint Martin"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:516, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:588, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Saint Pierre and Miquelon"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:517, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:589, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Saint Vincent and the Grenadines"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:518, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:590, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Samoa"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:519, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:591, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "San Marino"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:520, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:592, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Sao Tome and Principe"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:521, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:593, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Saudi Arabia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:522, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:594, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Senegal"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:523, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:595, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Serbia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:524, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:596, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Seychelles"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:525, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:597, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Sierra Leone"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:526, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:598, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Singapore"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:527
+#: ../profile-builder-2.0/admin/manage-fields.php:599
 msgid "Sint Maarten"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:528, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:600, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Slovakia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:529, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:601, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Slovenia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:530, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:602, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Solomon Islands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:531, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:603, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Somalia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:532, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:604, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "South Africa"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:533, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:605, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "South Georgia and the South Sandwich Islands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:534
+#: ../profile-builder-2.0/admin/manage-fields.php:606
 msgid "South Korea"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:535, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:607, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "South Sudan"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:536, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:608, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Spain"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:537, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:609, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Sri Lanka"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:538, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:610, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Sudan"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:539, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:611, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Suriname"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:540, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:612, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Svalbard and Jan Mayen"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:541, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:613, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Swaziland"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:542, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:614, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Sweden"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:543, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:615, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Switzerland"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:544
+#: ../profile-builder-2.0/admin/manage-fields.php:616
 msgid "Syria"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:545
+#: ../profile-builder-2.0/admin/manage-fields.php:617
 msgid "Taiwan"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:546, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:618, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Tajikistan"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:547
+#: ../profile-builder-2.0/admin/manage-fields.php:619
 msgid "Tanzania"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:548, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:620, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Thailand"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:549, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:621, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Togo"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:550, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:622, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Tokelau"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:551, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:623, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Tonga"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:552, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:624, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Trinidad and Tobago"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:553, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:625, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Tunisia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:554, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:626, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Turkey"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:555, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:627, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Turkmenistan"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:556, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:628, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Turks and Caicos Islands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:557, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:629, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Tuvalu"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:558
+#: ../profile-builder-2.0/admin/manage-fields.php:630
 msgid "U.S. Virgin Islands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:559, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:631, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Uganda"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:560, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:632, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Ukraine"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:561, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:633, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "United Arab Emirates"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:562, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:634, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "United Kingdom"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:563, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:635, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "United States"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:564, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:636, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "United States Minor Outlying Islands"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:565, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:637, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Uruguay"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:566, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:638, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Uzbekistan"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:567, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:639, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Vanuatu"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:568
+#: ../profile-builder-2.0/admin/manage-fields.php:640
 msgid "Vatican"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:569
+#: ../profile-builder-2.0/admin/manage-fields.php:641
 msgid "Venezuela"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:570
+#: ../profile-builder-2.0/admin/manage-fields.php:642
 msgid "Vietnam"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:571, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:643, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Wallis and Futuna"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:572, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:644, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Western Sahara"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:573, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:645, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Yemen"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:574, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:646, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Zambia"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:575, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
+#: ../profile-builder-2.0/admin/manage-fields.php:647, ../profile-builder-2.0/front-end/extra-fields/select-country/select-country.php:10
 msgid "Zimbabwe"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:608
+#: ../profile-builder-2.0/admin/manage-fields.php:680
 msgid "Albania Lek"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:609
+#: ../profile-builder-2.0/admin/manage-fields.php:681
 msgid "Afghanistan Afghani"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:610
+#: ../profile-builder-2.0/admin/manage-fields.php:682
 msgid "Argentina Peso"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:612
+#: ../profile-builder-2.0/admin/manage-fields.php:684
 msgid "Australia Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:613
+#: ../profile-builder-2.0/admin/manage-fields.php:685
 msgid "Azerbaijan New Manat"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:614
+#: ../profile-builder-2.0/admin/manage-fields.php:686
 msgid "Bahamas Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:615
+#: ../profile-builder-2.0/admin/manage-fields.php:687
 msgid "Barbados Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:616
+#: ../profile-builder-2.0/admin/manage-fields.php:688
 msgid "Bangladeshi taka"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:617
+#: ../profile-builder-2.0/admin/manage-fields.php:689
 msgid "Belarus Ruble"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:618
+#: ../profile-builder-2.0/admin/manage-fields.php:690
 msgid "Belize Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:619
+#: ../profile-builder-2.0/admin/manage-fields.php:691
 msgid "Bermuda Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:620
+#: ../profile-builder-2.0/admin/manage-fields.php:692
 msgid "Bolivia Boliviano"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:621
+#: ../profile-builder-2.0/admin/manage-fields.php:693
 msgid "Bosnia and Herzegovina Convertible Marka"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:622
+#: ../profile-builder-2.0/admin/manage-fields.php:694
 msgid "Botswana Pula"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:623
+#: ../profile-builder-2.0/admin/manage-fields.php:695
 msgid "Bulgaria Lev"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:624
+#: ../profile-builder-2.0/admin/manage-fields.php:696
 msgid "Brazil Real"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:625
+#: ../profile-builder-2.0/admin/manage-fields.php:697
 msgid "Brunei Darussalam Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:626
+#: ../profile-builder-2.0/admin/manage-fields.php:698
 msgid "Cambodia Riel"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:627
+#: ../profile-builder-2.0/admin/manage-fields.php:699
 msgid "Canada Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:628
+#: ../profile-builder-2.0/admin/manage-fields.php:700
 msgid "Cayman Islands Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:629
+#: ../profile-builder-2.0/admin/manage-fields.php:701
 msgid "Chile Peso"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:630
+#: ../profile-builder-2.0/admin/manage-fields.php:702
 msgid "China Yuan Renminbi"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:631
+#: ../profile-builder-2.0/admin/manage-fields.php:703
 msgid "Colombia Peso"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:632
+#: ../profile-builder-2.0/admin/manage-fields.php:704
 msgid "Costa Rica Colon"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:633
+#: ../profile-builder-2.0/admin/manage-fields.php:705
 msgid "Croatia Kuna"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:634
+#: ../profile-builder-2.0/admin/manage-fields.php:706
 msgid "Cuba Peso"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:635
+#: ../profile-builder-2.0/admin/manage-fields.php:707
 msgid "Czech Republic Koruna"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:636
+#: ../profile-builder-2.0/admin/manage-fields.php:708
 msgid "Denmark Krone"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:637
+#: ../profile-builder-2.0/admin/manage-fields.php:709
 msgid "Dominican Republic Peso"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:638
+#: ../profile-builder-2.0/admin/manage-fields.php:710
 msgid "East Caribbean Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:639
+#: ../profile-builder-2.0/admin/manage-fields.php:711
 msgid "Egypt Pound"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:640
+#: ../profile-builder-2.0/admin/manage-fields.php:712
 msgid "El Salvador Colon"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:641
+#: ../profile-builder-2.0/admin/manage-fields.php:713
 msgid "Estonia Kroon"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:642
+#: ../profile-builder-2.0/admin/manage-fields.php:714
 msgid "Euro"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:643
+#: ../profile-builder-2.0/admin/manage-fields.php:715
 msgid "Falkland Islands (Malvinas) Pound"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:644
+#: ../profile-builder-2.0/admin/manage-fields.php:716
 msgid "Fiji Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:645
+#: ../profile-builder-2.0/admin/manage-fields.php:717
 msgid "Ghana Cedis"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:646
+#: ../profile-builder-2.0/admin/manage-fields.php:718
 msgid "Gibraltar Pound"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:647
+#: ../profile-builder-2.0/admin/manage-fields.php:719
 msgid "Guatemala Quetzal"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:648
+#: ../profile-builder-2.0/admin/manage-fields.php:720
 msgid "Guernsey Pound"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:649
+#: ../profile-builder-2.0/admin/manage-fields.php:721
 msgid "Guyana Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:650
+#: ../profile-builder-2.0/admin/manage-fields.php:722
 msgid "Honduras Lempira"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:651
+#: ../profile-builder-2.0/admin/manage-fields.php:723
 msgid "Hong Kong Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:652
+#: ../profile-builder-2.0/admin/manage-fields.php:724
 msgid "Hungary Forint"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:653
+#: ../profile-builder-2.0/admin/manage-fields.php:725
 msgid "Iceland Krona"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:654
+#: ../profile-builder-2.0/admin/manage-fields.php:726
 msgid "India Rupee"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:655
+#: ../profile-builder-2.0/admin/manage-fields.php:727
 msgid "Indonesia Rupiah"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:656
+#: ../profile-builder-2.0/admin/manage-fields.php:728
 msgid "Iran Rial"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:657
+#: ../profile-builder-2.0/admin/manage-fields.php:729
 msgid "Isle of Man Pound"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:658
+#: ../profile-builder-2.0/admin/manage-fields.php:730
 msgid "Israel Shekel"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:659
+#: ../profile-builder-2.0/admin/manage-fields.php:731
 msgid "Jamaica Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:660
+#: ../profile-builder-2.0/admin/manage-fields.php:732
 msgid "Japan Yen"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:661
+#: ../profile-builder-2.0/admin/manage-fields.php:733
 msgid "Jersey Pound"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:662
+#: ../profile-builder-2.0/admin/manage-fields.php:734
 msgid "Kazakhstan Tenge"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:663
+#: ../profile-builder-2.0/admin/manage-fields.php:735
 msgid "Korea (North) Won"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:664
+#: ../profile-builder-2.0/admin/manage-fields.php:736
 msgid "Korea (South) Won"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:665
+#: ../profile-builder-2.0/admin/manage-fields.php:737
 msgid "Kyrgyzstan Som"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:666
+#: ../profile-builder-2.0/admin/manage-fields.php:738
 msgid "Laos Kip"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:667
+#: ../profile-builder-2.0/admin/manage-fields.php:739
 msgid "Latvia Lat"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:668
+#: ../profile-builder-2.0/admin/manage-fields.php:740
 msgid "Lebanon Pound"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:669
+#: ../profile-builder-2.0/admin/manage-fields.php:741
 msgid "Liberia Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:670
+#: ../profile-builder-2.0/admin/manage-fields.php:742
 msgid "Lithuania Litas"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:671
+#: ../profile-builder-2.0/admin/manage-fields.php:743
 msgid "Macedonia Denar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:672
+#: ../profile-builder-2.0/admin/manage-fields.php:744
 msgid "Malaysia Ringgit"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:673
+#: ../profile-builder-2.0/admin/manage-fields.php:745
 msgid "Mauritius Rupee"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:674
+#: ../profile-builder-2.0/admin/manage-fields.php:746
 msgid "Mexico Peso"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:675
+#: ../profile-builder-2.0/admin/manage-fields.php:747
 msgid "Mongolia Tughrik"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:676
+#: ../profile-builder-2.0/admin/manage-fields.php:748
 msgid "Mozambique Metical"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:677
+#: ../profile-builder-2.0/admin/manage-fields.php:749
 msgid "Namibia Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:678
+#: ../profile-builder-2.0/admin/manage-fields.php:750
 msgid "Nepal Rupee"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:679
+#: ../profile-builder-2.0/admin/manage-fields.php:751
 msgid "Netherlands Antilles Guilder"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:680
+#: ../profile-builder-2.0/admin/manage-fields.php:752
 msgid "New Zealand Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:681
+#: ../profile-builder-2.0/admin/manage-fields.php:753
 msgid "Nicaragua Cordoba"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:682
+#: ../profile-builder-2.0/admin/manage-fields.php:754
 msgid "Nigeria Naira"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:683
+#: ../profile-builder-2.0/admin/manage-fields.php:755
 msgid "Norway Krone"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:684
+#: ../profile-builder-2.0/admin/manage-fields.php:756
 msgid "Oman Rial"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:685
+#: ../profile-builder-2.0/admin/manage-fields.php:757
 msgid "Pakistan Rupee"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:686
+#: ../profile-builder-2.0/admin/manage-fields.php:758
 msgid "Panama Balboa"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:687
+#: ../profile-builder-2.0/admin/manage-fields.php:759
 msgid "Paraguay Guarani"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:688
+#: ../profile-builder-2.0/admin/manage-fields.php:760
 msgid "Peru Nuevo Sol"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:689
+#: ../profile-builder-2.0/admin/manage-fields.php:761
 msgid "Philippines Peso"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:690
+#: ../profile-builder-2.0/admin/manage-fields.php:762
 msgid "Poland Zloty"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:691
+#: ../profile-builder-2.0/admin/manage-fields.php:763
 msgid "Qatar Riyal"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:692
+#: ../profile-builder-2.0/admin/manage-fields.php:764
 msgid "Romania New Leu"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:693
+#: ../profile-builder-2.0/admin/manage-fields.php:765
 msgid "Russia Ruble"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:694
+#: ../profile-builder-2.0/admin/manage-fields.php:766
 msgid "Saint Helena Pound"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:695
+#: ../profile-builder-2.0/admin/manage-fields.php:767
 msgid "Saudi Arabia Riyal"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:696
+#: ../profile-builder-2.0/admin/manage-fields.php:768
 msgid "Serbia Dinar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:697
+#: ../profile-builder-2.0/admin/manage-fields.php:769
 msgid "Seychelles Rupee"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:698
+#: ../profile-builder-2.0/admin/manage-fields.php:770
 msgid "Singapore Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:699
+#: ../profile-builder-2.0/admin/manage-fields.php:771
 msgid "Solomon Islands Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:700
+#: ../profile-builder-2.0/admin/manage-fields.php:772
 msgid "Somalia Shilling"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:701
+#: ../profile-builder-2.0/admin/manage-fields.php:773
 msgid "South Africa Rand"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:702
+#: ../profile-builder-2.0/admin/manage-fields.php:774
 msgid "Sri Lanka Rupee"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:703
+#: ../profile-builder-2.0/admin/manage-fields.php:775
 msgid "Sweden Krona"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:704
+#: ../profile-builder-2.0/admin/manage-fields.php:776
 msgid "Switzerland Franc"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:705
+#: ../profile-builder-2.0/admin/manage-fields.php:777
 msgid "Suriname Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:706
+#: ../profile-builder-2.0/admin/manage-fields.php:778
 msgid "Syria Pound"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:707
+#: ../profile-builder-2.0/admin/manage-fields.php:779
 msgid "Taiwan New Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:708
+#: ../profile-builder-2.0/admin/manage-fields.php:780
 msgid "Thailand Baht"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:709
+#: ../profile-builder-2.0/admin/manage-fields.php:781
 msgid "Trinidad and Tobago Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:710, ../profile-builder-2.0/admin/manage-fields.php:711
+#: ../profile-builder-2.0/admin/manage-fields.php:782, ../profile-builder-2.0/admin/manage-fields.php:783
 msgid "Turkey Lira"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:712
+#: ../profile-builder-2.0/admin/manage-fields.php:784
 msgid "Tuvalu Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:713
+#: ../profile-builder-2.0/admin/manage-fields.php:785
 msgid "Ukraine Hryvna"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:714
+#: ../profile-builder-2.0/admin/manage-fields.php:786
 msgid "United Kingdom Pound"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:715
+#: ../profile-builder-2.0/admin/manage-fields.php:787
 msgid "Uganda Shilling"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:716
+#: ../profile-builder-2.0/admin/manage-fields.php:788
 msgid "US Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:717
+#: ../profile-builder-2.0/admin/manage-fields.php:789
 msgid "Uruguay Peso"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:718
+#: ../profile-builder-2.0/admin/manage-fields.php:790
 msgid "Uzbekistan Som"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:719
+#: ../profile-builder-2.0/admin/manage-fields.php:791
 msgid "Venezuela Bolivar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:720
+#: ../profile-builder-2.0/admin/manage-fields.php:792
 msgid "Viet Nam Dong"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:721
+#: ../profile-builder-2.0/admin/manage-fields.php:793
 msgid "Yemen Rial"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:722
+#: ../profile-builder-2.0/admin/manage-fields.php:794
 msgid "Zimbabwe Dollar"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1024, ../profile-builder-2.0/admin/manage-fields.php:1181
+#: ../profile-builder-2.0/admin/manage-fields.php:1097, ../profile-builder-2.0/admin/manage-fields.php:1254
 msgid ""
 "You must select a field\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1034
+#: ../profile-builder-2.0/admin/manage-fields.php:1107
 msgid ""
 "Please choose a different field type as this one already exists in your form (must be unique)\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1045
+#: ../profile-builder-2.0/admin/manage-fields.php:1118
 msgid ""
 "The entered avatar size is not between 20 and 200\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1048
+#: ../profile-builder-2.0/admin/manage-fields.php:1121
 msgid ""
 "The entered avatar size is not numerical\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1056
+#: ../profile-builder-2.0/admin/manage-fields.php:1129
 msgid ""
 "The entered row number is not numerical\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1059
+#: ../profile-builder-2.0/admin/manage-fields.php:1132
 msgid ""
 "You must enter a value for the row number\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1067
+#: ../profile-builder-2.0/admin/manage-fields.php:1140
 msgid ""
 "You must enter the site key\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1069
+#: ../profile-builder-2.0/admin/manage-fields.php:1142
 msgid ""
 "You must enter the secret key\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1080
+#: ../profile-builder-2.0/admin/manage-fields.php:1153
 msgid ""
 "The entered value for the Datepicker is not a valid date-format\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1083
+#: ../profile-builder-2.0/admin/manage-fields.php:1156
 msgid ""
 "You must enter a value for the date-format\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1099
+#: ../profile-builder-2.0/admin/manage-fields.php:1172
 msgid ""
 "The meta-name cannot be empty\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1111, ../profile-builder-2.0/admin/manage-fields.php:1119, ../profile-builder-2.0/admin/manage-fields.php:1130
+#: ../profile-builder-2.0/admin/manage-fields.php:1184, ../profile-builder-2.0/admin/manage-fields.php:1192, ../profile-builder-2.0/admin/manage-fields.php:1203
 msgid ""
 "That meta-name is already in use\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1141
+#: ../profile-builder-2.0/admin/manage-fields.php:1214
 msgid ""
 "The meta-name can only contain lowercase letters, numbers, _ , - and no spaces.\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1161
+#: ../profile-builder-2.0/admin/manage-fields.php:1234
 msgid ""
 "The following option(s) did not coincide with the ones in the options list: %s\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1165
+#: ../profile-builder-2.0/admin/manage-fields.php:1238
 msgid ""
 "The following option did not coincide with the ones in the options list: %s\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1172
+#: ../profile-builder-2.0/admin/manage-fields.php:1245
 msgid ""
 "Please select at least one user role\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1188
+#: ../profile-builder-2.0/admin/manage-fields.php:1261
 msgid ""
 "That field is already added in this form\n"
 ""
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1239
+#: ../profile-builder-2.0/admin/manage-fields.php:1312
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1254
+#: ../profile-builder-2.0/admin/manage-fields.php:1327
 msgid "Use these shortcodes on the pages you want the forms to be displayed:"
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1263
+#: ../profile-builder-2.0/admin/manage-fields.php:1336
 msgid "If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Modules."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1265
+#: ../profile-builder-2.0/admin/manage-fields.php:1338
 msgid "With Profile Builder Pro you can display different fields in the registration and edit profile forms, using the Multiple Registration & Edit Profile Forms module."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/manage-fields.php:1362
+#: ../profile-builder-2.0/admin/manage-fields.php:1435
 msgid "Search Location"
 msgstr ""
 
@@ -4445,7 +4477,7 @@ msgstr ""
 msgid "We recommend \"<a href=\"%s\" target=\"_blank\">Custom Profile Menus</a>\" addon if you need different menu items for logged in / logged out users."
 msgstr ""
 
-#: ../profile-builder-2.0/admin/private-website.php:127, ../profile-builder-2.0/features/functions.php:767, includes/views/view-admin.php:47, includes/views/view-fields.php:275, includes/views/view-forms.php:321, includes/views/view-shortcodes.php:77, includes/views/view-userlisting.php:91, ../profile-builder-2.0/features/content-restriction/content-restriction.php:159, ../profile-builder-2.0/modules/class-mustache-templates/class-mustache-templates.php:390, ../pb-add-on-labels-edit/assets/lib/wck-api/wordpress-creation-kit.php:402, ../profile-builder-2.0/assets/lib/wck-api/wordpress-creation-kit.php:394
+#: ../profile-builder-2.0/admin/private-website.php:127, ../profile-builder-2.0/features/functions.php:767, includes/views/view-admin.php:47, includes/views/view-fields.php:275, includes/views/view-forms.php:321, includes/views/view-shortcodes.php:77, includes/views/view-userlisting.php:91, ../profile-builder-2.0/features/content-restriction/content-restriction.php:159, ../profile-builder-2.0/modules/class-mustache-templates/class-mustache-templates.php:390, ../pb-add-on-labels-edit/assets/lib/wck-api/wordpress-creation-kit.php:402, ../profile-builder-2.0/assets/lib/wck-api/wordpress-creation-kit.php:405
 msgid "Save Changes"
 msgstr ""
 
@@ -4561,7 +4593,7 @@ msgstr ""
 msgid "Incorrect phone number"
 msgstr ""
 
-#: ../profile-builder-2.0/features/functions.php:795, ../pb-add-on-labels-edit/assets/lib/wck-api/wordpress-creation-kit.php:444, ../profile-builder-2.0/assets/lib/wck-api/wordpress-creation-kit.php:436
+#: ../profile-builder-2.0/features/functions.php:795, ../pb-add-on-labels-edit/assets/lib/wck-api/wordpress-creation-kit.php:444, ../profile-builder-2.0/assets/lib/wck-api/wordpress-creation-kit.php:447
 msgid "Content"
 msgstr ""
 
@@ -4617,51 +4649,51 @@ msgstr ""
 msgid "You must be logged in to edit your profile."
 msgstr ""
 
-#: ../profile-builder-2.0/front-end/class-formbuilder.php:263, ../profile-builder-2.0/front-end/login.php:479
+#: ../profile-builder-2.0/front-end/class-formbuilder.php:265, ../profile-builder-2.0/front-end/login.php:479
 msgid "You are not allowed to do this."
 msgstr ""
 
-#: ../profile-builder-2.0/front-end/class-formbuilder.php:320, ../profile-builder-2.0/front-end/class-formbuilder.php:327
+#: ../profile-builder-2.0/front-end/class-formbuilder.php:322, ../profile-builder-2.0/front-end/class-formbuilder.php:329
 msgid "The account %1s has been successfully created!"
 msgstr ""
 
-#: ../profile-builder-2.0/front-end/class-formbuilder.php:323, ../profile-builder-2.0/front-end/class-formbuilder.php:333
+#: ../profile-builder-2.0/front-end/class-formbuilder.php:325, ../profile-builder-2.0/front-end/class-formbuilder.php:335
 msgid "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link."
 msgstr ""
 
-#: ../profile-builder-2.0/front-end/class-formbuilder.php:329
+#: ../profile-builder-2.0/front-end/class-formbuilder.php:331
 msgid "Before you can access your account %1s, an administrator has to approve it. You will be notified via email."
 msgstr ""
 
-#: ../profile-builder-2.0/front-end/class-formbuilder.php:352
+#: ../profile-builder-2.0/front-end/class-formbuilder.php:354
 msgid "Your profile has been successfully updated!"
 msgstr ""
 
-#: ../profile-builder-2.0/front-end/class-formbuilder.php:363
+#: ../profile-builder-2.0/front-end/class-formbuilder.php:365
 msgid "There was an error in the submitted form"
 msgstr ""
 
-#: ../profile-builder-2.0/front-end/class-formbuilder.php:420
+#: ../profile-builder-2.0/front-end/class-formbuilder.php:422
 msgid "Add User"
 msgstr ""
 
-#: ../profile-builder-2.0/front-end/class-formbuilder.php:486
+#: ../profile-builder-2.0/front-end/class-formbuilder.php:491
 msgid "Send these credentials via email."
 msgstr ""
 
-#: ../profile-builder-2.0/front-end/class-formbuilder.php:682
+#: ../profile-builder-2.0/front-end/class-formbuilder.php:687
 msgid "User to edit:"
 msgstr ""
 
-#: ../profile-builder-2.0/front-end/class-formbuilder.php:684
+#: ../profile-builder-2.0/front-end/class-formbuilder.php:689
 msgid "Select User"
 msgstr ""
 
-#: ../profile-builder-2.0/front-end/class-formbuilder.php:698
+#: ../profile-builder-2.0/front-end/class-formbuilder.php:703
 msgid "There are no other users to edit"
 msgstr ""
 
-#: ../profile-builder-2.0/front-end/class-formbuilder.php:716
+#: ../profile-builder-2.0/front-end/class-formbuilder.php:721
 msgid "Something went wrong. Please try again!"
 msgstr ""
 
@@ -4789,11 +4821,11 @@ msgstr ""
 msgid "There was an error while trying to send the activation link to %1$s!"
 msgstr ""
 
-#: ../profile-builder-2.0/front-end/recover.php:266, ../profile-builder-2.0/front-end/default-fields/password/password.php:47
+#: ../profile-builder-2.0/front-end/recover.php:266, ../profile-builder-2.0/front-end/default-fields/password/password.php:50
 msgid "The password must have the minimum length of %s characters"
 msgstr ""
 
-#: ../profile-builder-2.0/front-end/recover.php:270, ../profile-builder-2.0/front-end/default-fields/password/password.php:51
+#: ../profile-builder-2.0/front-end/recover.php:270, ../profile-builder-2.0/front-end/default-fields/password/password.php:54
 msgid "The password must have a minimum strength of %s"
 msgstr ""
 
@@ -5353,15 +5385,15 @@ msgstr ""
 msgid "Approve"
 msgstr ""
 
-#: ../profile-builder-2.0/features/admin-approval/class-admin-approval.php:167, ../profile-builder-2.0/modules/user-listing/userlisting.php:304, ../profile-builder-2.0/modules/user-listing/userlisting.php:790, ../profile-builder-2.0/modules/user-listing/userlisting.php:2295
+#: ../profile-builder-2.0/features/admin-approval/class-admin-approval.php:167, ../profile-builder-2.0/modules/user-listing/userlisting.php:312, ../profile-builder-2.0/modules/user-listing/userlisting.php:798, ../profile-builder-2.0/modules/user-listing/userlisting.php:2315
 msgid "Firstname"
 msgstr ""
 
-#: ../profile-builder-2.0/features/admin-approval/class-admin-approval.php:168, ../profile-builder-2.0/modules/user-listing/userlisting.php:793, ../profile-builder-2.0/modules/user-listing/userlisting.php:2296
+#: ../profile-builder-2.0/features/admin-approval/class-admin-approval.php:168, ../profile-builder-2.0/modules/user-listing/userlisting.php:801, ../profile-builder-2.0/modules/user-listing/userlisting.php:2316
 msgid "Lastname"
 msgstr ""
 
-#: ../profile-builder-2.0/features/admin-approval/class-admin-approval.php:170, ../profile-builder-2.0/features/roles-editor/roles-editor.php:255, ../profile-builder-2.0/modules/user-listing/userlisting.php:159, ../profile-builder-2.0/modules/user-listing/userlisting.php:305, ../profile-builder-2.0/modules/user-listing/userlisting.php:820, ../profile-builder-2.0/modules/user-listing/userlisting.php:2300
+#: ../profile-builder-2.0/features/admin-approval/class-admin-approval.php:170, ../profile-builder-2.0/features/roles-editor/roles-editor.php:255, ../profile-builder-2.0/modules/user-listing/userlisting.php:159, ../profile-builder-2.0/modules/user-listing/userlisting.php:313, ../profile-builder-2.0/modules/user-listing/userlisting.php:828, ../profile-builder-2.0/modules/user-listing/userlisting.php:2320
 msgid "Role"
 msgstr ""
 
@@ -6301,27 +6333,27 @@ msgstr ""
 msgid "No Edit-profile Forms found in trash"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:135, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:138, ../profile-builder-2.0/modules/user-listing/userlisting.php:2186
+#: ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:135, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:138, ../profile-builder-2.0/modules/user-listing/userlisting.php:2206
 msgid "Shortcode"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:155, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:159, ../profile-builder-2.0/modules/user-listing/userlisting.php:2207
+#: ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:155, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:159, ../profile-builder-2.0/modules/user-listing/userlisting.php:2227
 msgid "(no title)"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:175, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:178, ../profile-builder-2.0/modules/user-listing/userlisting.php:2227
+#: ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:175, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:178, ../profile-builder-2.0/modules/user-listing/userlisting.php:2247
 msgid "The shortcode will be available after you publish this form."
 msgstr ""
 
-#: ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:177, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:180, ../profile-builder-2.0/modules/user-listing/userlisting.php:2229
+#: ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:177, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:180, ../profile-builder-2.0/modules/user-listing/userlisting.php:2249
 msgid "Use this shortcode on the page you want the form to be displayed:"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:181, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:184, ../profile-builder-2.0/modules/user-listing/userlisting.php:2233
+#: ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:181, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:184, ../profile-builder-2.0/modules/user-listing/userlisting.php:2253
 msgid "<span style=\"color:red;\">Note:</span> changing the form title also changes the shortcode!"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:187, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:190, ../profile-builder-2.0/modules/user-listing/userlisting.php:2266
+#: ../profile-builder-2.0/modules/multiple-forms/edit-profile-forms.php:187, ../profile-builder-2.0/modules/multiple-forms/register-forms.php:190, ../profile-builder-2.0/modules/user-listing/userlisting.php:2286
 msgid "Form Shortcode"
 msgstr ""
 
@@ -6437,6 +6469,14 @@ msgstr ""
 msgid "Are you sure you want to delete this?"
 msgstr ""
 
+#: ../profile-builder-2.0/modules/user-listing/one-map-listing.php:511
+msgid "Please wait while the pins are loading..."
+msgstr ""
+
+#: ../profile-builder-2.0/modules/user-listing/one-map-listing.php:624
+msgid "The API Key was not provided."
+msgstr ""
+
 #: ../profile-builder-2.0/modules/user-listing/userlisting.php:14
 msgid "Add new User Listing"
 msgstr ""
@@ -6469,11 +6509,11 @@ msgstr ""
 msgid "Display name as"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:161, ../profile-builder-2.0/modules/user-listing/userlisting.php:2294
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:161, ../profile-builder-2.0/modules/user-listing/userlisting.php:2314
 msgid "Registration Date"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:162, ../profile-builder-2.0/modules/user-listing/userlisting.php:2299
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:162, ../profile-builder-2.0/modules/user-listing/userlisting.php:2319
 msgid "Number of Posts"
 msgstr ""
 
@@ -6497,7 +6537,7 @@ msgstr ""
 msgid "Sort Tags"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:222, ../profile-builder-2.0/modules/user-listing/userlisting.php:253
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:222, ../profile-builder-2.0/modules/user-listing/userlisting.php:261
 msgid "Extra Functions"
 msgstr ""
 
@@ -6509,7 +6549,7 @@ msgstr ""
 msgid "Search all Fields"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:227, ../profile-builder-2.0/modules/user-listing/userlisting.php:2381
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:227, ../profile-builder-2.0/modules/user-listing/userlisting.php:2401
 msgid "Faceted Menus"
 msgstr ""
 
@@ -6517,319 +6557,323 @@ msgstr ""
 msgid "User Count"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:255
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:235
+msgid "Map of listed users"
+msgstr ""
+
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:263
 msgid "Go Back Link"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:273
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:281
 msgid "All-userlisting Template"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:276
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:284
 msgid "Single-userlisting Template"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:302
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:310
 msgid "Avatar"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:306, ../profile-builder-2.0/modules/user-listing/userlisting.php:805
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:314, ../profile-builder-2.0/modules/user-listing/userlisting.php:813
 msgid "Posts"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:307, ../profile-builder-2.0/modules/user-listing/userlisting.php:787
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:315, ../profile-builder-2.0/modules/user-listing/userlisting.php:795
 msgid "Sign-up Date"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:308
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:316
 msgid "More"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:402
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:410
 msgid "You do not have permission to view this user list."
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:415
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:423
 msgid "You do not have the required user role to view this user list."
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:439
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:447
 msgid "User not found"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:781
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:789
 msgid "First/Lastname"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:796, ../profile-builder-2.0/modules/user-listing/userlisting.php:2297
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:804, ../profile-builder-2.0/modules/user-listing/userlisting.php:2317
 msgid "Display Name"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:808, ../profile-builder-2.0/modules/user-listing/userlisting.php:2304
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:816, ../profile-builder-2.0/modules/user-listing/userlisting.php:2324
 msgid "Aim"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:811, ../profile-builder-2.0/modules/user-listing/userlisting.php:2305
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:819, ../profile-builder-2.0/modules/user-listing/userlisting.php:2325
 msgid "Yim"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:814, ../profile-builder-2.0/modules/user-listing/userlisting.php:2306
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:822, ../profile-builder-2.0/modules/user-listing/userlisting.php:2326
 msgid "Jabber"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1092, ../profile-builder-2.0/modules/user-listing/userlisting.php:1552, ../profile-builder-2.0/modules/user-listing/userlisting.php:2024, ../profile-builder-2.0/modules/user-listing/userlisting.php:2501
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1100, ../profile-builder-2.0/modules/user-listing/userlisting.php:1569, ../profile-builder-2.0/modules/user-listing/userlisting.php:2041, ../profile-builder-2.0/modules/user-listing/userlisting.php:2521
 msgid "Search Users by All Fields"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1357
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1369
 msgid "Click here to see more information about this user"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1357, ../profile-builder-2.0/modules/user-listing/userlisting.php:1357
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1369, ../profile-builder-2.0/modules/user-listing/userlisting.php:1369
 msgid "More..."
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1360
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1372
 msgid "Click here to see more information about this user."
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1387
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1399
 msgid "View Map"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1506, ../profile-builder-2.0/modules/user-listing/userlisting.php:1509
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1523, ../profile-builder-2.0/modules/user-listing/userlisting.php:1526
 msgid "Click here to go back"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1506, ../profile-builder-2.0/modules/user-listing/userlisting.php:1506
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1523, ../profile-builder-2.0/modules/user-listing/userlisting.php:1523
 msgid "Back"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1539
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1556
 msgid "&laquo;&laquo; First"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1540
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1557
 msgid "&laquo; Prev"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1541
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1558
 msgid "Next &raquo; "
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1542
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1559
 msgid "Last &raquo;&raquo;"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1571
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1588
 msgid "You don't have any pagination settings on this userlisting!"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1620
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1637
 msgid "Show All"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1694
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1711
 msgid "Choose..."
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1783
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1800
 msgid "No options available"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1932
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:1949
 msgid "Remove All Filters"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2041
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2058
 msgid "Search"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2042
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2059
 msgid "Clear Results"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2236, ../profile-builder-2.0/modules/user-listing/userlisting.php:2240
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2256, ../profile-builder-2.0/modules/user-listing/userlisting.php:2260
 msgid "Extra shortcode parameters"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2238
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2258
 msgid "View all extra shortcode parameters"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2243
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2263
 msgid "displays users having a certain meta-value within a certain (extra) meta-field"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2244
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2264
 msgid "Example:"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2246
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2266
 msgid "Remember though, that the field-value combination must exist in the database."
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2252
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2272
 msgid "displays only the users that you specified the user_id for"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2258
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2278
 msgid "displays all users except the ones you specified the user_id for"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2321
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2341
 msgid "Random (very slow on large databases > 10K user)"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2324
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2344
 msgid "Ascending"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2325
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2345
 msgid "Descending"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2333
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2353
 msgid "Roles to Display"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2333
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2353
 msgid "Restrict the userlisting to these selected roles only<br/>If not specified, defaults to all existing roles"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2334
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2354
 msgid "Number of Users/Page"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2334
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2354
 msgid "Set the number of users to be displayed on every paginated part of the all-userlisting"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2335
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2355
 msgid "Default Sorting Criteria"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2335
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2355
 msgid "Set the default sorting criteria<br/>This can temporarily be changed for each new session"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2336
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2356
 msgid "Default Sorting Order"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2336
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2356
 msgid "Set the default sorting order<br/>This can temporarily be changed for each new session"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2337
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2357
 msgid "Avatar Size (All-userlisting)"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2337
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2357
 msgid "Set the avatar size on the all-userlisting only"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2338
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2358
 msgid "Avatar Size (Single-userlisting)"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2338
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2358
 msgid "Set the avatar size on the single-userlisting only"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2339
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2359
 msgid "Visible only to logged in users?"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2339
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2359
 msgid "The userlisting will only be visible only to the logged in users"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2340
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2360
 msgid "Visible to following Roles"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2340
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2360
 msgid "The userlisting will only be visible to the following roles"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2346
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2366
 msgid "Userlisting Settings"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2371
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2391
 msgid "Label"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2371
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2391
 msgid "Choose the facet name that appears on the frontend"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2372
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2392
 msgid "Facet Type"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2372
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2392
 msgid "Choose the facet menu type"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2373
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2393
 msgid "Facet Meta"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2373
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2393
 msgid "Choose the meta field for the facet menu"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2374
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2394
 msgid "Behaviour"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2374
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2394
 msgid "Narrow the results"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2374
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2394
 msgid "Expand the results"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2374
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2394
 msgid "Choose how multiple selections affect the results"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2375
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2395
 msgid "Visible choices"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2375
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2395
 msgid "Show a toggle link after this many choices. Leave blank for all"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2400
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2420
 msgid "Search Fields"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2400
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2420
 msgid "Choose the fields in which the Search Field will look in"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2405
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2425
 msgid "Search Settings"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2477
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2497
 msgid "You need to activate the Userlisting feature from within the \"Modules\" tab!"
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2477
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2497
 msgid "You can find it in the Profile Builder menu."
 msgstr ""
 
-#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2640
+#: ../profile-builder-2.0/modules/user-listing/userlisting.php:2660
 msgid "No results found!"
 msgstr ""
 
-#: ../pb-add-on-labels-edit/assets/lib/wck-api/wordpress-creation-kit.php:541, ../profile-builder-2.0/assets/lib/wck-api/wordpress-creation-kit.php:534
+#: ../pb-add-on-labels-edit/assets/lib/wck-api/wordpress-creation-kit.php:541, ../profile-builder-2.0/assets/lib/wck-api/wordpress-creation-kit.php:545
 msgid "Delete this item"
 msgstr ""
 
@@ -6875,6 +6919,14 @@ msgstr ""
 
 #: ../profile-builder-2.0/front-end/default-fields/email/email.php:77, ../profile-builder-2.0/front-end/default-fields/email/email.php:95
 msgid "This email is already in use."
+msgstr ""
+
+#: ../profile-builder-2.0/front-end/default-fields/gdpr-delete/gdpr-delete.php:31
+msgid "Type %s to confirm deleting your account and all data associated with it:"
+msgstr ""
+
+#: ../profile-builder-2.0/front-end/default-fields/gdpr-delete/gdpr-delete.php:32
+msgid "You did not type %s. Try again!"
 msgstr ""
 
 #: ../profile-builder-2.0/front-end/default-fields/password-repeat/password-repeat.php:37, ../profile-builder-2.0/front-end/default-fields/password-repeat/password-repeat.php:41

@@ -200,7 +200,7 @@ function wpgmaps_activate() {
 	
 	update_option('WPGMZA_OTHER_SETTINGS', $other_settings);
 
-    update_option("wpgmza_temp_api",'AIzaSyChPphumyabdfggISDNBuGOlGVBgEvZnGE');
+    update_option("wpgmza_temp_api",'AIzaSyDjyYKnTqGG2CAF9nmrfB6zgTBE6oPhMk4');
 
 	// set defaults for the Marker XML Dir and Marker XML URL
     if (get_option("wpgmza_xml_location") == "") {
@@ -2755,10 +2755,10 @@ function wpgmza_settings_page_post()
 	if(isset($_POST['wpgmza_load_engine_api_condition']))
 		$wpgmza->settings['wpgmza_load_engine_api_condition'] = $_POST['wpgmza_load_engine_api_condition'];
 	
-	if(!empty($_POST['wpgmza_always_include_engine_api_on_pages']))
+	if(isset($_POST['wpgmza_always_include_engine_api_on_pages']))
 		$wpgmza->settings['wpgmza_always_include_engine_api_on_pages'] = $_POST['wpgmza_always_include_engine_api_on_pages'];
 	
-	if(!empty($_POST['wpgmza_always_exclude_engine_api_on_pages']))
+	if(isset($_POST['wpgmza_always_exclude_engine_api_on_pages']))
 		$wpgmza->settings['wpgmza_always_exclude_engine_api_on_pages'] = $_POST['wpgmza_always_exclude_engine_api_on_pages'];
 	
 	if(isset($_POST['wpgmza_use_fontawesome']))
@@ -6362,6 +6362,7 @@ if (function_exists('wpgmza_register_pro_version')) {
     add_action('wp_ajax_delete_marker', 'wpgmaps_action_callback_pro');
     add_action('wp_ajax_edit_marker', 'wpgmaps_action_callback_pro');
     add_action('wp_ajax_approve_marker', 'wpgmaps_action_callback_pro');
+	add_action('wp_ajax_delete_marker', 'wpgmaps_action_callback_pro');	// NB: Legacy support
     add_action('wp_ajax_delete_poly', 'wpgmaps_action_callback_pro');
     add_action('wp_ajax_delete_polyline', 'wpgmaps_action_callback_pro');
     add_action('wp_ajax_delete_dataset', 'wpgmaps_action_callback_pro');
@@ -6464,7 +6465,7 @@ function wpgmaps_permission_warning() {
 function wpgmaps_update_db_check() {
     global $wpgmza_version;
     if (get_option('wpgmza_db_version') != $wpgmza_version) {
-        update_option("wpgmza_temp_api",'AIzaSyChPphumyabdfggISDNBuGOlGVBgEvZnGE');
+        update_option("wpgmza_temp_api",'AIzaSyDjyYKnTqGG2CAF9nmrfB6zgTBE6oPhMk4');
         wpgmaps_handle_db();
     }
 

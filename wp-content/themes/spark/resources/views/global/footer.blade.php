@@ -10,7 +10,7 @@
         <div class="content">
           {{ the_field('footer_content', 'option') }}
           @set($login_page = 'http://royal-rewards.com')
-          <a class="logout" href="{{ wp_logout_url($login_page) }}">Logout</a>
+          <a class="logout uk-button uk-button-primary" href="{{ wp_logout_url($login_page) }}">Logout</a>
         </div>
       </div>
     </div>

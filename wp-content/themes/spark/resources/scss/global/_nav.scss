@@ -57,12 +57,12 @@ header#site-header {
 
       .icon {
         height: 18px;
+        position: relative;
+        bottom: 2px;
 
         span {
+          font-size: 24px;
           display: inline-block;
-          height: 18px;
-          width: 18px;
-          background: $white;
         }
       }
 

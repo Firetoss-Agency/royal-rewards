@@ -220,7 +220,14 @@ Please upgrade your version of WP Google Maps to version 6.0.27 as it includes m
 
 == Changelog ==
 
-= 7.11.32 =
+= 7.11.33 :- 2019-07-02 :- Low priority =
+* Added admin-ajax fallback for when REST API is blocked
+* Fixed characters such as accents showing as plain text HTML entities in DOMElement
+* Fixed object must implement countable notice on QueryFragment
+* Regenerated temporary API key
+* Removed unreachable code
+
+= 7.11.32 :- 2019-06-21 :- Low priority =
 * Added mechanism to report 403 Forbidden on REST API, this is usually caused by security plugins blocking REST requests for non-logged in users
 
 = 7.11.31 :- 2019-06-18 :- Low priority =
@@ -1188,6 +1195,15 @@ Please upgrade your version of WP Google Maps to version 6.0.27 as it includes m
 
 
 For more, please view the WP Google Maps site
+
+
+
+
+
+
+
+
+
 
 
 

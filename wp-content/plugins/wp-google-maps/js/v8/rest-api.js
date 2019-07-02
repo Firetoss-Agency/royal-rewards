@@ -14,6 +14,8 @@ jQuery(function($) {
 	WPGMZA.RestAPI = function()
 	{
 		WPGMZA.RestAPI.URL = WPGMZA.resturl;
+		
+		this.useAJAXFallback = false;
 	}
 	
 	/**
@@ -80,6 +82,25 @@ jQuery(function($) {
 		return base64.replace(/\//g, "-") + suffix;
 	}
 	
+	function sendAJAXFallbackRequest(route, params)
+	{
+		var params = $.extend({}, params);
+		
+		if(!params.data)
+			params.data = {};
+		
+		if("route" in params.data)
+			throw new Error("Cannot send route through this method");
+		
+		if("action" in params.data)
+			throw new Error("Cannot send action through this method");
+		
+		params.data.route = route;
+		params.data.action = "wpgmza_rest_api_request";
+		
+		return $.ajax(WPGMZA.ajaxurl, params);
+	}
+	
 	/**
 	 * Makes an AJAX to the REST API, this function is a wrapper for $.ajax
 	 * @method
@@ -89,6 +110,9 @@ jQuery(function($) {
 	 */
 	WPGMZA.RestAPI.prototype.call = function(route, params)
 	{
+		if(this.useAJAXFallback)
+			return sendAJAXFallbackRequest(route, params);
+		
 		var attemptedCompressedPathVariable = false;
 		var fallbackRoute = route;
 		var fallbackParams = $.extend({}, params);
@@ -133,6 +157,10 @@ jQuery(function($) {
 						}, function(response) {});
 						
 						console.warn("The REST API was blocked. This is usually due to security plugins blocking REST requests for non-authenticated users.");
+						
+						this.useAJAXFallback = true;
+						
+						return sendAJAXFallbackRequest(fallbackRoute, fallbackParams);
 						break;
 					
 					case 414:
@@ -194,7 +222,7 @@ jQuery(function($) {
 		nativeCallFunction.apply(this, arguments);
 	}
 	
-	$("#wpgmza-rest-api-blocked button.notice-dismiss").on("click", function(event) {
+	$(document.body).on("click", "#wpgmza-rest-api-blocked button.notice-dismiss", function(event) {
 		
 		WPGMZA.restAPI.call("/rest-api/", {
 			method: "POST",

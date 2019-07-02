@@ -666,6 +666,14 @@
 <?php __("Whether the field is required or not", "profile-builder"); ?>
 <?php __("Overwrite Existing", "profile-builder"); ?>
 <?php __("Selecting 'Yes' will add the field to the list, but will overwrite any other field in the database that has the same meta-name<br/>Use this at your own risk", "profile-builder"); ?>
+<?php __("POIs Load Type", "profile-builder"); ?>
+<?php __("POIs of the listed users (as filtered & paginated)", "profile-builder"); ?>
+<?php __("POIs of all the users for the filter* (no pagination)", "profile-builder"); ?>
+<?php __("This option allows you to load on a single map the POIs for all users, or just these for the listed ones (this will take into account the filters and the faceted menus). *Please use this feature wisely, it will impact the performance.", "profile-builder"); ?>
+<?php __("POI Bubble Info", "profile-builder"); ?>
+<?php __("Select the attributes to be listed inside the POI bubble.", "profile-builder"); ?>
+<?php __("Number of Users per Map Iteration", "profile-builder"); ?>
+<?php __("When loading the map of all users with no pagination, the map script will iterate multiple times and will expose gradually POIs on the map, until all the POIs for the users that match the criteria will be added on the map (think of this as of pagination for the map POIs). The smaller the number of users per iteration, the fastest the iteration response will be, but for a large number of users, the map script will iterate multiple times. Setting a higher limit will decrease the performance, but might produce a smaller number of iterations. <br><br><b>Please adjust this value to your hosting capabilities, and make sure that the value you set is the best for performance.</b> We recommend a <b>maximum</b> value of 300.", "profile-builder"); ?>
 <?php __("Form Field Properties", "profile-builder"); ?>
 <?php __("Registration & Edit Profile Forms", "profile-builder"); ?>
 <?php __("Usernames cannot be changed.", "profile-builder"); ?>
@@ -1583,6 +1591,8 @@
 <?php __("Specify the URL of the page users will be redirected once registered using this form<br/>Use the following format: http://www.mysite.com", "profile-builder"); ?>
 <?php __("After Registration...", "profile-builder"); ?>
 <?php __("Are you sure you want to delete this?", "profile-builder"); ?>
+<?php __("Please wait while the pins are loading...", "profile-builder"); ?>
+<?php __("The API Key was not provided.", "profile-builder"); ?>
 <?php __("Add new User Listing", "profile-builder"); ?>
 <?php __("Edit the User Listing", "profile-builder"); ?>
 <?php __("New User Listing", "profile-builder"); ?>
@@ -1603,6 +1613,7 @@
 <?php __("Search all Fields", "profile-builder"); ?>
 <?php __("Faceted Menus", "profile-builder"); ?>
 <?php __("User Count", "profile-builder"); ?>
+<?php __("Map of listed users", "profile-builder"); ?>
 <?php __("Go Back Link", "profile-builder"); ?>
 <?php __("All-userlisting Template", "profile-builder"); ?>
 <?php __("Single-userlisting Template", "profile-builder"); ?>
@@ -1693,6 +1704,8 @@
 <?php __("This email is already reserved to be used soon.", "profile-builder"); ?>
 <?php __("Please try a different one!", "profile-builder"); ?>
 <?php __("This email is already in use.", "profile-builder"); ?>
+<?php __("Type %s to confirm deleting your account and all data associated with it:", "profile-builder"); ?>
+<?php __("You did not type %s. Try again!", "profile-builder"); ?>
 <?php __("The passwords do not match", "profile-builder"); ?>
 <?php __("To use reCAPTCHA you must get an API key from", "profile-builder"); ?>
 <?php __("For security reasons, you must pass the remote ip to reCAPTCHA!", "profile-builder"); ?>

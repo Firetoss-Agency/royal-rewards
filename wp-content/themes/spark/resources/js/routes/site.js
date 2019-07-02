@@ -18,6 +18,7 @@ export default {
     // Mobile categories menu
     $('#sticky-mobile-nav .categories .button').click(function () {
       $('#categories').slideToggle('fast')
+      $(this).find('.fas').toggleClass('fa-chevron-up fa-chevron-down')
     })
   }
 };

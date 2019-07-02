@@ -64,6 +64,7 @@ function wppb_populate_manage_fields(){
                     'label'		=> __('Other'),
                     'options'	=> array(
                         'GDPR Checkbox', // since 2.8.2
+                        'GDPR Delete Button', // since 3.0.1
                     ),
                 ),
         ),
@@ -1165,7 +1166,7 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 				$unique_meta_name_list = array( 'first_name', 'last_name', 'nickname', 'description' );
 
                 //check to see if meta-name is empty
-                $skip_empty_check_for_fields = array( 'Heading', 'Select (User Role)', 'reCAPTCHA', 'HTML' );
+                $skip_empty_check_for_fields = array( 'Heading', 'Select (User Role)', 'reCAPTCHA', 'HTML', 'GDPR Delete Button' );
 
                 if( !in_array( $posted_values['field'], $skip_empty_check_for_fields ) && empty( $posted_values['meta-name'] ) ) {
                     $message .= __( "The meta-name cannot be empty\n", 'profile-builder' );

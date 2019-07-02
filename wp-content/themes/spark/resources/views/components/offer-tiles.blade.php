@@ -45,7 +45,7 @@
 
       @query($args)
         <div class="uk-width-1-3@l uk-width-1-2@m uk-width-1-1">
-          <a href="{{ the_permalink() }}" class="uk-card uk-card-default">
+          <a href="{{ the_permalink() }}" id="{{ get_post_field('post_name', get_the_ID()) }}" class="uk-card uk-card-default offer-tile">
 
             {{-- Image --}}
             @if(get_field('header_image') || get_field('logo'))

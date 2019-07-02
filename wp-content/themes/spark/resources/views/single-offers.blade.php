@@ -24,7 +24,7 @@
             @if($link)
               <div class="uk-text-center uk-margin-medium-bottom">
                 <hr class="uk-width-1-2@l uk-width-2-3@m uk-width-1-1">
-                <a class="uk-button uk-button-primary" href="{{ $link['url'] }}" {{ $link['target'] ? 'target="'.$link['target'].'"' : '' }}>{{ $link['title'] }}</a>
+                <a class="uk-button uk-button-primary view-offer" id="top-btn-{{ get_post_field('post_name', get_the_ID()) }}" href="{{ $link['url'] }}" {{ $link['target'] ? 'target="'.$link['target'].'"' : '' }}>{{ $link['title'] }}</a>
               </div>
             @endif
           </div>
@@ -50,7 +50,7 @@
           <div class="uk-text-center uk-margin-bottom">
             @if($link)
               <div class="uk-margin-bottom">
-                <a class="uk-button uk-button-primary" href="{{ $link['url'] }}" {{ $link['target'] ? 'target="'.$link['target'].'"' : '' }}>{{ $link['title'] }}</a>
+                <a class="uk-button uk-button-primary view-offer" id="btm-btn-{{ get_post_field('post_name', get_the_ID()) }}" href="{{ $link['url'] }}" {{ $link['target'] ? 'target="'.$link['target'].'"' : '' }}>{{ $link['title'] }}</a>
               </div>
             @endif
 
