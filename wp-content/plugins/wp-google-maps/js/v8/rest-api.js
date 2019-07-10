@@ -82,7 +82,7 @@ jQuery(function($) {
 		return base64.replace(/\//g, "-") + suffix;
 	}
 	
-	function sendAJAXFallbackRequest(route, params)
+	/*function sendAJAXFallbackRequest(route, params)
 	{
 		var params = $.extend({}, params);
 		
@@ -99,7 +99,7 @@ jQuery(function($) {
 		params.data.action = "wpgmza_rest_api_request";
 		
 		return $.ajax(WPGMZA.ajaxurl, params);
-	}
+	}*/
 	
 	/**
 	 * Makes an AJAX to the REST API, this function is a wrapper for $.ajax
@@ -110,8 +110,8 @@ jQuery(function($) {
 	 */
 	WPGMZA.RestAPI.prototype.call = function(route, params)
 	{
-		if(this.useAJAXFallback)
-			return sendAJAXFallbackRequest(route, params);
+		//if(this.useAJAXFallback)
+			//return sendAJAXFallbackRequest(route, params);
 		
 		var attemptedCompressedPathVariable = false;
 		var fallbackRoute = route;
@@ -158,9 +158,9 @@ jQuery(function($) {
 						
 						console.warn("The REST API was blocked. This is usually due to security plugins blocking REST requests for non-authenticated users.");
 						
-						this.useAJAXFallback = true;
+						//this.useAJAXFallback = true;
 						
-						return sendAJAXFallbackRequest(fallbackRoute, fallbackParams);
+						//return sendAJAXFallbackRequest(fallbackRoute, fallbackParams);
 						break;
 					
 					case 414:

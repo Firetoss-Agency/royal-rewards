@@ -220,6 +220,10 @@ Please upgrade your version of WP Google Maps to version 6.0.27 as it includes m
 
 == Changelog ==
 
+= 7.11.34 :- 2019-07-07 :- Medium priority =
+* Fixed DataTable sort order unpredictable with mixture of numeric and non-numeric data
+* Rolled back admin-ajax changes pending review
+
 = 7.11.33 :- 2019-07-02 :- Low priority =
 * Added admin-ajax fallback for when REST API is blocked
 * Fixed characters such as accents showing as plain text HTML entities in DOMElement
@@ -1195,6 +1199,10 @@ Please upgrade your version of WP Google Maps to version 6.0.27 as it includes m
 
 
 For more, please view the WP Google Maps site
+
+
+
+
 
 
 
