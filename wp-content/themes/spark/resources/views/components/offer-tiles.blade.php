@@ -77,7 +77,7 @@
                 <div class="divider" style="border-color: {{ the_field('highlight_color', $category) }}"></div>
 
                 @if(get_field('details'))
-                  <p class="uk-visible@m">{{ get_details_excerpt(120) }}</p>
+                  <p class="uk-visible@m">{!! get_details_excerpt(120) !!}</p>
                 @endif
               </div>
 

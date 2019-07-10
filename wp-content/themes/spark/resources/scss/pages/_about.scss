@@ -11,6 +11,24 @@ main.about {
   }
 
   section.map {
+    #wpgmza_filter_1 {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin: 0 0 1rem !important;
+      padding-top: 1rem;
+
+      select {
+        width: 320px;
+        max-width: 100%;
+        margin-left: 1rem;
+
+        &:focus {
+          border-color: #e5e5e5;
+        }
+      }
+    }
+
     .wpgmza_map {
       height: 40vw !important;
 

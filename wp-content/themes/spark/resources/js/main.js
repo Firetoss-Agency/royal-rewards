@@ -14,13 +14,16 @@ import site from './routes/site'
 import pageLogin from './routes/login'
 import postTypeArchiveOffers from './routes/offers'
 import singleOffers from './routes/offer'
+import about from './routes/about';
+
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
   site,
   pageLogin,
   postTypeArchiveOffers,
-  singleOffers
+  singleOffers,
+  about
 });
 
 /** Load events */

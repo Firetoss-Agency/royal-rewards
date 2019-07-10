@@ -22,7 +22,7 @@
     <div class="uk-container">
       <div class="uk-grid" uk-grid>
         <div class="uk-width-1-1">
-          @shortcode('[wpgmza id="1"]')
+          @shortcode('[wpgmza id="1" enable_category="1"]')
         </div>
       </div>
     </div>

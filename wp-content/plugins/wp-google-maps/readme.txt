@@ -197,6 +197,9 @@ Try [Nifty Maps](http://www.niftymaps.co) - Comprehensive Map Builder for all we
 
 == Upgrade Notice ==
 
+= 7.11.35 =
+Please update to 7.11.35 or above to ensure you are using the latest security enhancements.
+
 = 7.11.19 =
 Please update to 7.11.18 or above to ensure you are using the latest security enhancements.
 
@@ -219,6 +222,9 @@ We no longer support timthumb and we have opted to remove it from WP Google Maps
 Please upgrade your version of WP Google Maps to version 6.0.27 as it includes multiple security improvements.
 
 == Changelog ==
+
+= 7.11.35 :- 2019-07-08 :- High priority =
+* Security vulnerabilities fixed (Thank you Plugin Review Team at WordPress.org and pluginvulnerabilities.com)
 
 = 7.11.34 :- 2019-07-07 :- Medium priority =
 * Fixed DataTable sort order unpredictable with mixture of numeric and non-numeric data

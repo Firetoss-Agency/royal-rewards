@@ -132,11 +132,13 @@ function wpgmaps_deactivation_survey_t2( $plugins ) {
 if (function_exists('wpgmaps_head_pro' )) {
     add_action( 'admin_head', 'wpgmaps_head_pro' );
 } else {
+	
     if (function_exists( 'wpgmaps_pro_activate' ) && floatval($wpgmza_version) < 5.24) {
         add_action( 'admin_head', 'wpgmaps_head_old' );
     } else {
         add_action( 'admin_head', 'wpgmaps_head' );
     }
+
     
 }
 add_action( 'admin_head','wpgmaps_feedback_head' );
@@ -2084,7 +2086,7 @@ function wpgmaps_action_callback_basic() {
     global $wpgmza_tblname_polylines;
     $check = check_ajax_referer( 'wpgmza', 'security' );
     $table_name = $wpdb->prefix . "wpgmza";
-
+	
     if ($check == 1) {
 
         if ($_POST['action'] == "add_marker") {
@@ -2804,6 +2806,11 @@ function wpgmza_settings_page_post()
  */
 function wpgmaps_head() {
 
+
+	if (!current_user_can('administrator')) {
+	   return false;
+	}
+
 	global $wpgmza;
     global $wpgmza_tblname_maps;
     global $wpgmza_version;
@@ -2823,6 +2830,11 @@ function wpgmaps_head() {
     
     
     if (isset($_POST['wpgmza_savemap'])){
+
+    	if ( !isset( $_POST['wpgmaps_main-nonce'] ) || !wp_verify_nonce( $_POST['wpgmaps_main-nonce'], 'wpgmaps_main-nonce' ) ) {
+    		wp_die( __( 'You do not have permission to perform this function', 'wp-google-maps' ) );
+    	}
+
         global $wpdb;
 
         
@@ -2859,7 +2871,7 @@ function wpgmaps_head() {
         $other_settings['store_locator_distance'] = isset($_POST['wpgmza_store_locator_distance']) ? 1 : 2;
 
         if (isset($_POST['wpgmza_store_locator_default_radius']))
-            $other_settings['store_locator_default_radius'] =  esc_attr($_POST['wpgmza_store_locator_default_radius']);
+            $other_settings['store_locator_default_radius'] =  intval($_POST['wpgmza_store_locator_default_radius']);
         
 	    if (isset($_POST['wpgmza_store_locator_not_found_message'])) { $other_settings['store_locator_not_found_message'] = sanitize_text_field( $_POST['wpgmza_store_locator_not_found_message'] ); }
         $other_settings['store_locator_bounce'] = isset($_POST['wpgmza_store_locator_bounce']) ? 1 : 2;
@@ -2869,10 +2881,10 @@ function wpgmaps_head() {
         if (isset($_POST['wpgmza_store_locator_restrict'])) { $other_settings['wpgmza_store_locator_restrict'] = sanitize_text_field($_POST['wpgmza_store_locator_restrict']); }
 		
 		if(isset($_POST['store_locator_style']))
-			$other_settings['store_locator_style'] = $_POST['store_locator_style'];
+			$other_settings['store_locator_style'] = sanitize_text_field($_POST['store_locator_style']);
 		
 		if(isset($_POST['wpgmza_store_locator_radius_style']))
-			$other_settings['wpgmza_store_locator_radius_style'] = $_POST['wpgmza_store_locator_radius_style'];
+			$other_settings['wpgmza_store_locator_radius_style'] = sanitize_text_field($_POST['wpgmza_store_locator_radius_style']);
 
         $other_settings['map_max_zoom'] = sanitize_text_field($map_max_zoom);
 
@@ -2960,6 +2972,9 @@ function wpgmaps_head() {
     }
 
     else if (isset($_POST['wpgmza_save_maker_location'])){
+    	if ( !isset( $_POST['wpgmaps_marker-nonce'] ) || !wp_verify_nonce( $_POST['wpgmaps_marker-nonce'], 'wpgmaps_marker-nonce' ) ) {
+    		wp_die( __( 'You do not have permission to perform this function', 'wp-google-maps' ) );
+    	}
         global $wpdb;
         global $wpgmza_tblname;
         $mid = sanitize_text_field($_POST['wpgmaps_marker_id']);
@@ -2987,6 +3002,9 @@ function wpgmaps_head() {
 
     }
     else if (isset($_POST['wpgmza_save_poly'])){
+    	if ( !isset( $_POST['wpgmaps_polygon-nonce'] ) || !wp_verify_nonce( $_POST['wpgmaps_polygon-nonce'], 'wpgmaps_polygon-nonce' ) ) {
+    		wp_die( __( 'You do not have permission to perform this function', 'wp-google-maps' ) );
+    	}
         global $wpdb;
         global $wpgmza_tblname_poly;
         $mid = sanitize_text_field($_POST['wpgmaps_map_id']);
@@ -3047,6 +3065,10 @@ function wpgmaps_head() {
 
     }
     else if (isset($_POST['wpgmza_edit_poly'])){
+    	if ( !isset( $_POST['wpgmaps_polygon-nonce'] ) || !wp_verify_nonce( $_POST['wpgmaps_polygon-nonce'], 'wpgmaps_polygon-nonce' ) ) {
+    		wp_die( __( 'You do not have permission to perform this function', 'wp-google-maps' ) );
+    	}
+
         global $wpdb;
         global $wpgmza_tblname_poly;
         $mid = sanitize_text_field($_POST['wpgmaps_map_id']);
@@ -3108,6 +3130,11 @@ function wpgmaps_head() {
 
     }
     else if (isset($_POST['wpgmza_save_polyline'])){
+
+    	if ( !isset( $_POST['wpgmaps_polyline-nonce'] ) || !wp_verify_nonce( $_POST['wpgmaps_polyline-nonce'], 'wpgmaps_polyline-nonce' ) ) {
+    		wp_die( __( 'You do not have permission to perform this function', 'wp-google-maps' ) );
+    	}
+
         global $wpdb;
         global $wpgmza_tblname_polylines;
         $mid = sanitize_text_field($_POST['wpgmaps_map_id']);
@@ -3153,6 +3180,12 @@ function wpgmaps_head() {
 
     }
     else if (isset($_POST['wpgmza_edit_polyline'])){
+
+    	if ( !isset( $_POST['wpgmaps_polyline-nonce'] ) || !wp_verify_nonce( $_POST['wpgmaps_polyline-nonce'], 'wpgmaps_polyline-nonce' ) ) {
+    		wp_die( __( 'You do not have permission to perform this function', 'wp-google-maps' ) );
+    	}
+
+
         global $wpdb;
         global $wpgmza_tblname_polylines;
         $mid = sanitize_text_field($_POST['wpgmaps_map_id']);
@@ -3195,10 +3228,15 @@ function wpgmaps_head() {
 
     }
 	else if (isset($_POST['wpgmza_save_circle'])){
+
+    	if ( !isset( $_POST['wpgmaps_circle-nonce'] ) || !wp_verify_nonce( $_POST['wpgmaps_circle-nonce'], 'wpgmaps_circle-nonce' ) ) {
+    		wp_die( __( 'You do not have permission to perform this function', 'wp-google-maps' ) );
+    	}
+
         global $wpdb;
         global $wpgmza_tblname_circles;
         
-		$center = preg_replace('/[(),]/', '', $_POST['center']);
+		$center = preg_replace('/[(),]/', '', sanitize_text_field($_POST['center']));
 		
 		if(isset($_POST['circle_id']))
 		{
@@ -3212,11 +3250,11 @@ function wpgmaps_head() {
 				WHERE id = %d
 			", array(
 				"POINT($center)",
-				$_POST['circle_name'],
-				$_POST['circle_color'],
-				$_POST['circle_opacity'],
-				$_POST['circle_radius'],
-				$_POST['circle_id']
+				sanitize_text_field($_POST['circle_name']),
+				sanitize_hex_color($_POST['circle_color']),
+				floatval($_POST['circle_opacity']),
+				intval($_POST['circle_radius']),
+				intval($_POST['circle_id'])
 			));
 		}
 		else
@@ -3228,11 +3266,11 @@ function wpgmaps_head() {
 				({$wpgmza->spatialFunctionPrefix}GeomFromText(%s), %d, %s, %s, %f, %f)
 			", array(
 				"POINT($center)",
-				$_POST['wpgmaps_map_id'],
-				$_POST['circle_name'],
-				$_POST['circle_color'],
-				$_POST['circle_opacity'],
-				$_POST['circle_radius']
+				intval($_POST['wpgmaps_map_id']),
+				sanitize_text_field($_POST['circle_name']),
+				sanitize_hex_color($_POST['circle_color']),
+				intval($_POST['circle_opacity']),
+				intval($_POST['circle_radius'])
 			));
 		}
 		
@@ -3250,11 +3288,16 @@ function wpgmaps_head() {
 		
     }
 	else if (isset($_POST['wpgmza_save_rectangle'])){
+
+    	if ( !isset( $_POST['wpgmaps_rectangle-nonce'] ) || !wp_verify_nonce( $_POST['wpgmaps_rectangle-nonce'], 'wpgmaps_rectangle-nonce' ) ) {
+    		wp_die( __( 'You do not have permission to perform this function', 'wp-google-maps' ) );
+    	}
+
         global $wpdb;
         global $wpgmza_tblname_rectangles;
         
 		$m = null;
-		preg_match_all('/-?\d+(\.\d+)?/', $_POST['bounds'], $m);
+		preg_match_all('/-?\d+(\.\d+)?/', sanitize_text_field($_POST['bounds']), $m);
 		
 		$north = $m[0][0];
 		$east = $m[0][1];
@@ -3275,12 +3318,12 @@ function wpgmaps_head() {
 				cornerB = {$wpgmza->spatialFunctionPrefix}GeomFromText(%s)
 				WHERE id = %d
 			", array(
-				$_POST['rectangle_name'],
-				$_POST['rectangle_color'],
-				$_POST['rectangle_opacity'],
+				sanitize_text_field($_POST['rectangle_name']),
+				sanitize_hex_color($_POST['rectangle_color']),
+				floatval($_POST['rectangle_opacity']),
 				$cornerA,
 				$cornerB,
-				$_POST['rectangle_id']
+				intval($_POST['rectangle_id'])
 			));
 		}
 		else
@@ -3291,10 +3334,10 @@ function wpgmaps_head() {
 				VALUES
 				(%d, %s, %s, %f, {$wpgmza->spatialFunctionPrefix}GeomFromText(%s), {$wpgmza->spatialFunctionPrefix}GeomFromText(%s))
 			", array(
-				$_POST['wpgmaps_map_id'],
-				$_POST['rectangle_name'],
-				$_POST['rectangle_color'],
-				$_POST['rectangle_opacity'],
+				intval($_POST['wpgmaps_map_id']),
+				sanitize_text_field($_POST['rectangle_name']),
+				sanitize_hex_color($_POST['rectangle_color']),
+				floatval($_POST['rectangle_opacity']),
 				$cornerA,
 				$cornerB
 			));
@@ -3380,6 +3423,9 @@ function wpgmaps_feedback_head() {
  * @return void
  */
 function wpgmaps_head_old() {
+	if (!current_user_can('administrator')) {
+	   return false;
+	}
     global $wpgmza_tblname_maps;
     if (isset($_POST['wpgmza_savemap'])){
         global $wpdb;
@@ -4949,6 +4995,9 @@ function wpgmza_basic_menu() {
                         <div id=\"tabs-1\">
                             <p></p>
                             <input type='hidden' name='http_referer' value='" . htmlspecialchars($_SERVER['PHP_SELF'], ENT_QUOTES, 'UTF-8') . "' />
+                            
+                            <input type='hidden' name='wpgmaps_main-nonce' id='wpgmaps_b_nonce' value='".wp_create_nonce( 'wpgmaps_main-nonce' )."' />
+
                             <input type='hidden' name='wpgmza_id' id='wpgmza_id' value='".$res->id."' />
                             <input id='wpgmza_start_location' name='wpgmza_start_location' type='hidden' size='40' maxlength='100' value='".$res->map_start_location."' />
                             <select id='wpgmza_start_zoom' name='wpgmza_start_zoom' style='display:none;' >
@@ -5896,6 +5945,7 @@ function wpgmza_basic_menu() {
 
 
 function wpgmza_edit_marker($mid) {
+
     global $wpgmza_tblname_maps;
 
     global $wpdb;
@@ -5911,6 +5961,7 @@ function wpgmza_edit_marker($mid) {
                     <form action='?page=wp-google-maps-menu&action=edit&map_id=".$res->map_id."' method='post' id='wpgmaps_edit_marker'>
                     <p></p>
 
+					<input type='hidden' name='wpgmaps_marker-nonce' id='wpgmaps_b_nonce' value='".wp_create_nonce( 'wpgmaps_marker-nonce' )."' />
                     <input type='hidden' name='wpgmaps_marker_id' id='wpgmaps_marker_id' value='".$mid."' />
                     <div id=\"wpgmaps_status\"></div>
                     <table>
@@ -7694,7 +7745,7 @@ function wpgmza_b_add_circle($mid)
                     <h2>".__("Add circle","wp-google-maps")."</h2>
                     <form action='?page=wp-google-maps-menu&action=edit&map_id=".$mid."' method='post' id='wpgmaps_add_circle_form'>
                     <input type='hidden' name='wpgmaps_map_id' id='wpgmaps_map_id' value='".$mid."' />
-					
+					<input type='hidden' name='wpgmaps_circle-nonce' id='wpgmaps_b_nonce' value='".wp_create_nonce( 'wpgmaps_circle-nonce' )."' />
 					<input type='hidden' name='center'/>
 					
                     <table class='wpgmza-listing-comp' style='width:30%;float:left;'>
@@ -7801,7 +7852,9 @@ function wpgmza_b_edit_circle($mid)
                     <form action='?page=wp-google-maps-menu&action=edit&map_id=".$mid."' method='post' id='wpgmaps_add_circle_form'>
                     <input type='hidden' name='wpgmaps_map_id' id='wpgmaps_map_id' value='".$mid."' />
 					<input type='hidden' name='circle_id' value='{$circle_id}'/>
-					
+					<input type='hidden' name='wpgmaps_circle-nonce' id='wpgmaps_b_nonce' value='".wp_create_nonce( 'wpgmaps_circle-nonce' )."' />
+
+
 					<input type='hidden' name='center' value='{$center}'/>
 					
                     <table class='wpgmza-listing-comp' style='width:30%;float:left;'>
@@ -8055,7 +8108,7 @@ function wpgmza_b_add_rectangle($mid)
                     <h2>".__("Add rectangle","wp-google-maps")."</h2>
                     <form action='?page=wp-google-maps-menu&action=edit&map_id=".$mid."' method='post' id='wpgmaps_add_rectangle_form'>
                     <input type='hidden' name='wpgmaps_map_id' id='wpgmaps_map_id' value='".$mid."' />
-					
+					<input type='hidden' name='wpgmaps_rectangle-nonce' id='wpgmaps_b_nonce' value='".wp_create_nonce( 'wpgmaps_rectangle-nonce' )."' />
 					<input type='hidden' name='bounds'/>
 					
                     <table class='wpgmza-listing-comp' style='width:30%;float:left;'>
@@ -8150,7 +8203,7 @@ function wpgmza_b_edit_rectangle($mid)
                     <form action='?page=wp-google-maps-menu&action=edit&map_id=".$mid."' method='post' id='wpgmaps_add_rectangle_form'>
                     <input type='hidden' name='wpgmaps_map_id' id='wpgmaps_map_id' value='".$mid."' />
 					<input type='hidden' name='rectangle_id' value='{$rectangle_id}'/>
-					
+					<input type='hidden' name='wpgmaps_rectangle-nonce' id='wpgmaps_b_nonce' value='".wp_create_nonce( 'wpgmaps_rectangle-nonce' )."' />
 					<input type='hidden' name='bounds' value='$north $west $south $east'/>
 					
                     <table class='wpgmza-listing-comp' style='width:30%;float:left;'>
