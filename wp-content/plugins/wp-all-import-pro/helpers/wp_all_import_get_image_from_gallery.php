@@ -55,6 +55,9 @@ function wp_all_import_get_image_from_gallery($image_name, $targetDir = FALSE, $
 
     // Search attachment by file headers.
     if (empty($attch) and @file_exists($targetDir . DIRECTORY_SEPARATOR . $original_image_name)) {
+        if ( ! function_exists('wp_read_image_metadata') ) {
+            require_once( ABSPATH . 'wp-admin/includes/image.php' );
+        }
         if ($bundle_type == 'images' and ($img_meta = wp_read_image_metadata($targetDir . DIRECTORY_SEPARATOR . $original_image_name))) {
             if (trim($img_meta['title']) && !is_numeric(sanitize_title($img_meta['title']))) {
                 $img_title = $img_meta['title'];

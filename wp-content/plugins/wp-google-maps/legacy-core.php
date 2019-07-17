@@ -138,13 +138,8 @@ if (function_exists('wpgmaps_head_pro' )) {
     } else {
         add_action( 'admin_head', 'wpgmaps_head' );
     }
-
     
 }
-add_action( 'admin_head','wpgmaps_feedback_head' );
-
-
-add_action( 'admin_footer', 'wpgmaps_reload_map_on_post' );
 
 add_action( 'init', 'wpgmaps_init' );
 add_action( 'admin_menu', 'wpgmaps_admin_menu' );
@@ -490,7 +485,6 @@ function wpgmaps_handle_directory() {
     
 }
 
-
 /**
  * Plugin action links filter
  *
@@ -510,71 +504,6 @@ function wpgmza_plugin_action_links( $links ) {
 
     return $links;
 }
-
-// NB: GDPR
-//add_action( 'wp_ajax_wpgmza_subscribe','wpgmza_ajax_subscribe');
-//add_action( 'wp_ajax_wpgmza_subscribe_hide','wpgmza_ajax_subscribe'); 
-function wpgmza_ajax_subscribe() {
-    /*$check = check_ajax_referer( 'wpgmza_subscribe', 'security' );
-    if ( $check == 1 ) {
-        if ( $_POST['action'] == 'wpgmza_subscribe' ) {
-            $uid = get_current_user_id();
-            update_user_meta( $uid, 'wpgmza_subscribed', true);
-
-        }
-
-        if ( $_POST['action'] == 'wpgmza_subscribe_hide' ) { 
-            $uid = get_current_user_id(); 
-            update_user_meta( $uid, 'wpgmza_subscribed', true); 
-            echo "1"; 
-            die(); 
-        }  
-    }*/
-}
-
-// NB: GDPR
-/*add_action ( 'admin_head', 'wpgmza_plugin_row_js' );*/
-/*function wpgmza_plugin_row_js(){
-    $current_page = get_current_screen();
-
-	if(!is_object($current_page))
-		return;
-	
-    if ( $current_page->base == 'plugins' ) {
-        wp_register_script( 'wpgmza_plugin_row_js', WPGMAPS_DIR.'js/wpgmaps_plugin_row.js', array( 'jquery-ui-core' ) );
-        wp_enqueue_script( 'wpgmza_plugin_row_js' );
-        wp_localize_script( 'wpgmza_plugin_row_js', 'wpgmza_sub_nonce', wp_create_nonce("wpgmza_subscribe") );
-    }
-}*/
-
-
-/**
- * Adds the email subscription field below the plugin row on the plugins page
- * 
- */
-// NB: GDPR
-/*add_filter( 'plugin_row_meta', 'wpgmza_plugin_row', 4, 10 );
-function wpgmza_plugin_row( $plugin_meta, $plugin_file, $plugin_data, $status ) {
-
-    if ( $plugin_file == "wp-google-maps/wpGoogleMaps.php") {
-        $check = get_user_meta(get_current_user_id(),"wpgmza_subscribed");
-		
-        if (!$check) {
-            $ret = '<div class="wpgmza_sub_div" style="margin-top:10px; color:#333; display:block; white-space:normal;">';
-            $ret .= '<form>';
-            $ret .= '<p><label for="wpgmza_signup_newsletter" style="font-style:italic; margin-bottom:5px;">' . __( 'Sign up to our newsletter and get information on the latest updates, beta versions and specials.', 'wp-google-maps' ) . '</label></p>';
-            $ret .= '<span id="wpgmza_subscribe_div">';
-            $ret .= '<input type="text" name="wpgmza_signup_newsletter" id="wpgmza_signup_newsletter" value="'.get_option( 'admin_email' ).'"></option>';
-            $ret .= '<input type="button" class="button button-primary"  id="wpgmza_signup_newsletter_btn" name="wpgmza_signup_newsletter_btn" value="' . __( 'Sign up', 'wp-google-maps' ) . '" />';
-            $ret .= '<input type="button" class="button button-secondary"  id="wpgmza_signup_newsletter_hide" name="wpgmza_signup_newsletter_hide" value="' . __( 'Hide', 'wp-google-maps' ) . '" />';
-            $ret .= '<span>';
-            $ret .= '</form>';
-            $ret .= '</div>';
-            array_push( $plugin_meta, $ret );
-        }
-    }
-    return $plugin_meta;
-}*/
 
 /**
  * Check if the XML folder exists, if not, display a warning notification
@@ -640,53 +569,6 @@ function wpgmaps_check_permissions_cache() {
         return true;
     }
 
-
-}
-
-
-/**
- * Reloads the map when the Save Map button is pressed in the map editor
- * @return void
- */
-function wpgmaps_reload_map_on_post() {
-    /*
-    if (isset($_POST['wpgmza_savemap'])){
-
-        $res = wpgmza_get_map_data(sanitize_text_field($_GET['map_id']));
-        $wpgmza_lat = $res->map_start_lat;
-        $wpgmza_lng = $res->map_start_lng;
-        $wpgmza_width = intval($res->map_width);
-        $wpgmza_height = intval($res->map_height);
-        $wpgmza_width_type = $res->map_width_type;
-        $wpgmza_height_type = $res->map_height_type;
-        $wpgmza_map_type = $res->type;
-        if (!$wpgmza_map_type || $wpgmza_map_type == "" || $wpgmza_map_type == "1") { $wpgmza_map_type = "ROADMAP"; }
-        else if ($wpgmza_map_type == "2") { $wpgmza_map_type = "SATELLITE"; }
-        else if ($wpgmza_map_type == "3") { $wpgmza_map_type = "HYBRID"; }
-        else if ($wpgmza_map_type == "4") { $wpgmza_map_type = "TERRAIN"; }
-        else { $wpgmza_map_type = "ROADMAP"; }
-        $start_zoom = $res->map_start_zoom;
-        if ($start_zoom < 1 || !$start_zoom) { $start_zoom = 5; }
-        if (!$wpgmza_lat || !$wpgmza_lng) { $wpgmza_lat = "51.5081290"; $wpgmza_lng = "-0.1280050"; }
-
-        ?>
-        <script type="text/javascript">
-            jQuery(function() {
-                jQuery("#wpgmza_map").css({
-                    height:'<?php echo $wpgmza_height; ?><?php echo $wpgmza_height_type; ?>',
-                    width:'<?php echo $wpgmza_width; ?><?php echo $wpgmza_width_type; ?>'
-
-                });
-                var myLatLng = new WPGMZA.LatLng(<?php echo $wpgmza_lat; ?>,<?php echo $wpgmza_lng; ?>);
-                MYMAP.init('#wpgmza_map', myLatLng, <?php echo $start_zoom; ?>);
-                UniqueCode=Math.round(Math.random()*10010);
-                MYMAP.placeMarkers('<?php echo wpgmaps_get_marker_url(sanitize_text_field($_GET['map_id'])); ?>?u='+UniqueCode,<?php echo sanitize_text_field($_GET['map_id']); ?>);
-
-            });
-        </script>
-    <?php
-    }
-*/
 
 }
 
@@ -2086,7 +1968,7 @@ function wpgmaps_action_callback_basic() {
     global $wpgmza_tblname_polylines;
     $check = check_ajax_referer( 'wpgmza', 'security' );
     $table_name = $wpdb->prefix . "wpgmza";
-	
+
     if ($check == 1) {
 
         if ($_POST['action'] == "add_marker") {
@@ -2806,7 +2688,6 @@ function wpgmza_settings_page_post()
  */
 function wpgmaps_head() {
 
-
 	if (!current_user_can('administrator')) {
 	   return false;
 	}
@@ -2815,14 +2696,7 @@ function wpgmaps_head() {
     global $wpgmza_tblname_maps;
     global $wpgmza_version;
 
-    /* deprecated in version 6.0.30 as GoDaddy have added a "flush cache" feature */
-    /*
-    $checker = get_dropins();
-    if (isset($checker['object-cache.php'])) {
-	echo "<div id=\"message\" class=\"error\"><p>".__("Please note: <strong>WP Google Maps will not function correctly while using APC Object Cache.</strong> We have found that GoDaddy hosting packages automatically include this with their WordPress hosting packages. Please email GoDaddy and ask them to remove the object-cache.php from your wp-content/ directory.","wp-google-maps")."</p></div>";
-    }
-     * 
-     */
+	
 
     if ((isset($_GET['page']) && $_GET['page'] == "wp-google-maps-menu") || (isset($_GET['page']) && $_GET['page'] == "wp-google-maps-menu-settings")) {
         wpgmaps_folder_check();
@@ -3369,63 +3243,17 @@ function wpgmaps_head() {
 }
 
 /**
- * Sends feedback to CC server
- * @return void
- */
-function wpgmaps_feedback_head() {
-        
-    if( isset( $_POST['wpgmza_savemap'] ) ){
-
-        $wpgmza_settings = get_option('WPGMZA_OTHER_SETTINGS');
-            
-        if( isset( $wpgmza_settings['wpgmza_settings_enable_usage_tracking'] ) && $wpgmza_settings['wpgmza_settings_enable_usage_tracking'] == 'yes' ){
-
-            $map_id = sanitize_text_field($_POST['wpgmza_id']);
-
-            wpgmza_track_usage( $map_id );
-
-        }
-        
-    }
-
-    
-    if (isset($_POST['wpgmza_save_feedback'])) {
-        
-        global $wpgmza_pro_version;
-        global $wpgmza_global_array;
-        if (function_exists('curl_version')) {
-            
-            $request_url = "http://www.wpgmaps.com/apif/rec.php";
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $request_url);
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $_POST);
-            curl_setopt($ch, CURLOPT_REFERER, $_SERVER['HTTP_HOST']);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            $output = curl_exec($ch);
-            
-            curl_close($ch);
-            $wpgmza_global_array['message'] = __('Thank you for your feedback!','wp-google-maps');
-            $wpgmza_global_array['code'] = '100';
-        } else {
-            
-            $wpgmza_global_array['message'] = __('Thank you for your feedback!','wp-google-maps');
-            $wpgmza_global_array['code'] = '100';
-        }
-        
-    }
-    
-    
-}
-
-/**
  * POST handling for version 5.24 or less
  * @return void
  */
 function wpgmaps_head_old() {
+	
+	// SECURITY TODO: Secure with nonce
+	
 	if (!current_user_can('administrator')) {
 	   return false;
 	}
+	
     global $wpgmza_tblname_maps;
     if (isset($_POST['wpgmza_savemap'])){
         global $wpdb;
@@ -5945,7 +5773,6 @@ function wpgmza_basic_menu() {
 
 
 function wpgmza_edit_marker($mid) {
-
     global $wpgmza_tblname_maps;
 
     global $wpdb;
@@ -6076,17 +5903,6 @@ function wpgmaps_admin_scripts() {
             wp_enqueue_style('wpgmaps-admin-style');
         }
     }
-    /**
-     * Deprecated - anonymous tracking is now sent when a map is saved, if the option is enabled.      
-     */
-    /*
-    if( isset( $wpgmza_settings['wpgmza_settings_enable_usage_tracking'] ) && $wpgmza_settings['wpgmza_settings_enable_usage_tracking'] == 'yes' ){      
-        if( ( isset( $_GET['action'] ) && $_GET['action'] == 'edit' ) && isset( $_GET['map_id'] ) ){
-            wp_register_script('wpgmaps-usage-tracking', WPGMAPS_DIR.'js/usage_tracking.js', array('jquery'), '1.0.0', true);
-            wp_enqueue_script('wpgmaps-usage-tracking');
-        }
-    }
-    */
 }
 function wpgmaps_user_styles() {
     
@@ -7009,70 +6825,6 @@ function wpgmza_basic_support_menu() {
         </div>
         
 <?php
-}
-
-add_action('wp_ajax_track_usage', 'wpgmaps_usage_tracking_callback');
-add_action('wp_ajax_request_coupon', 'wpgmaps_usage_tracking_callback');
-
-function wpgmaps_usage_tracking_callback(){
-
-    if( isset( $_POST['action'] ) ){
-
-        if( $_POST['action'] == 'track_usage' ){
-
-        /**
-         * No longer being done in Ajax. Will track when the map is saved.
-         */
-
-        }
-
-        if( $_POST['action'] == 'request_coupon' ){
-
-            if( $_POST['status'] == 'true' ){
-
-                if (function_exists('curl_version')) {
-                
-                    $request_url = "http://ccplugins.co/usage-tracking/coupons.php";
-
-                    $ch = curl_init();
-                    curl_setopt($ch, CURLOPT_URL, $request_url);
-                    curl_setopt($ch, CURLOPT_POST, 1);
-                    curl_setopt($ch, CURLOPT_POSTFIELDS, $_POST);
-                    curl_setopt($ch, CURLOPT_REFERER, $_SERVER['HTTP_HOST']);
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                    
-                    $output = curl_exec($ch);                            
-                    
-                    curl_close($ch);
-
-                    $wpgmza_settings = get_option('WPGMZA_OTHER_SETTINGS');
-
-                    $wpgmza_settings['wpgmza_settings_enable_usage_tracking'] = 'yes';
-
-                    update_option('WPGMZA_OTHER_SETTINGS', $wpgmza_settings);
-
-                } else {
-                    $body = "Usage tracking has been enabled by ".$_POST['email'];
-                    wp_mail('nick@wpgmaps.com', 'Coupon Code Request', $body);
-
-                }
-
-            } else {
-
-                $wpgmza_settings = get_option('WPGMZA_OTHER_SETTINGS');
-
-                $wpgmza_settings['wpgmza_settings_enable_usage_tracking'] = '0';
-
-                update_option('WPGMZA_OTHER_SETTINGS', $wpgmza_settings);
-
-            }
-
-        }
-
-    }
-
-    wp_die();
-
 }
 
 function wpgmza_return_country_tld_array(){

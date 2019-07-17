@@ -33,20 +33,16 @@ class RestAPI extends Factory
 		add_action('wp_ajax_nopriv_wpgmza_report_rest_api_blocked', array($this, 'onReportRestAPIBlocked'));
 		
 		// AJAX fallback for when REST API is blocked
-		//add_action('wp_ajax_wpgmza_rest_api_request', array($this, 'onAJAXRequest'));
-		//add_action('wp_ajax_nopriv_wpgmza_rest_api_request', array($this, 'onAJAXRequest'));
+		add_action('wp_ajax_wpgmza_rest_api_request', array($this, 'onAJAXRequest'));
+		add_action('wp_ajax_nopriv_wpgmza_rest_api_request', array($this, 'onAJAXRequest'));
 		
 		// Show REST API blocked notification
 		if($lastBlocked = get_option('wpgmza_last_rest_api_blocked'))
 		{
 			$date 		= \DateTime::createFromFormat(\DateTime::ISO8601, $lastBlocked);
 			$friendly 	= $date->format("H:i Y-m-d");
-			/*$message 	= sprintf(
-				__('<strong>WP Google Maps:</strong> We recommend allowing REST API requests to the <span style="font-family: monospace;">wpgmza</span> endpoints. One or more REST requests were blocked, a fallback will be used, however, this fallback is less optimal in terms of performance than REST requests. Last reported at %s.', 'wp-google-maps'),
-				$friendly
-			);*/
 			$message 	= sprintf(
-				__('<strong>WP Google Maps:</strong> We recommend allowing REST API requests to the <span style="font-family: monospace;">wpgmza</span> endpoints. One or more REST requests were blocked, some of the plugins features may not function for unauthenticated users. Last reported at %s.', 'wp-google-maps'),
+				__('<strong>WP Google Maps:</strong> We recommend allowing REST API requests to the <span style="font-family: monospace;">wpgmza</span> endpoints. One or more REST requests were blocked, a fallback will be used, however, this fallback is less optimal in terms of performance than REST requests. Last reported at %s.', 'wp-google-maps'),
 				$friendly
 			);
 			
@@ -268,7 +264,7 @@ class RestAPI extends Factory
 		return array('success' => 1);
 	}
 	
-	/*protected function sendAJAXResponse($result, $code=200)
+	protected function sendAJAXResponse($result, $code=200)
 	{
 		if($code != 200)
 			http_response_code($code);
@@ -342,7 +338,7 @@ class RestAPI extends Factory
 		$this->sendAJAXResponse($result);
 		
 		exit;
-	}*/
+	}
 	
 	public function onWPRestCacheAllowedEndpoints($allowed_endpoints)
 	{

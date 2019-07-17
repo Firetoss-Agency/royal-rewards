@@ -2168,7 +2168,7 @@ class PMXI_Admin_Import extends PMXI_Controller_Admin {
 			if ( ! $this->errors->get_error_codes()) { // no validation errors found	
 
 				// Attributes fields logic
-				$post = apply_filters('pmxi_save_options', $post);					
+				$post = apply_filters('pmxi_save_options', $post, $this->isWizard);
 				
 				if ($this->isWizard) {
 
@@ -2457,7 +2457,7 @@ class PMXI_Admin_Import extends PMXI_Controller_Admin {
 				(empty(PMXI_Plugin::$session->source) ? array() : PMXI_Plugin::$session->source)
 				+ array(
 					'xpath' => PMXI_Plugin::$session->xpath,					
-					'options' => $import->options + PMXI_Plugin::$session->options,
+					'options' => ($this->data['update_previous']->isEmpty()) ? PMXI_Plugin::$session->options : $import->options + PMXI_Plugin::$session->options,
 					'count' => PMXI_Plugin::$session->count,
 					'friendly_name' => wp_all_import_clear_xss(PMXI_Plugin::$session->options['friendly_name']),
 					'feed_type' => PMXI_Plugin::$session->feed_type,

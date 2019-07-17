@@ -35,6 +35,7 @@
 				if (preg_match('%png%i', $content_type[1])) return 'png';
 				if (preg_match('%gif%i', $content_type[1])) return 'gif';
 				if (preg_match('%svg%i', $content_type[1])) return 'svg';
+				if (preg_match('%webp%i', $content_type[1])) return 'webp';
                 if (preg_match('%pdf%i', $content_type[1])) return 'pdf';
 				return ($content_type[1] == "unknown") ? "" : $content_type[1];
 			}

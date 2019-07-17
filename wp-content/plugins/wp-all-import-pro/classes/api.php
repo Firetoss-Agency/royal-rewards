@@ -62,8 +62,8 @@ class PMXI_API
 
 				$is_set_with_xpath_visible = true;
 				foreach ($params['enum_values'] as $key => $value): ?>
-					<div class="form-field wpallimport-radio-field wpallimport-<?php echo sanitize_title($params['field_name']); ?>_<?php echo $key; ?>">						
-						<input type="radio" id="<?php echo sanitize_title($params['field_name']); ?>_<?php echo $key; ?>" class="switcher" name="<?php echo $params['field_name']; ?>" value="<?php echo $key; ?>" <?php echo $key == $params['field_value'] ? 'checked="checked"': '' ?>/>
+					<div class="form-field wpallimport-radio-field wpallimport-<?php echo sanitize_title($params['field_name']); ?>_<?php echo sanitize_title($key); ?>">
+						<input type="radio" id="<?php echo sanitize_title($params['field_name']); ?>_<?php echo sanitize_title($key); ?>" class="switcher" name="<?php echo $params['field_name']; ?>" value="<?php echo $key; ?>" <?php echo $key == $params['field_value'] ? 'checked="checked"': '' ?>/>
 						<?php  
 							$label = '';
 							$tooltip = '';
@@ -74,7 +74,7 @@ class PMXI_API
 								$label = $value;
 							}
 						?>
-						<label for="<?php echo sanitize_title($params['field_name']); ?>_<?php echo $key; ?>"><?php echo $label; ?></label>
+						<label for="<?php echo sanitize_title($params['field_name']); ?>_<?php echo sanitize_title($key); ?>"><?php echo $label; ?></label>
 						<?php 
 							if (is_array($value) and ! empty($value)){
 								foreach ($value as $k => $p) {
